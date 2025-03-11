@@ -1,0 +1,23 @@
+.status-bar {
+  width: 100%;
+  color: white;
+}
+
+.status-bar .inner {
+  display: flex;
+  justify-content: space-between;
+  height: 50px;
+  padding-top: 21px;
+}
+
+.status-bar .time {
+  padding-right: 6px;
+  padding-left: 16px;
+}
+
+.status-bar .levels {
+  display: flex;
+  gap: 7px;
+  padding-right: 16px;
+  padding-left: 6px;
+}

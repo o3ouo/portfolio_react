@@ -1,8 +1,8 @@
 .fullscreen {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  height: calc(var(--vh) * 100);
+  flex-direction: column;
+  height: calc(var(--vh, 1vh) * 100);
+  height: 100vh;
   min-height: -webkit-fill-available; /* iOS Safari에서 주소창 문제 해결*/ 
   max-height: 1024px; /* 너무 긴 화면 방지 */
   padding-bottom: env(safe-area-inset-bottom); /* iPhone X 이후 홈바 고려 */
@@ -13,8 +13,22 @@
 @media screen and (orientation: landscape) {
   .fullscreen {
     min-height: 480px;
-    max-height: 768px;
-    height: auto;
+    /* max-height: 768px;
+    height: auto; */
     overflow-x: auto;
+  }
+}
+
+@media screen and (min-width: 320px) {
+  .fullscreen {
+    background-image: url(/public/image/iphone-bg.jpg);
+    background-size: cover;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .fullscreen {
+    background-image: url(/public/image/ipad-bg.jpg);
+    background-size: cover;
   }
 }

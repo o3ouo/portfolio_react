@@ -1,0 +1,25 @@
+@font-face {
+  font-family: "SF-Pro-Display-Semibold";
+  src: url(/public/font/SF-Pro-Fonts/SF-Pro-Display-Semibold.otf);
+  font-style: normal;
+}
+@font-face {
+  font-family: "SF-Pro-Rounded-Semibold";
+  src: url(/public/font/SF-Pro-Fonts/SF-Pro-Rounded-Semibold.otf);
+  font-style: normal;
+}
+@font-face {
+  font-family: "SF-Pro-Text-Semibold";
+  src: url(/public/font/SF-Pro-Fonts/SF-Pro-Text-Semibold.otf);
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "SF-Pro-Regular";
+  src: url(/public/font/SF-Pro-Fonts/SF-Pro.ttf);
+  font-style: normal;
+}
+
+body {
+  font-family: "SF-Pro-Regular";
+}

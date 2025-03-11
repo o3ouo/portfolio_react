@@ -1,11 +1,12 @@
 import './App.css';
+import './css/base.css'
 import Main from './page/Main';
-import StatusBar from './mobile/StatusBar';
 
 
 function setFullScreenHeight() {
   let vh = window.innerHeight * 0.01;
   document.documentElement.style.setProperty("--vh", `${vh}px`);
+  
 }
 
 function adjustFullScreen() {
@@ -33,9 +34,10 @@ window.addEventListener("DOMContentLoaded", () => {
 });
 
 function App() {
+
   return (
     <div className="App fullscreen">
-      <StatusBar />
+      <Main />
     </div>
   );
 }
