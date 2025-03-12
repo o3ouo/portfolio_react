@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useWeather } from './useWeather';
+import WeatherForecast from './WeatherForecast';
 
 function Weather() {
   const [location, setLocation] = useState({ lat: null, lon: null });
@@ -19,23 +20,29 @@ function Weather() {
   const {
     activeWeatherData,
     activeHourlyData,
+    weeklyTemperatureStats,
+    dailyRainProbability,
     currentLoading,
     hourlyLoading,
     currentError,
     hourlyError,
   } = useWeather(location);
 
-  if (currentLoading || hourlyLoading) return <div><img src={`${process.env.PUBLIC_URL}/image/spinner-icon.png`} alt="spinner-icon" /></div>
+  if (currentLoading || hourlyLoading) return <div className='loding'><img src={`${process.env.PUBLIC_URL}/image/spinner-icon.png`} alt="spinner-icon" /></div>
 
   if (currentError || hourlyError) {
     console.error("API 요청 실패:", { currentError, hourlyError});
-    return <p>Error</p>
+    return <div className='error'><img src={`${process.env.PUBLIC_URL}/image/error-07.jpeg`} alt="error-img" /></div>
   }
 
   return (
     <div className="weather-wrap">
-      
-      
+      <WeatherForecast 
+        activeWeatherData={activeWeatherData}
+        activeHourlyData={activeHourlyData}
+        weeklyTemperatureStats={weeklyTemperatureStats}
+        dailyRainProbability={dailyRainProbability}
+      />
     </div>
   );
 }

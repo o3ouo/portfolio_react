@@ -24,4 +24,5 @@
 .big-time {
   font-family: "SF-Pro-Display-Semibold";
   font-size: calc(60px + 2vw);
+  text-align: center;
 }

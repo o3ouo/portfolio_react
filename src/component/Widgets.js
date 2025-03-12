@@ -1,9 +1,11 @@
 import React from 'react';
+import '../css/Widgets.css'
+import Weather from '../weather/Weather';
 
 function Widgets() {
   return (
-    <div>
-      
+    <div className="widgets">
+      <Weather />
     </div>
   );
 }

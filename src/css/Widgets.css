@@ -1,0 +1,82 @@
+.weather-wrap {
+  margin-top: 20px;
+  padding: 0 33px;
+  color: white;
+}
+
+.weather-forecast {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.weather-forecast .left {
+  margin: 6px;
+}
+
+.weather-forecast .top {
+  display: flex;
+  justify-content: flex-start;
+  gap: 3px;
+}
+
+.weather-forecast .top img {
+  width: 25px;
+  filter: brightness(10)
+}
+
+.weather-forecast .city {
+  text-align: start;
+  text-transform: capitalize;
+}
+
+.weather-forecast .temp {
+  line-height: 20px;
+}
+
+.weather-forecast .max-min-temp {
+  display: flex;
+  letter-spacing: .5px;
+}
+
+.weather-forecast .right {
+  display: flex;
+  gap: 16px;
+  height: 60px;
+  margin: 7px 0;
+}
+
+.weather-forecast .rain {
+  position: relative;
+  margin: 0 7px;
+}
+
+.weather-forecast .rain-txt {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 17px;
+}
+
+.weather-forecast .sun-time {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 60px;
+  margin: 0 7px;
+  border-radius: 100%;
+  background-color: rgba(180, 159, 167, .5);
+  backdrop-filter: blur(50px);
+}
+
+.weather-forecast .am-pm {
+  font-size: 9px;
+  line-height: 13px;
+}
+
+.weather-forecast .sun-icon img {
+  width: 17px;
+  filter: brightness(10);
+}

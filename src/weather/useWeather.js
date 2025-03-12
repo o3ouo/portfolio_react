@@ -23,8 +23,41 @@ export const useWeather = (location) => {
 
   // 6일 동안의 최고/최저 온도 계산
   const weeklyTemperatureStats = useMemo(() => {
-    if (!activeWeatherData?.list) return [];
+    if (!activeHourlyData || !activeHourlyData.list) return [];
 
     const tempByDate = {};
-  }) 
-}
+    activeHourlyData.list.forEach((hour) => {
+      const date = hour.dt_txt.split(" ")[0];
+
+      if (!tempByDate[date]) {
+        tempByDate[date] = { maxTemp: hour.main.temp, minTemp: hour.main.temp };
+      } else {
+        tempByDate[date].maxTemp = Math.max(tempByDate[date].maxTemp, hour.main.temp);
+        tempByDate[date].minTemp = Math.min(tempByDate[date].minTemp, hour.main.temp);
+      }
+    });
+
+    return Object.entries(tempByDate)
+      .slice(0, 6)
+      .map(([date, temps]) => ({ date, ...temps }));
+  }, [activeHourlyData]);
+  
+  // 오늘 강수 확률 계산
+  const dailyRainProbability = useMemo(() => {
+    if (!activeHourlyData || !activeHourlyData.list) return 0;
+
+    const pops = activeHourlyData.list.map((hour) => hour.pop || 0);
+    return pops.length ? Math.round((pops.reduce((sum, pop) => sum + pop, 0) / pops.length) * 100) : 0;
+  }, [activeHourlyData]);
+
+  return {
+    activeWeatherData,
+    activeHourlyData,
+    weeklyTemperatureStats,
+    dailyRainProbability,
+    currentLoading,
+    hourlyLoading,
+    currentError,
+    hourlyError,
+  };
+};

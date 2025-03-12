@@ -6,7 +6,6 @@
   min-height: -webkit-fill-available; /* iOS Safari에서 주소창 문제 해결*/ 
   max-height: 1024px; /* 너무 긴 화면 방지 */
   padding-bottom: env(safe-area-inset-bottom); /* iPhone X 이후 홈바 고려 */
-  text-align: center;
   /* background-color: #f0f0f0; */
 }
 

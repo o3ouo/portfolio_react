@@ -3,7 +3,7 @@ import '../css/LockScreen.css';
 import StatusBar from './StatusBar';
 import NowDate from '../component/NowDate';
 import Widgets from '../component/Widgets';
-
+import Notifications from '../component/Notifications';
 
 function LockScreen() {
   const [time, setTime] = useState('');
@@ -22,7 +22,6 @@ function LockScreen() {
 
       setTime(`${hours}:${minutes}`);
       setToday([day, usMonth, date]);
-      console.log(day, usMonth, date, options);
     };  
     // 1분마다 updateTime 실행
     const timerId = setInterval(updateTime, 60000);
@@ -38,6 +37,7 @@ function LockScreen() {
       <StatusBar time={time}/>
       <NowDate today={today} time={time}/>
       <Widgets />
+      <Notifications />
     </div>
   );
 }
