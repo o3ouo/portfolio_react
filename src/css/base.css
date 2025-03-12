@@ -15,11 +15,11 @@
 }
 
 @font-face {
-  font-family: "SF-Pro-Regular";
+  font-family: "SF-Pro";
   src: url(/public/font/SF-Pro-Fonts/SF-Pro.ttf);
   font-style: normal;
 }
 
 body {
-  font-family: "SF-Pro-Regular";
+  font-family: "SF-Pro";
 }

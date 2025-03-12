@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import '../css/LockScreen.css';
 import StatusBar from './StatusBar';
-import Today from '../component/Today';
+import NowDate from '../component/NowDate';
+import Widgets from '../component/Widgets';
 
 
 function LockScreen() {
@@ -21,7 +22,6 @@ function LockScreen() {
 
       setTime(`${hours}:${minutes}`);
       setToday([day, usMonth, date]);
-      console.log(now)
       console.log(day, usMonth, date, options);
     };  
     // 1분마다 updateTime 실행
@@ -36,7 +36,8 @@ function LockScreen() {
   return (
     <div className='lock-screen'>
       <StatusBar time={time}/>
-      <Today today={today} time={time}/>
+      <NowDate today={today} time={time}/>
+      <Widgets />
     </div>
   );
 }
