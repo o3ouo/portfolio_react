@@ -1,19 +1,12 @@
-.fullscreen {
-  display: flex;
-  flex-direction: column;
-  height: calc(var(--vh, 1vh) * 100);
-  /* height: 100vh; */
-  min-height: -webkit-fill-available; /* iOS Safari에서 주소창 문제 해결*/ 
-  max-height: 1024px; /* 너무 긴 화면 방지 */
-  padding-bottom: env(safe-area-inset-bottom); /* iPhone X 이후 홈바 고려 */
-  /* background-color: #f0f0f0; */
+.fullscreen-bg {
+  height: 100vh;
 }
 
 @media screen and (orientation: landscape) {
   .fullscreen {
     min-height: 480px;
-    /* max-height: 768px;
-    height: auto; */
+    max-height: 768px;
+    height: auto;
     overflow-x: auto;
   }
 }

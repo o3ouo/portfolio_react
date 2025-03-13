@@ -1,6 +1,7 @@
 .lock-screen {
   position: relative;
-  height: 100%;
+  background-image: url(/public/image/iphone-bg.jpg);
+  background-size: cover;
 }
 
 /* NowDate css */
