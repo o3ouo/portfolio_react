@@ -36,7 +36,7 @@ window.addEventListener("DOMContentLoaded", () => {
 function App() {
 
   return (
-    <div className="App fullscreen">
+    <div className="App fullscreen-bg">
       <Main />
     </div>
   );

@@ -12,6 +12,7 @@
 
 .weather-forecast .left {
   margin: 6px;
+  font-weight: 500;
 }
 
 .weather-forecast .top {
@@ -44,6 +45,7 @@
   gap: 16px;
   height: 60px;
   margin: 7px 0;
+  font-weight: 500;
 }
 
 .weather-forecast .rain {

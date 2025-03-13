@@ -1,4 +1,5 @@
 .lock-screen {
+  position: relative;
   height: 100%;
 }
 
@@ -12,6 +13,7 @@
   display: flex;
   justify-content: center;
   font-size: 22px;
+  font-weight: 500;
 }
 
 .today .day,
@@ -22,7 +24,54 @@
 }
 
 .big-time {
-  font-family: "SF-Pro-Display-Semibold";
+  font-family: "SF-Pro-Display-bold";
   font-size: calc(60px + 2vw);
   text-align: center;
+}
+
+/* flash-camera */
+.flash-camera-box {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 8px;
+  padding: 0 46px;
+}
+
+.flash,
+.camera {
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+  background-color: rgba(0, 0, 0, .26);
+  backdrop-filter: blur(67.96px);
+  align-content: center;
+}
+
+.flash img,
+.camera img {
+  margin: auto;
+}
+
+/* swipu-up */
+.swipe-up {
+  text-align: center;
+  color: white;
+}
+
+/* indicator */
+.indicator {
+  /* position: absolute;
+  bottom: -34px; */
+  width: 100%;
+  height: 34px;
+  align-content: end;
+}
+
+.indicator .bar {
+  width: 50%;
+  height: 5px;
+  margin: auto;
+  border-radius: 100px;
+  background-color: white;
+  
 }

@@ -9,11 +9,33 @@
   letter-spacing: -0.23px;
 }
 
+.notifications .inner {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+  padding: 14px;
+  padding-bottom: 12px;
+  border-radius: 24px;
+  background-color: rgba(166, 166, 166, .5);
+  backdrop-filter: blur(50px);
+}
+
+.notifications .bg {
+  top: 10px;
+  width: 90%;
+  background-color: rgba(166, 166, 166, .5);
+  backdrop-filter: blur(150px);
+  z-index: 1;
+}
+
 .notifications .first-content,
 .notifications .last-content {
   position: relative;
 }
 
+.notifications .last-content {
+  height: 85px;
+}
 
 .notifications .last-content .content-box {
   position: absolute;
@@ -37,33 +59,14 @@
   z-index: 0;
 }
 
+.notifications .first-content + .middle {
+  margin-top: 8px;
+}
+
 .notifications .last-content::before {
   z-index: 5;
 }
 
-.notifications .bg {
-  top: 10px;
-  width: 90%;
-  background-color: rgba(166, 166, 166, .5);
-  backdrop-filter: blur(150px);
-  z-index: 1;
-}
-
-.notifications .inner {
-  display: flex;
-  gap: 10px;
-  width: 100%;
-  padding: 14px;
-  padding-bottom: 12px;
-  border-radius: 24px;
-  background-color: rgba(166, 166, 166, .5);
-  backdrop-filter: blur(50px);
-}
-
-
-.notifications .middle:first-child {
-  margin-top: 8px;
-}
 
 .notifications .con-img {
   overflow: hidden;

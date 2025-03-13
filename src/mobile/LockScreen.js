@@ -38,6 +38,20 @@ function LockScreen() {
       <NowDate today={today} time={time}/>
       <Widgets />
       <Notifications />
+      <div className="flash-camera-box">
+        <figure className="flash">
+          <img src={`${process.env.PUBLIC_URL}/image/flashlight-icon.png`} alt="flashlight-icon" />
+        </figure>
+        <figure className="camera">
+          <img src={`${process.env.PUBLIC_URL}/image/camera-icon.png`} alt="flashlight-icon" />
+        </figure>
+      </div>
+      <div className="swipe-up">
+        <p>Swipe up to</p>
+      </div>
+      <div className="indicator">
+        <div className="bar"></div>
+      </div>
     </div>
   );
 }

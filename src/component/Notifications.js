@@ -35,8 +35,8 @@ function Notifications() {
       {
         list.map((con, index) => (
           index > 0 && index < 5 ? (
-            <div className="middle">
-              <Content key={index} title={con.title} description={con.description} icon={con.icon}/>
+            <div className="middle" key={index}>
+              <Content  title={con.title} description={con.description} icon={con.icon}/>
             </div>
           ) : (
             ""
