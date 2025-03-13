@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { useWeather } from './useWeather';
 import WeatherForecast from './WeatherForecast';
+import HomeWidgets from '../component/HomeWidgets';
+import '../css/WeatherForecast.css';
 
-function Weather() {
+function Weather({ isLockScreenVisible }) {
   const [location, setLocation] = useState({ lat: null, lon: null });
-  
+
   // 컴포넌트가 마운트될 때 사용자의 위치 정보를 가져옴
   useEffect(() => {
     if (navigator.geolocation) {
@@ -15,12 +17,12 @@ function Weather() {
         });
       });
     }
-  }, []);
+  }, [isLockScreenVisible]);
 
   const {
     activeWeatherData,
     activeHourlyData,
-    weeklyTemperatureStats,
+    dailyTemperatureStats,
     dailyRainProbability,
     currentLoading,
     hourlyLoading,
@@ -31,18 +33,26 @@ function Weather() {
   if (currentLoading || hourlyLoading) return <div className='loding'><img src={`${process.env.PUBLIC_URL}/image/spinner_icon.png`} alt="spinner_icon" /></div>
 
   if (currentError || hourlyError) {
-    console.error("API 요청 실패:", { currentError, hourlyError});
+    console.error("API 요청 실패:", { currentError, hourlyError });
     return <div className='error'><img src={`${process.env.PUBLIC_URL}/image/error_07.jpeg`} alt="error_img" /></div>
   }
 
   return (
     <div className="weather_wrap">
-      <WeatherForecast 
-        activeWeatherData={activeWeatherData}
-        activeHourlyData={activeHourlyData}
-        weeklyTemperatureStats={weeklyTemperatureStats}
-        dailyRainProbability={dailyRainProbability}
-      />
+      {
+        isLockScreenVisible ?
+          <WeatherForecast
+            activeWeatherData={activeWeatherData}
+            dailyTemperatureStats={dailyTemperatureStats}
+            dailyRainProbability={dailyRainProbability}
+          />
+          :
+          <HomeWidgets
+            activeWeatherData={activeWeatherData}
+            activeHourlyData={activeHourlyData}
+            dailyTemperatureStats={dailyTemperatureStats}
+          />
+      }
     </div>
   );
 }

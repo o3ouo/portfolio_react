@@ -1,43 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import '../css/LockScreen.css';
-import StatusBar from './StatusBar';
 import NowDate from '../component/NowDate';
-import Widgets from '../component/Widgets';
+import Weather from '../weather/Weather';
 import Notifications from '../component/Notifications';
 
-function LockScreen() {
-  const [time, setTime] = useState('');
-  const [today, setToday] = useState([]);
-
-  useEffect(() => {
-    const updateTime = () => {
-      const now = new Date();
-      const month = now.getMonth();
-      const options = { month: "long"};
-      const usMonth = new Intl.DateTimeFormat("en-US", options).format(now);
-      const day = now.getDay();
-      const date = now.getDate();
-      const hours = String(now.getHours());
-      const minutes = String(now.getMinutes()).padStart(2, "0");
-
-      setTime(`${hours}:${minutes}`);
-      setToday([day, usMonth, date]);
-    };  
-    // 1쵸마다 updateTime 실행
-    const timerId = setInterval(updateTime, 1000);
-    // 컴포넌트가 마운트될 때 즉시 한 번 실행
-    updateTime();
-
-    // 언마운트 시 타이머 정리
-    return () => clearInterval(timerId);
-  }, []);
+function LockScreen({ isLockScreenVisible }) {
 
   return (
     <div className='lock_screen'>
-      {/* <StatusBar time={time}/> */}
       <div className="today_weather">
-        <NowDate today={today} time={time}/>
-        <Widgets />
+        <NowDate />
+        <Weather isLockScreenVisible={isLockScreenVisible}/>
       </div>
       <div className="con_bottom">
       <Notifications />

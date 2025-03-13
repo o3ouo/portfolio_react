@@ -22,24 +22,26 @@ export const useWeather = (location) => {
   const activeHourlyData = useMemo(() => hourlyData);
 
   // 6일 동안의 최고/최저 온도 계산
-  const weeklyTemperatureStats = useMemo(() => {
+  const dailyTemperatureStats = useMemo(() => {
     if (!activeHourlyData || !activeHourlyData.list) return [];
 
-    const tempByDate = {};
+    const today = new Date().toISOString().split("T")[0]; 
+
+    const tempStats = { maxTemp: -Infinity, minTemp: Infinity };
+
     activeHourlyData.list.forEach((hour) => {
       const date = hour.dt_txt.split(" ")[0];
 
-      if (!tempByDate[date]) {
-        tempByDate[date] = { maxTemp: hour.main.temp, minTemp: hour.main.temp };
-      } else {
-        tempByDate[date].maxTemp = Math.max(tempByDate[date].maxTemp, hour.main.temp);
-        tempByDate[date].minTemp = Math.min(tempByDate[date].minTemp, hour.main.temp);
+      if (date === today) {
+        tempStats.maxTemp = Math.max(tempStats.maxTemp, hour.main.temp);
+        tempStats.minTemp = Math.min(tempStats.minTemp, hour.main.temp);
       }
     });
 
-    return Object.entries(tempByDate)
-      .slice(0, 6)
-      .map(([date, temps]) => ({ date, ...temps }));
+    // 최고/최저 온도가 갱신되지 않으면 빈 배열 반환
+    if (tempStats.maxTemp === -Infinity || tempStats.minTemp === Infinity) return [];
+
+    return [{ date: today, ...tempStats }];
   }, [activeHourlyData]);
   
   // 오늘 강수 확률 계산
@@ -53,7 +55,7 @@ export const useWeather = (location) => {
   return {
     activeWeatherData,
     activeHourlyData,
-    weeklyTemperatureStats,
+    dailyTemperatureStats,
     dailyRainProbability,
     currentLoading,
     hourlyLoading,

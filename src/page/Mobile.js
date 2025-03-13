@@ -62,9 +62,9 @@ function Mobile() {
   return (
     <div className="mobile" ref={mobileDivRef}>
       <div className="inner">
-        <LockScreen />
+        <LockScreen isLockScreenVisible={isLockScreenVisible}/>
         <div className="divider"></div>
-        <HomeScreen />
+        <HomeScreen isLockScreenVisible={isLockScreenVisible}/>
       </div>
     </div>
   );

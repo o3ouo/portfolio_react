@@ -18,10 +18,10 @@ export const getTime = (timeUnix) => {
   )
 };
 
-function WeatherForecast({ activeWeatherData, activeHourlyData, weeklyTemperatureStats, dailyRainProbability }) {
+function WeatherForecast({ activeWeatherData, dailyTemperatureStats, dailyRainProbability }) {
   if (!activeWeatherData) return <div className='error'><img src={`${process.env.PUBLIC_URL}/image/error.jpeg`} alt="error_img" /></div>
 
-  const { name, main, weather, sys } = activeWeatherData;
+  const { main, weather, sys } = activeWeatherData;
   const weatherMain = weather[0].main;
   const { sunrise, sunset } = sys;
 
@@ -39,8 +39,8 @@ function WeatherForecast({ activeWeatherData, activeHourlyData, weeklyTemperatur
         </div>
         <p className="city">{weather[0].description}</p>
         <div className="max_min_temp">
-          <p className="h">H:{Math.round(weeklyTemperatureStats[0].maxTemp)}°&nbsp;</p>
-          <p className="l">L:{Math.round(weeklyTemperatureStats[0].minTemp)}°</p>
+          <p className="h">H:{Math.round(dailyTemperatureStats[0].maxTemp)}°&nbsp;</p>
+          <p className="l">L:{Math.round(dailyTemperatureStats[0].minTemp)}°</p>
         </div>
       </div>
    
