@@ -28,15 +28,15 @@ function Weather() {
     hourlyError,
   } = useWeather(location);
 
-  if (currentLoading || hourlyLoading) return <div className='loding'><img src={`${process.env.PUBLIC_URL}/image/spinner-icon.png`} alt="spinner-icon" /></div>
+  if (currentLoading || hourlyLoading) return <div className='loding'><img src={`${process.env.PUBLIC_URL}/image/spinner_icon.png`} alt="spinner_icon" /></div>
 
   if (currentError || hourlyError) {
     console.error("API 요청 실패:", { currentError, hourlyError});
-    return <div className='error'><img src={`${process.env.PUBLIC_URL}/image/error-07.jpeg`} alt="error-img" /></div>
+    return <div className='error'><img src={`${process.env.PUBLIC_URL}/image/error_07.jpeg`} alt="error_img" /></div>
   }
 
   return (
-    <div className="weather-wrap">
+    <div className="weather_wrap">
       <WeatherForecast 
         activeWeatherData={activeWeatherData}
         activeHourlyData={activeHourlyData}

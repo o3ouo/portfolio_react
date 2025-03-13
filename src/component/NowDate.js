@@ -7,13 +7,13 @@ function NowDate({ today, time }) {
   const day = today[0];
 
   return (
-    <div className="now-date">
+    <div className="now_date">
       <div className="today">
         <p className="day">{week[day]}day,&nbsp;</p>
         <p className="month">{today[1]}&nbsp;</p>
         <p className="date">{today[2]}</p>
       </div>
-      <div className="big-time"><span>{time}</span></div>
+      <div className="big_time"><span>{time}</span></div>
     </div>
   );
 }

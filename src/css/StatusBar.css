@@ -1,21 +1,22 @@
-.status-bar {
+.status_bar {
   width: 100%;
   color: white;
 }
 
-.status-bar .inner {
+.status_bar .inner {
   display: flex;
   justify-content: space-between;
   height: 50px;
   padding-top: 21px;
 }
 
-.status-bar .time {
+.status_bar .time {
   padding-right: 6px;
   padding-left: 16px;
+  font-family: "SF-Pro-Text-Semibold";
 }
 
-.status-bar .levels {
+.status_bar .levels {
   display: flex;
   gap: 7px;
   padding-right: 16px;

@@ -1,5 +1,10 @@
-.fullscreen-bg {
-  height: 100vh;
+.fullscreen {
+	height: calc(var(--vh) * 100);
+  height: 100dvh;
+  max-height: 1024px;
+  min-height: 100vh;
+	min-height: -webkit-fill-available; /* iOC Safari 대응 */
+	padding-bottom: env(safe-area-inset-bottom);
 }
 
 @media screen and (orientation: landscape) {
@@ -12,15 +17,15 @@
 }
 
 @media screen and (min-width: 320px) {
-  .fullscreen-bg {
-    background-image: url(/public/image/iphone-bg.jpg);
+  .fullscreen {
+    background-image: url(/public/image/iphone_bg.jpg);
     background-size: cover;
   }
 }
 
 @media screen and (min-width: 768px) {
-  .fullscreen-bg {
-    background-image: url(/public/image/ipad-bg.jpg);
+  .fullscreen {
+    background-image: url(/public/image/ipad_bg.jpg);
     background-size: cover;
   }
 }

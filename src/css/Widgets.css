@@ -1,46 +1,45 @@
-.weather-wrap {
-  margin-top: 20px;
+.weather_wrap {
   padding: 0 33px;
   color: white;
 }
 
-.weather-forecast {
+.weather_forecast {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-.weather-forecast .left {
+.weather_forecast .left {
   margin: 6px;
   font-weight: 500;
 }
 
-.weather-forecast .top {
+.weather_forecast .top {
   display: flex;
   justify-content: flex-start;
   gap: 3px;
 }
 
-.weather-forecast .top img {
+.weather_forecast .top img {
   width: 25px;
   filter: brightness(10)
 }
 
-.weather-forecast .city {
+.weather_forecast .city {
   text-align: start;
   text-transform: capitalize;
 }
 
-.weather-forecast .temp {
+.weather_forecast .temp {
   line-height: 20px;
 }
 
-.weather-forecast .max-min-temp {
+.weather_forecast .max_min_temp {
   display: flex;
   letter-spacing: .5px;
 }
 
-.weather-forecast .right {
+.weather_forecast .right {
   display: flex;
   gap: 16px;
   height: 60px;
@@ -48,12 +47,12 @@
   font-weight: 500;
 }
 
-.weather-forecast .rain {
+.weather_forecast .rain {
   position: relative;
   margin: 0 7px;
 }
 
-.weather-forecast .rain-txt {
+.weather_forecast .rain_txt {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -61,7 +60,7 @@
   font-size: 17px;
 }
 
-.weather-forecast .sun-time {
+.weather_forecast .sun_time {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -73,12 +72,12 @@
   backdrop-filter: blur(50px);
 }
 
-.weather-forecast .am-pm {
+.weather_forecast .am_pm {
   font-size: 9px;
   line-height: 13px;
 }
 
-.weather-forecast .sun-icon img {
+.weather_forecast .sun_icon img {
   width: 17px;
   filter: brightness(10);
 }

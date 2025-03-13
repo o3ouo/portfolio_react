@@ -33,24 +33,32 @@ function LockScreen() {
   }, []);
 
   return (
-    <div className='lock-screen'>
-      <StatusBar time={time}/>
-      <NowDate today={today} time={time}/>
-      <Widgets />
+    <div className='lock_screen'>
+      {/* <StatusBar time={time}/> */}
+      <div className="today_weather">
+        <NowDate today={today} time={time}/>
+        <Widgets />
+      </div>
+      <div className="con_bottom">
       <Notifications />
-      <div className="flash-camera-box">
-        <figure className="flash">
-          <img src={`${process.env.PUBLIC_URL}/image/flashlight-icon.png`} alt="flashlight-icon" />
-        </figure>
-        <figure className="camera">
-          <img src={`${process.env.PUBLIC_URL}/image/camera-icon.png`} alt="flashlight-icon" />
-        </figure>
+      <div className="bottom">
+        <div className="flash_camera_box">
+          <figure className="flash">
+            <img src={`${process.env.PUBLIC_URL}/image/flashlight_icon.png`} alt="flashlight_icon" />
+          </figure>
+          <figure className="camera">
+            <img src={`${process.env.PUBLIC_URL}/image/camera_icon.png`} alt="flashlight_icon" />
+          </figure>
+        </div>
+        <div className="swipe_box">
+          <div className="swipe_up">
+            <p>Swipe up to</p>
+          </div>
+          <div className="indicator">
+            <div className="bar"></div>
+          </div>
+        </div>
       </div>
-      <div className="swipe-up">
-        <p>Swipe up to</p>
-      </div>
-      <div className="indicator">
-        <div className="bar"></div>
       </div>
     </div>
   );
