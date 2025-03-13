@@ -3,7 +3,10 @@
   flex-direction: column;
   justify-content: space-between;
   gap: 8px;
-  height: 100%;
+  width: 100%;
+  height: 100vh;
+  /* background-image: url(/public/image/iphone_bg.jpg);
+  background-size: cover; */
 }
 
 /* NowDate css */

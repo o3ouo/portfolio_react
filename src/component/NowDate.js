@@ -1,7 +1,6 @@
 import React from 'react';
 
 function NowDate({ today, time }) {
-  console.log('today:', today, 'time:', time);
 
   const week = ["Sun", "Mon", "Tues", "Wednes", "Thurs", "Fir", "Satur"];
   const day = today[0];

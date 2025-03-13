@@ -23,8 +23,8 @@ function LockScreen() {
       setTime(`${hours}:${minutes}`);
       setToday([day, usMonth, date]);
     };  
-    // 1분마다 updateTime 실행
-    const timerId = setInterval(updateTime, 60000);
+    // 1쵸마다 updateTime 실행
+    const timerId = setInterval(updateTime, 1000);
     // 컴포넌트가 마운트될 때 즉시 한 번 실행
     updateTime();
 

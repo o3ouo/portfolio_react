@@ -1,21 +1,71 @@
-import React from 'react';
+import React, { useState, useEffect, useRef } from 'react';
+import gsap from "gsap";
+import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 import '../css/Mobile.css';
 import LockScreen from '../mobile/LockScreen';
-import useTouchEvent from '../customHook/useTouchEvent';
+import useTouchSwipe from '../customHook/useTouchSwipe';
 import HomeScreen from '../mobile/HomeScreen';
 
+// 플러그인 등록
+gsap.registerPlugin(ScrollToPlugin);
+// 페이지 사이에 빈 공간을 추가해 오차 허용 범위를 넓힘
+const DIVIDER_HEIGHT = 5;
+
 function Mobile() {
-  const { touchStart, onTouchStart, onTouchMove, onTouchEnd } = useTouchEvent();
+  const mobileDivRef = useRef();
+  // 잠금화면 보이기 여부
+  const [isLockScreenVisible, setIsLockScreenVisible] = useState(true)
+
+  const scrollPage = (direction) => {
+    const mobileDiv = mobileDivRef.current;
+    const scrollTop = mobileDiv.scrollTop;
+    const pageHeight = window.innerHeight;
+    let targetScroll;
+
+    if (direction === "down") {
+      targetScroll = scrollTop < pageHeight ? pageHeight + DIVIDER_HEIGHT : pageHeight * 2 + DIVIDER_HEIGHT * 2;
+      setIsLockScreenVisible(false); // 잠금화면 숨기기
+    } else {
+      targetScroll = scrollTop > pageHeight ? pageHeight : 0;
+      setIsLockScreenVisible(targetScroll === 0);
+    }
+
+    // 스크롤 애니메이션
+    gsap.to(mobileDiv, {
+      scrollTo: targetScroll,
+      duration: 0.5,
+      ease: "power2.out", // 부드러운 감속 효과
+    });
+  };
+
+  useEffect(() => {
+    const wheelHandler = (e) => {
+      e.preventDefault();
+      const { deltaY } = e;
+      scrollPage(deltaY > 0 ? "down" : "up");
+    };
+
+    const mobileDiv = mobileDivRef.current;
+    mobileDiv.addEventListener("wheel", wheelHandler);
+
+    return () => {
+      mobileDiv.removeEventListener("wheel", wheelHandler);
+    };
+  }, []);
+
+  // 터치 스와이프 적용
+  useTouchSwipe(
+    () => scrollPage("down"),
+    () => scrollPage("up")
+  );
 
   return (
-    <div className='mobile' onTouchStart={onTouchStart} onTouchMove={onTouchMove} onTouchEnd={onTouchEnd}>
-      {
-        touchStart ? (
-          <HomeScreen />
-        ) : (
-          <LockScreen />
-        ) 
-      }
+    <div className="mobile" ref={mobileDivRef}>
+      <div className="inner">
+        <LockScreen />
+        <div className="divider"></div>
+        <HomeScreen />
+      </div>
     </div>
   );
 }

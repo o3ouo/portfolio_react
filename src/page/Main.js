@@ -8,8 +8,6 @@ function Main() {
   const { width } = useWindowDimensions();
   const mobile = width <= 768;
 
-  
-
   return (
     <div className='main'>
       {mobile ? <Mobile /> : <Tablet />}

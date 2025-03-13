@@ -1,9 +1,10 @@
 import React from 'react';
+import "../css/HomeScreen.css"
 
 function HomeScreen() {
   return (
-    <div>
-      
+    <div className="home_screen">
+      <h1>Home Screen</h1>
     </div>
   );
 }

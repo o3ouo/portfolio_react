@@ -28,8 +28,6 @@ function WeatherForecast({ activeWeatherData, activeHourlyData, weeklyTemperatur
   const nowTime = new Date();
   const hours = nowTime.getHours();
 
-  console.log("weather:", weather);
-
   return (
     <div className="weather_forecast">
       <div className="left">

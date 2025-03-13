@@ -1,5 +1,24 @@
 .mobile {
+  overflow-y: hidden;
   width: 100%;
   min-width: 320px;
-  height: 100%;
+  height: 100vh;
+}
+
+.mobile::-webkit-scollbar {
+  display: none;
+}
+
+.mobile>.inner {
+  /* display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh; */
+}
+
+.mobile .divider {
+  width: 100%;
+  height: 5px;
 }
