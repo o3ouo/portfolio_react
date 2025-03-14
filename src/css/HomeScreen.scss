@@ -1,5 +1,7 @@
 .home_screen {
   overflow-y: auto;
+  -ms-overflow-style: none; /* for Internet Explorer, Edge */
+  scrollbar-width: none; /* for Firefox */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -12,6 +14,10 @@
   text-align: center;
   color: white;
   // transition: opacity 0.3s ease-in-out;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
   .work_icon {
     overflow: hidden;
     width: 60px;
@@ -27,7 +33,7 @@
     flex-direction: column;
     gap: 19px;
 
-    /* About & Work List*/ 
+    /* About & Work List*/
     .top_contents {
       display: flex;
       justify-content: center;
@@ -36,6 +42,8 @@
 
       .about {
         text-align: center;
+        cursor: pointer;
+
         .about_icon {
           overflow: hidden;
           width: 158px;
@@ -43,21 +51,24 @@
           margin-bottom: 5px;
           border-radius: 21px;
         }
-      } 
+      }
 
       .work_list {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         gap: 19px;
         text-align: center;
+
         .phils {
           padding: 5px;
           background-color: #fff;
         }
+
         .play_press {
           padding: 5px;
           background-color: #F4F1EA;
         }
+
         .portfolio {
           background-color: #fff;
           padding: 5px;
@@ -65,10 +76,11 @@
       }
     }
 
-    /* Notion & TodoList */ 
+    /* Notion & TodoList */
     .notion_todo_box {
       display: flex;
       justify-content: space-between;
+
       .notion {
         background-color: #fff;
         padding: 5px;
@@ -102,6 +114,7 @@
       margin: auto;
       padding: 12px;
       padding-top: 10px;
+
       .inner {
         display: flex;
         justify-content: space-between;
@@ -109,6 +122,7 @@
         padding: 19px 21px;
         border-radius: 42px;
         background-color: rgba(51, 51, 51, .35);
+
         .kakao {
           background-color: #FAE200;
           padding: 5px;
@@ -116,14 +130,12 @@
       }
     }
   }
-  }
-
-
+}
 
 /* Home Weather Widgets */
 .home_widegets {
   text-align: center;
-  
+
   .inner {
     display: flex;
     flex-direction: column;
@@ -132,7 +144,7 @@
     padding: 12px 16px;
     margin-bottom: 5px;
     border-radius: 21px;
-    background-image: linear-gradient(180deg, rgba(16,88,178,1) 0%, rgba(49,155,230,1) 100%);
+    background-image: linear-gradient(180deg, rgba(16, 88, 178, 1) 0%, rgba(49, 155, 230, 1) 100%);
     /* font-family: "SF-Pro-Text-Semibold"; */
     font-size: 14px;
   }
@@ -140,16 +152,19 @@
   .current_weather {
     display: flex;
     justify-content: space-between;
+
     .current_temp {
       font-size: 40px;
       text-align: start;
     }
   }
+
   .icon_description_box {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
     justify-content: space-between;
+
     .weather_icon img {
       width: 25px;
       filter: brightness(10)
@@ -159,14 +174,17 @@
   .hourly_weather {
     display: flex;
     justify-content: space-between;
+
     li {
       display: flex;
       flex-direction: column;
       gap: 3px;
+
       .time {
         font-size: 12px;
         color: #eee;
       }
+
       .time-icon img {
         width: 25px;
         filter: brightness(10)
@@ -174,4 +192,3 @@
     }
   }
 }
-

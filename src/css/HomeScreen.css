@@ -1,5 +1,7 @@
 .home_screen {
   overflow-y: auto;
+  -ms-overflow-style: none; /* for Internet Explorer, Edge */
+  scrollbar-width: none; /* for Firefox */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -11,6 +13,9 @@
   font-weight: 500;
   text-align: center;
   color: white;
+}
+.home_screen::-webkit-scrollbar {
+  display: none;
 }
 .home_screen .work_icon {
   overflow: hidden;
@@ -37,6 +42,7 @@
 }
 .home_screen .top_inner .top_contents .about {
   text-align: center;
+  cursor: pointer;
 }
 .home_screen .top_inner .top_contents .about .about_icon {
   overflow: hidden;

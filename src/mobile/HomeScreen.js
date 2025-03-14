@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import "../css/HomeScreen.css"
 import WorkList from '../component/WorkList';
 import Weather from '../weather/Weather';
@@ -6,13 +7,14 @@ import NotionTodo from '../component/NotionTodo';
 import LinkAppList from '../component/LinkAppList';
 import DockBar from '../component/DockBar';
 
-function HomeScreen({ isLockScreenVisible }) {
-  
+function HomeContainer({ isLockScreenVisible }) {
+  const navigate = useNavigate();
+
   return (
     <div className="home_screen">
       <div className="top_inner">
         <div className="top_contents">
-          <div className="about">
+          <div className="about" onClick={() => navigate("/about")}>
             <figure className="about_icon">
               <img src={`${process.env.PUBLIC_URL}/image/about_icon.jpg`} alt="about_icon" />
             </figure>
@@ -36,4 +38,4 @@ function HomeScreen({ isLockScreenVisible }) {
   );
 }
 
-export default HomeScreen;
+export default HomeContainer;

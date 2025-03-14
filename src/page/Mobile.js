@@ -1,12 +1,12 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { Routes, Route, useNavigate } from 'react-router-dom';
 import gsap from "gsap";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 import '../css/Mobile.css';
 import LockScreen from '../mobile/LockScreen';
 import useTouchSwipe from '../customHook/useTouchSwipe';
 import HomeScreen from '../mobile/HomeScreen';
-import About from './About';
+import About from '../mobile/About';
 
 
 // 플러그인 등록
@@ -14,6 +14,7 @@ gsap.registerPlugin(ScrollToPlugin);
 
 function Mobile() {
   const mobileDivRef = useRef();
+  const navigate = useNavigate();
   // 잠금화면 보이기 여부
   const [isLockScreenVisible, setIsLockScreenVisible] = useState(true)
 
@@ -23,18 +24,20 @@ function Mobile() {
     const pageHeight = window.innerHeight;
     let targetScroll;
 
+    if (window.location.pathname !== "/") return;
+
     if (direction === "down") {
-      targetScroll = scrollTop < pageHeight ? pageHeight : pageHeight;
-      setIsLockScreenVisible(false); // 잠금화면 숨기기
+      targetScroll = pageHeight;
+      setIsLockScreenVisible(false);
     } else {
-      targetScroll = scrollTop > pageHeight ? pageHeight : 0;
-      setIsLockScreenVisible(targetScroll === 0);
+      targetScroll = 0;
+      setIsLockScreenVisible(true);
     }
 
     // 스크롤 애니메이션
     gsap.to(mobileDiv, {
       scrollTo: targetScroll,
-      duration: 0.5,
+      duration: 0.6,
       ease: "power2.out", // 부드러운 감속 효과
     });
 
@@ -58,7 +61,7 @@ function Mobile() {
     return () => {
       mobileDiv.removeEventListener("wheel", wheelHandler);
     };
-  }, []);
+  }, [isLockScreenVisible]);
 
   // 터치 스와이프 적용
   useTouchSwipe(
@@ -67,18 +70,15 @@ function Mobile() {
   );
 
   return (
-    <BrowserRouter>
-      <div className="mobile" ref={mobileDivRef}>
-        <div className="inner">
-          <LockScreen isLockScreenVisible={isLockScreenVisible} />
-          <Routes>
-            <Route path="/" element={<HomeScreen />} />
-            <Route path="/about" element={<About />} />
-          </Routes>
-        </div>
+    <div className="mobile" ref={mobileDivRef}>
+      <div className="inner">
+        <LockScreen isLockScreenVisible={isLockScreenVisible} />
+        <Routes>
+          <Route path="/" element={<HomeScreen isLockScreenVisible={isLockScreenVisible} />} />
+          <Route path="/about" element={<About />} />
+        </Routes>
       </div>
-    </BrowserRouter>
-
+    </div>
   );
 }
 

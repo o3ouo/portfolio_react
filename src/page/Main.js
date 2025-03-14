@@ -1,4 +1,5 @@
 import React from 'react';
+import { BrowserRouter } from 'react-router-dom';
 import '../css/Main.css';
 import Mobile from './Mobile';
 import Tablet from './Tablet';
@@ -9,9 +10,12 @@ function Main() {
   const mobile = width <= 768;
 
   return (
-    <div className='main'>
-      {mobile ? <Mobile /> : <Tablet />}
-    </div>
+    <BrowserRouter>
+      <div className='main'>
+        {mobile ? <Mobile /> : <Tablet />}
+      </div>
+    </BrowserRouter>
+
   );
 }
 
