@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/portfolio_react/static/css/main.31c8b8e1.css",
-    "main.js": "/portfolio_react/static/js/main.1d406e8d.js",
+    "main.css": "/portfolio_react/static/css/main.57c305a6.css",
+    "main.js": "/portfolio_react/static/js/main.d7d1c251.js",
     "static/js/453.906b0208.chunk.js": "/portfolio_react/static/js/453.906b0208.chunk.js",
     "static/media/SF-Pro.ttf": "/portfolio_react/static/media/SF-Pro.28d1cfc2d99a9a4b19ac.ttf",
     "static/media/SF-Pro-Text-Semibold.otf": "/portfolio_react/static/media/SF-Pro-Text-Semibold.288d5eb3fd7bf0174807.otf",
@@ -9,12 +9,12 @@
     "static/media/ipad_bg.jpg": "/portfolio_react/static/media/ipad_bg.9a8939c2238d5ccd8704.jpg",
     "static/media/iphone_bg.jpg": "/portfolio_react/static/media/iphone_bg.02c09ce505c3539ada29.jpg",
     "index.html": "/portfolio_react/index.html",
-    "main.31c8b8e1.css.map": "/portfolio_react/static/css/main.31c8b8e1.css.map",
-    "main.1d406e8d.js.map": "/portfolio_react/static/js/main.1d406e8d.js.map",
+    "main.57c305a6.css.map": "/portfolio_react/static/css/main.57c305a6.css.map",
+    "main.d7d1c251.js.map": "/portfolio_react/static/js/main.d7d1c251.js.map",
     "453.906b0208.chunk.js.map": "/portfolio_react/static/js/453.906b0208.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.31c8b8e1.css",
-    "static/js/main.1d406e8d.js"
+    "static/css/main.57c305a6.css",
+    "static/js/main.d7d1c251.js"
   ]
 }
