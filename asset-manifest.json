@@ -1,21 +1,20 @@
 {
   "files": {
-    "main.css": "/portfolio_react/static/css/main.54a1d775.css",
-    "main.js": "/portfolio_react/static/js/main.ef57d4b9.js",
+    "main.css": "/portfolio_react/static/css/main.226b5e5b.css",
+    "main.js": "/portfolio_react/static/js/main.7351282d.js",
     "static/js/453.906b0208.chunk.js": "/portfolio_react/static/js/453.906b0208.chunk.js",
     "static/media/SF-Pro.ttf": "/portfolio_react/static/media/SF-Pro.28d1cfc2d99a9a4b19ac.ttf",
-    "static/media/SF-Pro-Rounded-Semibold.otf": "/portfolio_react/static/media/SF-Pro-Rounded-Semibold.0462db06c27a6984b28d.otf",
     "static/media/SF-Pro-Text-Semibold.otf": "/portfolio_react/static/media/SF-Pro-Text-Semibold.288d5eb3fd7bf0174807.otf",
     "static/media/SF-Pro-Display-Bold.otf": "/portfolio_react/static/media/SF-Pro-Display-Bold.07a7fd83dabf0d1a6353.otf",
     "static/media/ipad_bg.jpg": "/portfolio_react/static/media/ipad_bg.9a8939c2238d5ccd8704.jpg",
     "static/media/iphone_bg.jpg": "/portfolio_react/static/media/iphone_bg.02c09ce505c3539ada29.jpg",
     "index.html": "/portfolio_react/index.html",
-    "main.54a1d775.css.map": "/portfolio_react/static/css/main.54a1d775.css.map",
-    "main.ef57d4b9.js.map": "/portfolio_react/static/js/main.ef57d4b9.js.map",
+    "main.226b5e5b.css.map": "/portfolio_react/static/css/main.226b5e5b.css.map",
+    "main.7351282d.js.map": "/portfolio_react/static/js/main.7351282d.js.map",
     "453.906b0208.chunk.js.map": "/portfolio_react/static/js/453.906b0208.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.54a1d775.css",
-    "static/js/main.ef57d4b9.js"
+    "static/css/main.226b5e5b.css",
+    "static/js/main.7351282d.js"
   ]
 }
