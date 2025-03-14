@@ -1,5 +1,5 @@
 .mobile {
-  overflow-y: hidden;
+  overflow-y: scroll;
   width: 100%;
   min-width: 320px;
   height: 100vh;
@@ -519,5 +519,15 @@
         }
       }
     }
+  }
+}
+
+// About Page
+.about_page {
+  overflow-y: hidden;
+  height: 100vh;
+
+  .back_box {
+    cursor: pointer;
   }
 }

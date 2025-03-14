@@ -1,5 +1,5 @@
 .mobile {
-  overflow-y: hidden;
+  overflow-y: scroll;
   width: 100%;
   min-width: 320px;
   height: 100vh;
@@ -438,6 +438,14 @@
 .home_screen .bottom_inner .dock_bar .inner .kakao {
   background-color: #FAE200;
   padding: 5px;
+}
+
+.about_page {
+  overflow-y: hidden;
+  height: 100vh;
+}
+.about_page .back_box {
+  cursor: pointer;
 }
 
 /*# sourceMappingURL=Mobile.css.map */

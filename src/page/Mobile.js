@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, useLocation } from 'react-router-dom';
 import gsap from "gsap";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 import '../css/Mobile.css';
@@ -14,30 +14,35 @@ gsap.registerPlugin(ScrollToPlugin);
 
 function Mobile() {
   const mobileDivRef = useRef();
+  const location = useLocation();
   // 잠금화면 보이기 여부
   const [isLockScreenVisible, setIsLockScreenVisible] = useState(true);
+  const [isScrolling, setIsScrolling] = useState(false);
+
+  useEffect(() => {
+    if (location.pathname.startsWith("/about")) {
+      setIsLockScreenVisible(false);
+    }
+  }, [location.pathname]);
 
   const scrollPage = (direction) => {
+    if (location.pathname !== "/" || isScrolling) return;
+
     const mobileDiv = mobileDivRef.current;
-    const scrollTop = mobileDiv.scrollTop;
     const pageHeight = window.innerHeight;
-    let targetScroll;
+    let targetScroll = direction === "down" ? pageHeight : 0;
 
-    if (window.location.pathname !== "/") return;
-
-    if (direction === "down") {
-      targetScroll = pageHeight;
-      setIsLockScreenVisible(false);
-    } else {
-      targetScroll = 0;
-      setIsLockScreenVisible(true);
-    }
+    setIsScrolling(true);
 
     // 스크롤 애니메이션
     gsap.to(mobileDiv, {
       scrollTo: targetScroll,
       duration: 0.6,
       ease: "power2.out", // 부드러운 감속 효과
+      onComplete: () => {
+        setIsScrolling(false); // 스크롤 종료 후 다시 가능하도록 설정
+        setIsLockScreenVisible(direction !== "down");
+      },
     });
 
     // 잠금화면 페이드 효과
@@ -49,32 +54,36 @@ function Mobile() {
 
   useEffect(() => {
     const wheelHandler = (e) => {
+      if (location.pathname !== "/" || isScrolling) return;
       e.preventDefault();
-      const { deltaY } = e;
-      scrollPage(deltaY > 0 ? "down" : "up");
+      scrollPage(e.deltaY > 0 ? "down" : "up");
     };
 
     const mobileDiv = mobileDivRef.current;
-    mobileDiv.addEventListener("wheel", wheelHandler);
+    if (mobileDiv) {
+      mobileDiv.addEventListener("wheel", wheelHandler);
+    }
 
     return () => {
-      mobileDiv.removeEventListener("wheel", wheelHandler);
+      if (mobileDiv) {
+        mobileDiv.removeEventListener("wheel", wheelHandler);
+      }
     };
-  }, [isLockScreenVisible]);
+  }, [isScrolling, location.pathname]);
 
   // 터치 스와이프 적용
   useTouchSwipe(
-    () => scrollPage("down"),
-    () => scrollPage("up")
+    () => !isScrolling && location.pathname === "/" && scrollPage("down"),
+    () => !isScrolling && location.pathname === "/" && scrollPage("up")
   );
 
   return (
     <div className="mobile" ref={mobileDivRef}>
       <div className="inner">
-        <LockScreen isLockScreenVisible={isLockScreenVisible} />
+        {isLockScreenVisible && <LockScreen isLockScreenVisible={isLockScreenVisible} />}
         <Routes>
           <Route path="/" element={<HomeScreen isLockScreenVisible={isLockScreenVisible} />} />
-          <Route path="/about" element={<About />} />
+          <Route path="/about/*" element={<About />} />
         </Routes>
       </div>
     </div>

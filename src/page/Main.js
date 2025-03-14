@@ -11,7 +11,7 @@ function Main() {
   const mobile = width <= 768;
 
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/portfolio_react">
       <WeatherProvider>
         <div className='main'>
           {mobile ? <Mobile /> : <Tablet />}
