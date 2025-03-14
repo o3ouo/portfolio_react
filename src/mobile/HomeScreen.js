@@ -1,13 +1,12 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import "../css/HomeScreen.css"
 import WorkList from '../component/WorkList';
-import Weather from '../weather/Weather';
 import NotionTodo from '../component/NotionTodo';
 import LinkAppList from '../component/LinkAppList';
 import DockBar from '../component/DockBar';
+import HomeWidgets from '../component/HomeWidgets';
 
-function HomeContainer({ isLockScreenVisible }) {
+function HomeContainer() {
   const navigate = useNavigate();
 
   return (
@@ -24,7 +23,7 @@ function HomeContainer({ isLockScreenVisible }) {
             <WorkList />
           </div>
         </div>
-        <Weather isLockScreenVisible={isLockScreenVisible}/>
+        <HomeWidgets/>
         <NotionTodo />
         <LinkAppList />
       </div>

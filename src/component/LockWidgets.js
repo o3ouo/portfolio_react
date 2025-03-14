@@ -1,4 +1,5 @@
 import React from 'react';
+import { useWeatherContext } from '../weather/WeatherContext';
 
 export const getTime = (timeUnix) => {
   const date = new Date(timeUnix * 1000);
@@ -18,8 +19,25 @@ export const getTime = (timeUnix) => {
   )
 };
 
-function WeatherForecast({ activeWeatherData, dailyTemperatureStats, dailyRainProbability }) {
+function LockWidgets() {
+  const {
+    activeWeatherData,
+    dailyTemperatureStats,
+    dailyRainProbability,
+    currentLoading,
+    hourlyLoading,
+    currentError,
+    hourlyError,
+  } = useWeatherContext();
+  
   if (!activeWeatherData) return <div className='error'><img src={`${process.env.PUBLIC_URL}/image/error.jpeg`} alt="error_img" /></div>
+
+  if (currentLoading || hourlyLoading) {
+    <div className='loding'><img src={`${process.env.PUBLIC_URL}/image/spinner_icon.png`} alt="spinner_icon" /></div>
+  }
+  if (currentError || hourlyError) {
+    <div className='error'><img src={`${process.env.PUBLIC_URL}/image/error.jpeg`} alt="error_img" /></div>
+  }
 
   const { main, weather, sys } = activeWeatherData;
   const weatherMain = weather[0].main;
@@ -29,7 +47,7 @@ function WeatherForecast({ activeWeatherData, dailyTemperatureStats, dailyRainPr
   const hours = nowTime.getHours();
 
   return (
-    <div className="weather_forecast">
+    <div className="lock_widgets">
       <div className="left">
         <div className="top">
           <figure className="weather_icon">
@@ -43,7 +61,7 @@ function WeatherForecast({ activeWeatherData, dailyTemperatureStats, dailyRainPr
           <p className="l">L:{Math.round(dailyTemperatureStats[0].minTemp)}°</p>
         </div>
       </div>
-   
+
       <div className="right">
         <div className="rain">
           <figure className="rain_icon">
@@ -63,4 +81,4 @@ function WeatherForecast({ activeWeatherData, dailyTemperatureStats, dailyRainPr
   );
 }
 
-export default WeatherForecast;
+export default LockWidgets;

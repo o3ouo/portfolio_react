@@ -18,8 +18,8 @@ export const useWeather = (location) => {
     enabled: !!location.lat && !!location.lon,
   });
 
-  const activeWeatherData = useMemo(() => currentData);
-  const activeHourlyData = useMemo(() => hourlyData);
+  const activeWeatherData = currentData;
+  const activeHourlyData = hourlyData;
 
   // 6일 동안의 최고/최저 온도 계산
   const dailyTemperatureStats = useMemo(() => {

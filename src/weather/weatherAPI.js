@@ -11,7 +11,7 @@ const fetchWeather = async (endpoint) => {
     return data || {};
   } catch (error) {
     console.error("Weather API ErrorL:", error.message);
-    return {};
+    return null;
   }
 };
 

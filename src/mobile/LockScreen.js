@@ -1,16 +1,15 @@
-import React, { useState, useEffect } from 'react';
-import '../css/LockScreen.css';
+import React, { useState } from 'react';
 import NowDate from '../component/NowDate';
-import Weather from '../weather/Weather';
 import Notifications from '../component/Notifications';
+import LockWidgets from '../component/LockWidgets';
 
-function LockScreen({ isLockScreenVisible }) {
+function LockScreen() {
 
   return (
     <div className='lock_screen'>
       <div className="today_weather">
         <NowDate />
-        <Weather isLockScreenVisible={isLockScreenVisible}/>
+        <LockWidgets/>
       </div>
       <div className="con_bottom">
       <Notifications />

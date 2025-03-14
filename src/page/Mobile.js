@@ -1,10 +1,10 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Routes, Route, useNavigate } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import gsap from "gsap";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 import '../css/Mobile.css';
-import LockScreen from '../mobile/LockScreen';
 import useTouchSwipe from '../customHook/useTouchSwipe';
+import LockScreen from '../mobile/LockScreen';
 import HomeScreen from '../mobile/HomeScreen';
 import About from '../mobile/About';
 
@@ -14,9 +14,8 @@ gsap.registerPlugin(ScrollToPlugin);
 
 function Mobile() {
   const mobileDivRef = useRef();
-  const navigate = useNavigate();
   // 잠금화면 보이기 여부
-  const [isLockScreenVisible, setIsLockScreenVisible] = useState(true)
+  const [isLockScreenVisible, setIsLockScreenVisible] = useState(true);
 
   const scrollPage = (direction) => {
     const mobileDiv = mobileDivRef.current;
