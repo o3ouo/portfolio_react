@@ -17,11 +17,14 @@ function Mobile() {
   const location = useLocation();
   // 잠금화면 보이기 여부
   const [isLockScreenVisible, setIsLockScreenVisible] = useState(true);
+  // 스크롤 여부
   const [isScrolling, setIsScrolling] = useState(false);
 
   useEffect(() => {
     if (location.pathname.startsWith("/about")) {
       setIsLockScreenVisible(false);
+    } else {
+      setIsLockScreenVisible(true);
     }
   }, [location.pathname]);
 
@@ -45,10 +48,12 @@ function Mobile() {
       },
     });
 
-    // 잠금화면 페이드 효과
+    // 잠금화면 페이드 효과 (opacity와 y 위치로 애니메이션을 분리)
     gsap.to(".lock_screen", {
-      opacity: isLockScreenVisible ? 1 : 0,
-      duration: 0.3,
+      opacity: direction === "down" ? 0 : 1,
+      y: direction === "down" ? -window.innerHeight : 0,
+      duration: 0.6,
+      ease: "power2.out",
     });
   };
 
