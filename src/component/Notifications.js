@@ -1,5 +1,4 @@
 import React from 'react';
-import '../css/Notifications.css';
 
 function Content({ title, description, icon }) {
   return (

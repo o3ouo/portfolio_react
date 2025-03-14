@@ -1,5 +1,4 @@
 import React from 'react';
-import '../css/HomeWidgets.css';
 
 function HomeWidgets({ activeWeatherData, activeHourlyData, dailyTemperatureStats }) {
   console.log("activeWeatherData:", activeWeatherData);

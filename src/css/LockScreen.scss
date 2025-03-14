@@ -1,0 +1,275 @@
+.lock_screen {
+  // position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 8px;
+  width: 100%;
+  height: 100vh;
+  // opacity: 0.3s ease-in-out;
+  /* background-image: url(/public/image/iphone_bg.jpg);
+  background-size: cover; */
+
+  /* Today Weather css */
+  .now_date {
+    padding-top: 24px;
+    color: white;
+    .today {
+      display: flex;
+      justify-content: center;
+      font-size: 22px;
+      font-weight: 500;
+    .day,
+    .month,
+    .day,
+    .big-time {
+      backdrop-filter: blur(40px);
+    }
+    }
+    .big_time {
+      font-family: "SF-Pro-Display-bold";
+      font-size: calc(60px + 2vw);
+      text-align: center;
+    }
+  }
+
+  /* Weather Forecast */ 
+  .weather_forecast {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 33px;
+    color: white;
+
+    .left {
+      margin: 6px;
+      font-weight: 500;
+      .top {
+        display: flex;
+        justify-content: flex-start;
+        gap: 3px;
+        .weather_icon img {
+          width: 25px;
+          filter: brightness(10)
+        }  
+        .temp {
+          line-height: 20px;
+        }
+        .city {
+          text-align: start;
+          text-transform: capitalize;
+        }
+      }
+      .max_min_temp {
+        display: flex;
+        letter-spacing: .5px;
+      }
+    }
+
+    .right {
+      display: flex;
+      gap: 16px;
+      height: 60px;
+      margin: 7px 0;
+      font-weight: 500;
+      .rain {
+        position: relative;
+        margin: 0 7px;
+          .rain_txt {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          font-size: 17px;
+        }
+      }
+      .sun_time {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 60px;
+        margin: 0 7px;
+        border-radius: 100%;
+        background-color: rgba(180, 159, 167, .5);
+        backdrop-filter: blur(50px);
+        .am_pm {
+          font-size: 9px;
+          line-height: 13px;
+        }
+        .sun_icon img {
+          width: 17px;
+          filter: brightness(10);
+        }
+      }
+    }
+  }
+  
+  /* Content Bottom */
+  .con_bottom {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    .notifications {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-top: 6px;
+      padding: 0 8px;
+      padding-bottom: 8px;
+      line-height: 20px;
+      letter-spacing: -0.23px;
+      .inner {
+        display: flex;
+        gap: 10px;
+        width: 100%;
+        padding: 14px;
+        padding-bottom: 12px;
+        border-radius: 24px;
+        background-color: rgba(166, 166, 166, .3);
+        backdrop-filter: blur(50px);
+      }
+      .con_img {
+        overflow: hidden;
+        width: 38px;
+        height: 38px;
+        border-radius: 8.5px;
+        background-color: #fff;
+        align-content: center;
+      }
+      .title {
+        font-family: "SF-Pro-Text-Semibold";
+      }
+
+      .first_content {
+        position: relative;
+        &::before {
+          content: '';
+          display: block;
+          position: absolute;
+          left: 50%;
+          width: 95%;
+          height: 75px;
+          border-radius: 24px;
+          background-color: rgba(178, 178, 178, 0.5);
+          backdrop-filter: blur(50px);
+          transform: translateX(-50%);
+          z-index: 0;
+        }
+        .con_img {
+          display: none;
+        }
+        .text_box {
+          padding-left: 6px;
+        }
+      }
+
+      .middle_content {
+        .inner {
+          margin-top: 8px;
+          background-color: rgba(166, 166, 166, .6);
+        }
+      } 
+      
+      .last_contents {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+        min-height: 100px;
+        .content {
+          position: absolute;
+          width: 100%; 
+          &:first-child {
+            width: 100%;
+            z-index: 5;
+          }      
+          &:nth-child(2) {
+            top: 30px;
+            top: 10px;
+            width: 97%;
+            z-index: 4;
+          }
+          &:nth-child(2) .inner {
+            background-color: rgba(178, 178, 178, 0.5);
+          }
+          &:nth-child(3) {
+            top: 60px;
+            top: 20px;
+            width: 95%;
+            z-index: 3;
+          }
+          &:nth-child(3) .inner {
+            background-color: rgba(208, 208, 208, 0.5);
+          }
+          &:nth-child(4) {
+            overflow: hidden;
+            top: 90px;
+            top: 30px;
+            width: 92%;
+            z-index: 2;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+          }
+          &:nth-child(4) .inner {
+            background-color: rgba(231, 231, 231, 0.5);
+          }
+        }
+      }
+    }
+
+    /* Flash Camera */
+    .flash_camera_box {
+      display: flex;
+      justify-content: space-between;
+      padding: 0 46px;
+      padding-bottom: 10vh;
+      .flash,
+      .camera {
+        width: 50px;
+        height: 50px;
+        border-radius: 100%;
+        background-color: rgba(0, 0, 0, .26);
+        backdrop-filter: blur(67.96px);
+        align-content: center;
+      }
+      .flash img,
+      .camera img {
+        margin: auto;
+      }
+    }
+
+    /* Swipe Box */
+    .swipe_box {
+      width: 100%;
+      transform: translateY(-80px);
+      animation: updownMove .7s linear 0s infinite alternate;
+      @keyframes updownMove {
+        from { transform: translateY(-80px) }
+        to { transform: translateY(-90px) }
+      }
+      .swipe_up {
+        text-align: center;
+        color: white;
+      }  
+    }
+
+    /* indicator */
+    .indicator {
+      /* position: absolute;
+      bottom: -34px; */
+      width: 100%;
+      height: 16px;
+      align-content: end;
+      .bar {
+        width: 50%;
+        height: 5px;
+        margin: auto;
+        border-radius: 100px;
+        background-color: white;
+      }
+    }
+  }
+}
+

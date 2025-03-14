@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useWeather } from './useWeather';
 import WeatherForecast from './WeatherForecast';
-import HomeWidgets from '../component/HomeWidgets';
-import '../css/WeatherForecast.css';
+import HomeWidgets from './HomeWidgets';
 
 function Weather({ isLockScreenVisible }) {
   const [location, setLocation] = useState({ lat: null, lon: null });

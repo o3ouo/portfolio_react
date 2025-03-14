@@ -3,11 +3,7 @@
   src: url(/public/font/SF-Pro-Fonts/SF-Pro-Display-Bold.otf);
   font-style: normal;
 }
-@font-face {
-  font-family: "SF-Pro-Rounded-Semibold";
-  src: url(/public/font/SF-Pro-Fonts/SF-Pro-Rounded-Semibold.otf);
-  font-style: normal;
-}
+
 @font-face {
   font-family: "SF-Pro-Text-Semibold";
   src: url(/public/font/SF-Pro-Fonts/SF-Pro-Text-Semibold.otf);

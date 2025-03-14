@@ -3,9 +3,9 @@
   width: 100%;
   min-width: 320px;
   height: 100vh;
-}
-.mobile ::-webkit-scollbar {
-  display: none;
+
+  ::-webkit-scollbar {
+    display: none;
+  }
 }
 
-/*# sourceMappingURL=Mobile.css.map */

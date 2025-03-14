@@ -1,15 +1,16 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import gsap from "gsap";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 import '../css/Mobile.css';
 import LockScreen from '../mobile/LockScreen';
 import useTouchSwipe from '../customHook/useTouchSwipe';
 import HomeScreen from '../mobile/HomeScreen';
+import About from './About';
+
 
 // 플러그인 등록
 gsap.registerPlugin(ScrollToPlugin);
-// 페이지 사이에 빈 공간을 추가해 오차 허용 범위를 넓힘
-const DIVIDER_HEIGHT = 5;
 
 function Mobile() {
   const mobileDivRef = useRef();
@@ -23,7 +24,7 @@ function Mobile() {
     let targetScroll;
 
     if (direction === "down") {
-      targetScroll = scrollTop < pageHeight ? pageHeight + DIVIDER_HEIGHT : pageHeight * 2 + DIVIDER_HEIGHT * 2;
+      targetScroll = scrollTop < pageHeight ? pageHeight : pageHeight;
       setIsLockScreenVisible(false); // 잠금화면 숨기기
     } else {
       targetScroll = scrollTop > pageHeight ? pageHeight : 0;
@@ -35,6 +36,12 @@ function Mobile() {
       scrollTo: targetScroll,
       duration: 0.5,
       ease: "power2.out", // 부드러운 감속 효과
+    });
+
+    // 잠금화면 페이드 효과
+    gsap.to(".lock_screen", {
+      opacity: isLockScreenVisible ? 1 : 0,
+      duration: 0.3,
     });
   };
 
@@ -60,13 +67,18 @@ function Mobile() {
   );
 
   return (
-    <div className="mobile" ref={mobileDivRef}>
-      <div className="inner">
-        <LockScreen isLockScreenVisible={isLockScreenVisible}/>
-        <div className="divider"></div>
-        <HomeScreen isLockScreenVisible={isLockScreenVisible}/>
+    <BrowserRouter>
+      <div className="mobile" ref={mobileDivRef}>
+        <div className="inner">
+          <LockScreen isLockScreenVisible={isLockScreenVisible} />
+          <Routes>
+            <Route path="/" element={<HomeScreen />} />
+            <Route path="/about" element={<About />} />
+          </Routes>
+        </div>
       </div>
-    </div>
+    </BrowserRouter>
+
   );
 }
 
