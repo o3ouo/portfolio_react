@@ -1,10 +1,10 @@
 .mobile {
-  overflow-y: scroll;
+  overflow-y: aoto;
   width: 100%;
   min-width: 320px;
   height: 100vh;
 }
-.mobile ::-webkit-scollbar {
+.mobile::-webkit-scollbar {
   display: none;
 }
 
