@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import { Routes, Route, useNavigate } from "react-router-dom";
+import { Routes, Route, useNavigate, useLocation } from "react-router-dom";
 import gsap from "gsap";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 import "../css/Mobile.css";
@@ -14,10 +14,13 @@ function Mobile() {
   const mobileDivRef = useRef();
   const lockScreenRef = useRef();
   const navigate = useNavigate();
+  const location = useLocation();
   const [isScrolling, setIsScrolling] = useState(false);
   const [isLockScreenVisible, setIsLockScreenVisible] = useState(true);
+  const restrictedPaths = ["/about"]; 
 
-  // LockScreen 상태 변경을 Effect에서 처리
+
+  // LockScreen 상태 변경 애니메이션 처리
   useEffect(() => {
     if (lockScreenRef.current) {
       if (isLockScreenVisible) {
@@ -37,6 +40,7 @@ function Mobile() {
     }
   }, [isLockScreenVisible]);
 
+  // 스크롤 또는 스와이프 이벤트 처리
   const handleScrollOrSwipe = (direction) => {
     if (isScrolling) return;
     setIsScrolling(true);
@@ -72,21 +76,28 @@ function Mobile() {
     }
   };
 
+  // 스와이프 & 스크롤을 막을 페이지
+  const isRestrictedPage = restrictedPaths.some(path => location.pathname.startsWith(path));
+
+  // 터치 스와이프 이벤트 감지 (잠금화면에서만 동작)
+  const isSwipeEnabled = (isLockScreenVisible || location.pathname === "/home") && !isRestrictedPage;
+  useTouchSwipe(
+    isSwipeEnabled ? () => handleScrollOrSwipe("down") : null,
+    isSwipeEnabled ? () => handleScrollOrSwipe("up") : null
+  );
+
+  // 마우스 휠 이벤트 감지 (다른 페이지에서는 비활성화)
   useEffect(() => {
     const wheelHandler = (e) => {
-      if (isScrolling) return;
+      if (isScrolling || isRestrictedPage) return;
+      
       e.preventDefault();
       handleScrollOrSwipe(e.deltaY > 0 ? "down" : "up");
     };
 
     window.addEventListener("wheel", wheelHandler, { passive: false });
     return () => window.removeEventListener("wheel", wheelHandler);
-  }, [isScrolling]);
-
-  useTouchSwipe(
-    () => handleScrollOrSwipe("down"),
-    () => handleScrollOrSwipe("up")
-  );
+  }, [isScrolling, location.pathname]);
 
   return (
     <div className="mobile" ref={mobileDivRef}>

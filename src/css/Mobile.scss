@@ -369,7 +369,7 @@
     flex-direction: column;
     gap: 19px;
     margin-bottom: 19px;
-    padding: 0 29px;
+    padding: 0 16px;
 
 
     /* About & Work List*/
@@ -397,6 +397,10 @@
         grid-template-columns: repeat(2, 1fr);
         gap: 19px;
         text-align: center;
+
+        .work_content {
+          cursor: pointer;
+        }
 
         .phils {
           padding: 5px;
@@ -510,7 +514,6 @@
     .dock_bar {
       width: calc(100% - 24px);
       margin: auto;
-      padding: 12px;
       padding-top: 10px;
 
       .inner {
@@ -594,7 +597,7 @@
 
       .img {
         overflow: hidden;
-        max-height: 457px;
+        max-height: 50vh;
         border-radius: 10px;
 
         img {
@@ -702,7 +705,9 @@
       justify-content: space-between;
       padding-top: 7px;
     }
+  }
 
+  .web_redesign_page {
   }
 
 }

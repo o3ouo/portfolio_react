@@ -316,7 +316,7 @@
   flex-direction: column;
   gap: 19px;
   margin-bottom: 19px;
-  padding: 0 29px;
+  padding: 0 16px;
   /* About & Work List*/
   /* Home Weather Widgets */
   /* Notion & TodoList */
@@ -344,6 +344,9 @@
   grid-template-columns: repeat(2, 1fr);
   gap: 19px;
   text-align: center;
+}
+.home_screen .top_inner .top_contents .work_list .work_content {
+  cursor: pointer;
 }
 .home_screen .top_inner .top_contents .work_list .phils {
   padding: 5px;
@@ -432,7 +435,6 @@
 .home_screen .bottom_inner .dock_bar {
   width: calc(100% - 24px);
   margin: auto;
-  padding: 12px;
   padding-top: 10px;
 }
 .home_screen .bottom_inner .dock_bar .inner {
@@ -505,7 +507,7 @@
 }
 .about_page .contents .info .img {
   overflow: hidden;
-  max-height: 457px;
+  max-height: 50vh;
   border-radius: 10px;
 }
 .about_page .contents .info .img img {

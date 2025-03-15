@@ -1,5 +1,6 @@
-import React from 'react';
+import React, {useRef} from 'react';
 import { useNavigate } from 'react-router-dom';
+import gsap from 'gsap';
 import WorkList from '../component/WorkList';
 import LinkAppList from '../component/LinkAppList';
 import DockBar from '../component/DockBar';
