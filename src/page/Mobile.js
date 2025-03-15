@@ -1,93 +1,107 @@
-import React, { useState, useEffect, useRef } from 'react';
-import { Routes, Route, useLocation } from 'react-router-dom';
+import React, { useState, useEffect, useRef } from "react";
+import { Routes, Route, useLocation, useNavigate } from "react-router-dom";
 import gsap from "gsap";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
-import '../css/Mobile.css';
-import useTouchSwipe from '../customHook/useTouchSwipe';
-import LockScreen from '../mobile/LockScreen';
-import HomeScreen from '../mobile/HomeScreen';
-import About from '../mobile/About';
+import "../css/Mobile.css";
+import useTouchSwipe from "../customHook/useTouchSwipe";
+import LockScreen from "../mobile/LockScreen";
+import HomeScreen from "../mobile/HomeScreen";
+import About from "../mobile/About";
 
-
-// 플러그인 등록
 gsap.registerPlugin(ScrollToPlugin);
 
 function Mobile() {
   const mobileDivRef = useRef();
+  const lockScreenRef = useRef();
   const location = useLocation();
-  // 잠금화면 보이기 여부
-  const [isLockScreenVisible, setIsLockScreenVisible] = useState(true);
-  // 스크롤 여부
+  const navigate = useNavigate();
   const [isScrolling, setIsScrolling] = useState(false);
 
+  const isLockScreenVisible = location.pathname === "/";
+
   useEffect(() => {
-    if (location.pathname.startsWith("/about")) {
-      setIsLockScreenVisible(false);
-    } else {
-      setIsLockScreenVisible(true);
+    if (lockScreenRef.current) {
+      if (isLockScreenVisible) {
+        lockScreenRef.current.style.display = "block"; // 다시 보이게 설정
+        gsap.to(lockScreenRef.current, {
+          opacity: 1,
+          y: 0,
+          duration: 0.8,
+          ease: "power2.out",
+        });
+      } else {
+        gsap.to(lockScreenRef.current, {
+          opacity: 0,
+          y: -window.innerHeight,
+          duration: 0.8,
+          ease: "power2.out",
+          onComplete: () => {
+            lockScreenRef.current.style.display = "none"; // 완전히 숨김
+          },
+        });
+      }
     }
-  }, [location.pathname]);
+  }, [isLockScreenVisible]);
 
-  const scrollPage = (direction) => {
-    if (location.pathname !== "/" || isScrolling) return;
-
-    const mobileDiv = mobileDivRef.current;
-    const pageHeight = window.innerHeight;
-    let targetScroll = direction === "down" ? pageHeight : 0;
-
+  const handleScrollOrSwipe = (direction) => {
+    if (isScrolling) return;
     setIsScrolling(true);
 
-    // 스크롤 애니메이션
-    gsap.to(mobileDiv, {
-      scrollTo: targetScroll,
-      duration: 0.6,
-      ease: "power2.out", // 부드러운 감속 효과
-      onComplete: () => {
-        setIsScrolling(false); // 스크롤 종료 후 다시 가능하도록 설정
-        setIsLockScreenVisible(direction !== "down");
-      },
-    });
-
-    // 잠금화면 페이드 효과 (opacity와 y 위치로 애니메이션을 분리)
-    gsap.to(".lock_screen", {
-      opacity: direction === "down" ? 0 : 1,
-      y: direction === "down" ? -window.innerHeight : 0,
-      duration: 0.6,
-      ease: "power2.out",
-    });
+    if (lockScreenRef.current) {
+      if (direction === "down") {
+        gsap.to(lockScreenRef.current, {
+          y: -window.innerHeight,
+          opacity: 0,
+          duration: 0.8,
+          ease: "power2.out",
+          onComplete: () => {
+            lockScreenRef.current.style.display = "none"; // 락스크린 완전히 숨김
+            navigate("/home"); // 홈 화면으로 이동
+            setTimeout(() => setIsScrolling(false), 500);
+          },
+        });
+      } else {
+        lockScreenRef.current.style.display = "block"; // 락스크린 다시 보이게
+        gsap.set(lockScreenRef.current, { opacity: 0, y: -window.innerHeight });
+        gsap.to(lockScreenRef.current, {
+          y: 0,
+          opacity: 1,
+          duration: 0.8,
+          ease: "power2.out",
+          onComplete: () => {
+            navigate("/");
+            setTimeout(() => setIsScrolling(false), 500);
+          },
+        });
+      }
+    }
   };
 
   useEffect(() => {
     const wheelHandler = (e) => {
-      if (location.pathname !== "/" || isScrolling) return;
+      if (isScrolling) return;
       e.preventDefault();
-      scrollPage(e.deltaY > 0 ? "down" : "up");
+      handleScrollOrSwipe(e.deltaY > 0 ? "down" : "up");
     };
 
-    const mobileDiv = mobileDivRef.current;
-    if (mobileDiv) {
-      mobileDiv.addEventListener("wheel", wheelHandler);
-    }
+    window.addEventListener("wheel", wheelHandler, { passive: false });
+    return () => window.removeEventListener("wheel", wheelHandler);
+  }, [isScrolling]);
 
-    return () => {
-      if (mobileDiv) {
-        mobileDiv.removeEventListener("wheel", wheelHandler);
-      }
-    };
-  }, [isScrolling, location.pathname]);
-
-  // 터치 스와이프 적용
   useTouchSwipe(
-    () => !isScrolling && location.pathname === "/" && scrollPage("down"),
-    () => !isScrolling && location.pathname === "/" && scrollPage("up")
+    () => handleScrollOrSwipe("down"),
+    () => handleScrollOrSwipe("up")
   );
 
   return (
     <div className="mobile" ref={mobileDivRef}>
       <div className="inner">
-        {isLockScreenVisible && <LockScreen isLockScreenVisible={isLockScreenVisible} />}
+        <div ref={lockScreenRef} className="lock_screen">
+          <LockScreen />
+        </div>
         <Routes>
-          <Route path="/" element={<HomeScreen isLockScreenVisible={isLockScreenVisible} />} />
+          <Route path="/" element={<HomeScreen />} /> {/* 🔹 기본 경로 추가 */}
+          <Route path="/home" element={<HomeScreen />} />
           <Route path="/about/*" element={<About />} />
         </Routes>
       </div>

@@ -41,7 +41,7 @@ function About() {
     <div className="about_page">
       <div className="inner">
         <div className="nav_bar">
-          <div className="back_box" onClick={() => navigate("/")}>
+          <div className="back_box" onClick={() => navigate("/home")}>
             <figure>
               <img src={`${process.env.PUBLIC_URL}/image/back_icon.png`} alt="back_icon" />
             </figure>
