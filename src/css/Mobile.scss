@@ -3,6 +3,7 @@
   width: 100%;
   min-width: 320px;
   height: 100vh;
+
   &::-webkit-scollbar {
     display: none;
   }
@@ -530,12 +531,179 @@
   }
 }
 
-// About Page
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// About Page
 .about_page {
   overflow-y: hidden;
   height: 100vh;
+  background-color: #fff;
 
-  .back_box {
-    cursor: pointer;
+  .inner {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
   }
+
+  .nav_bar {
+    padding-top: 24px;
+
+    .back_box {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 11px 8px;
+      font-size: 17px;
+      line-height: 22px;
+      letter-spacing: -0.43px;
+      color: #007AFF;
+      cursor: pointer;
+    }
+
+    .title_box {
+      padding-top: 3px;
+      padding-bottom: 8px;
+      padding-left: 16px;
+      font-size: 34px;
+      font-weight: bold;
+      line-height: 41px;
+      letter-spacing: 0.4px;
+    }
+  }
+
+  .contents {
+    height: 100%;
+    padding: 0 16px;
+    padding-top: 16px;
+    background-color: #F2F2F7;
+
+    .list {
+      display: flex;
+      flex-direction: column;
+      padding-left: 16px;
+      border-radius: 10px;
+      background-color: #fff;
+      font-size: 16px;
+      line-height: 22px;
+      letter-spacing: -0.43px;
+    }
+
+
+    .info {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+
+      .img {
+        overflow: hidden;
+        max-height: 457px;
+        border-radius: 10px;
+
+        img {
+          object-fit: contain;
+        }
+      }
+
+      .list {
+
+        div {
+          display: flex;
+          justify-content: space-between;
+          padding: 10px 0;
+
+          &:not(:last-child) {
+            border-bottom: 0.33px solid rgba(86, 86, 86, .2);
+          }
+        }
+
+        .title {
+          color: rgba(60, 60, 60, .6);
+        }
+
+        .detail {
+          padding-right: 16px;
+        }
+      }
+
+    }
+
+    .education_and_certifications {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      height: 100%;
+
+      .header_title {
+        padding: 0 16px;
+        padding-bottom: 7px;
+        font-size: 13px;
+        line-height: 16px;
+        color: rgba(60, 60, 60, .6);
+      }
+
+      li {
+        padding: 10px 0;
+        &:not(:last-child) {
+          border-bottom: 0.33px solid rgba(86, 86, 86, .2);
+        }
+      }
+
+      .education {
+
+        .period {
+          font-size: 13px;
+          line-height: 18px;
+          letter-spacing: -0.08px;
+          color: rgba(60, 60, 60, .6);
+        }
+      }
+
+    }
+
+    .skills {
+
+      li {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        &:last-child .skill_name {
+          border: none;
+        }
+
+
+      }
+
+      .img {
+        margin-left: 8px;
+
+        img {
+          width: 30px;
+        }
+      }
+
+      .skill_name {
+        width: 100%;
+        min-height: 44px;
+        align-content: center;
+        border-bottom: 0.33px solid rgba(86, 86, 86, .2);
+     
+      }
+
+      
+    }
+
+
+  }
+
+  .tab_menu {
+    padding: 0 16px;
+    padding-bottom: 10vh;
+
+    ul {
+      display: flex;
+      justify-content: space-between;
+      padding-top: 7px;
+    }
+
+  }
+
 }
