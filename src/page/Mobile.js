@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import { Routes, Route, useLocation, useNavigate } from "react-router-dom";
+import { Routes, Route, useNavigate } from "react-router-dom";
 import gsap from "gsap";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 import "../css/Mobile.css";
@@ -13,30 +13,24 @@ gsap.registerPlugin(ScrollToPlugin);
 function Mobile() {
   const mobileDivRef = useRef();
   const lockScreenRef = useRef();
-  const location = useLocation();
   const navigate = useNavigate();
   const [isScrolling, setIsScrolling] = useState(false);
+  const [isLockScreenVisible, setIsLockScreenVisible] = useState(true);
 
-  const isLockScreenVisible = location.pathname === "/";
-
+  // LockScreen 상태 변경을 Effect에서 처리
   useEffect(() => {
     if (lockScreenRef.current) {
       if (isLockScreenVisible) {
-        lockScreenRef.current.style.display = "block"; // 다시 보이게 설정
-        gsap.to(lockScreenRef.current, {
-          opacity: 1,
-          y: 0,
-          duration: 0.8,
-          ease: "power2.out",
-        });
+        lockScreenRef.current.style.zIndex = "10"; // 락스크린을 최상위로 설정
+        gsap.set(lockScreenRef.current, { opacity: 1, y: 0 }); // 초기 상태 설정
       } else {
         gsap.to(lockScreenRef.current, {
           opacity: 0,
           y: -window.innerHeight,
-          duration: 0.8,
+          duration: 0.3,
           ease: "power2.out",
           onComplete: () => {
-            lockScreenRef.current.style.display = "none"; // 완전히 숨김
+            lockScreenRef.current.style.zIndex = "-1"; // 락스크린을 보이지 않게 함
           },
         });
       }
@@ -52,25 +46,26 @@ function Mobile() {
         gsap.to(lockScreenRef.current, {
           y: -window.innerHeight,
           opacity: 0,
-          duration: 0.8,
+          duration: 0.3,
           ease: "power2.out",
           onComplete: () => {
-            lockScreenRef.current.style.display = "none"; // 락스크린 완전히 숨김
+            setIsLockScreenVisible(false); // 잠금화면 숨기기
             navigate("/home"); // 홈 화면으로 이동
-            setTimeout(() => setIsScrolling(false), 500);
+            setTimeout(() => setIsScrolling(false), 400);
           },
         });
       } else {
-        lockScreenRef.current.style.display = "block"; // 락스크린 다시 보이게
-        gsap.set(lockScreenRef.current, { opacity: 0, y: -window.innerHeight });
+        lockScreenRef.current.style.zIndex = "10"; // 락스크린을 보이게 설정
+        lockScreenRef.current.style.opacity = "0"; // 초기 opacity 설정
         gsap.to(lockScreenRef.current, {
           y: 0,
           opacity: 1,
-          duration: 0.8,
+          duration: 0.3,
           ease: "power2.out",
           onComplete: () => {
-            navigate("/");
-            setTimeout(() => setIsScrolling(false), 500);
+            setIsLockScreenVisible(true); // 잠금화면 보이게
+            navigate("/"); // 잠금화면으로 돌아가기
+            setTimeout(() => setIsScrolling(false), 400);
           },
         });
       }
@@ -100,7 +95,7 @@ function Mobile() {
           <LockScreen />
         </div>
         <Routes>
-          <Route path="/" element={<HomeScreen />} /> {/* 🔹 기본 경로 추가 */}
+          <Route path="/" element={<HomeScreen />} />
           <Route path="/home" element={<HomeScreen />} />
           <Route path="/about/*" element={<About />} />
         </Routes>

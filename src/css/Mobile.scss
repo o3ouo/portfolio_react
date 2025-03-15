@@ -1,5 +1,5 @@
 .mobile {
-  overflow-y: aoto;
+  overflow-y: none;
   width: 100%;
   min-width: 320px;
   height: 100vh;
@@ -8,18 +8,24 @@
   }
 }
 
-// Lock Screen
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////Lock Screen
 .lock_screen {
-  // position: absolute;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   gap: 8px;
   width: 100%;
-  height: 100vh;
-  // opacity: 0.3s ease-in-out;
-  /* background-image: url(/public/image/iphone_bg.jpg);
-  background-size: cover; */
+  height: 100%;
+  opacity: 1;
+  z-index: 10;
+  transition: opacity 0.3s ease-out, transform 0.5s ease-out;
+  background-image: url(/public/image/iphone_bg.jpg);
+  background-size: cover;
 
   /* Today Weather css */
   .now_date {
@@ -321,7 +327,7 @@
   }
 }
 
-// Home Screen
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// Home Screen
 .home_screen {
   overflow-y: auto;
   -ms-overflow-style: none;
@@ -333,12 +339,15 @@
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  height: 100vh;
+  height: 100%;
   padding: 0 29px;
   font-size: 12px;
   font-weight: 500;
   text-align: center;
   color: white;
+  z-index: 1;
+  opacity: 1;
+  transition: opacity 0.3s ease-out, transform 0.5s ease-out;
 
   // transition: opacity 0.3s ease-in-out;
   &::-webkit-scrollbar {

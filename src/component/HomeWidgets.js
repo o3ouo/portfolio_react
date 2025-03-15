@@ -14,10 +14,6 @@ function HomeWidgets() {
 
   if (!activeWeatherData && !activeHourlyData && !dailyTemperatureStats) return <div className='error'><img src={`${process.env.PUBLIC_URL}/image/error.jpeg`} alt="error_img" /></div>
 
-  console.log("activeWeatherData:", activeWeatherData);
-  console.log("activeHourlyData:", activeHourlyData);
-  console.log("dailyTemperatureStats:", dailyTemperatureStats);
-
   if (currentLoading || hourlyLoading) {
     <div className='loding'><img src={`${process.env.PUBLIC_URL}/image/spinner_icon.png`} alt="spinner_icon" /></div>
   }
