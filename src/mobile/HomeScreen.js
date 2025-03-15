@@ -1,7 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import WorkList from '../component/WorkList';
-import NotionTodo from '../component/NotionTodo';
 import LinkAppList from '../component/LinkAppList';
 import DockBar from '../component/DockBar';
 import HomeWidgets from '../component/HomeWidgets';
@@ -24,7 +23,6 @@ function HomeContainer() {
           </div>
         </div>
         <HomeWidgets/>
-        <NotionTodo />
         <LinkAppList />
       </div>
       <div className="bottom_inner">

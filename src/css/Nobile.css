@@ -316,6 +316,7 @@
   display: flex;
   flex-direction: column;
   gap: 19px;
+  margin-bottom: 19px;
   /* About & Work List*/
   /* Home Weather Widgets */
   /* Notion & TodoList */
@@ -406,17 +407,13 @@
   width: 25px;
   filter: brightness(10);
 }
-.home_screen .top_inner .notion_todo_box {
-  display: flex;
-  justify-content: space-between;
-}
-.home_screen .top_inner .notion_todo_box .notion {
-  background-color: #fff;
-  padding: 5px;
-}
 .home_screen .top_inner .link_app_list {
   display: flex;
   justify-content: space-between;
+}
+.home_screen .top_inner .link_app_list .notion {
+  background-color: #fff;
+  padding: 5px;
 }
 .home_screen .bottom_inner {
   width: 100%;
