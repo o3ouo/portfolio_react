@@ -8,6 +8,9 @@
   height: 100%;
 }
 
+/****************************************************************************************************
+  Lock Screen 
+****************************************************************************************************/
 .lock_screen {
   overflow: auto;
   position: absolute;
@@ -281,18 +284,26 @@
   background-color: white;
 }
 
+/****************************************************************************************************
+  Home Screen 
+****************************************************************************************************/
 .home_screen {
   overflow-y: auto;
   -ms-overflow-style: none;
   /* for Internet Explorer, Edge */
   scrollbar-width: none;
   /* for Firefox */
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  height: 100%;
+  height: 100dvh;
   font-size: 12px;
   font-weight: 500;
   text-align: center;
@@ -465,6 +476,37 @@
   padding: 5px;
 }
 
+/****************************************************************************************************
+  Nav Bar Component 
+****************************************************************************************************/
+.nav_bar {
+  padding-top: 24px;
+}
+.nav_bar .back_box {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 11px 8px;
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 22px;
+  letter-spacing: -0.43px;
+  color: #007AFF;
+  cursor: pointer;
+}
+.nav_bar .title_box {
+  padding-top: 3px;
+  padding-bottom: 8px;
+  padding-left: 16px;
+  font-size: 32px;
+  font-weight: bold;
+  line-height: 41px;
+  letter-spacing: 0.4px;
+}
+
+/****************************************************************************************************
+  About Page 
+****************************************************************************************************/
 .about_page {
   overflow-y: hidden;
   height: 100dvh;
@@ -475,29 +517,6 @@
   flex-direction: column;
   justify-content: space-between;
   height: 100%;
-}
-.about_page .nav_bar {
-  padding-top: 24px;
-}
-.about_page .nav_bar .back_box {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  padding: 11px 8px;
-  font-size: 17px;
-  line-height: 22px;
-  letter-spacing: -0.43px;
-  color: #007AFF;
-  cursor: pointer;
-}
-.about_page .nav_bar .title_box {
-  padding-top: 3px;
-  padding-bottom: 8px;
-  padding-left: 16px;
-  font-size: 34px;
-  font-weight: bold;
-  line-height: 41px;
-  letter-spacing: 0.4px;
 }
 .about_page .contents {
   overflow-y: auto;
@@ -600,8 +619,101 @@
 .about_page .tab_menu ul {
   display: flex;
   justify-content: space-between;
-  padding: 12px 0;
+  padding: 12px 16px;
 }
+.about_page .tab_menu ul .box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 500;
+  color: #999999;
+}
+.about_page .tab_menu ul .active {
+  color: #007AFF;
+}
+.about_page .tab_menu ul img {
+  width: 30px;
+}
+
+/****************************************************************************************************
+  Web Redesign Page 
+****************************************************************************************************/
+.web_redesign_box {
+  overflow-y: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100dvh;
+  background-color: #fff;
+}
+.web_redesign_box .nav_bar {
+  border-bottom: 0.3px solid rgba(0, 0, 0, 0.3);
+  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+}
+.web_redesign_box .web_contents {
+  overflow: hidden;
+  height: 100%;
+  background-color: #F2F2F7;
+}
+.web_redesign_box .web_contents .inner {
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding-bottom: 16px;
+}
+.web_redesign_box .web_contents .inner::-webkit-scrollbar {
+  display: none;
+}
+.web_redesign_box .web_contents .box {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 15px;
+  padding: 16px;
+}
+.web_redesign_box .web_contents .box .overflow_box {
+  overflow-y: auto;
+  height: 35vh;
+  border-radius: 10px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+.web_redesign_box .web_contents .box .overflow_box:hover {
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+.web_redesign_box .web_contents .box .overflow_box::-webkit-scrollbar {
+  display: none;
+}
+.web_redesign_box .web_contents .box .link_box {
+  min-width: 250px;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  font-size: 17px;
+  line-height: 22px;
+  letter-spacing: -0.43px;
+}
+.web_redesign_box .web_contents .box .link_box button.link_btn {
+  width: 100%;
+}
+.web_redesign_box .web_contents .box .link_box .link_btn {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 16px;
+}
+.web_redesign_box .web_contents .box .link_box .link_btn:not(:last-child) {
+  border-bottom: 0.5px solid rgba(128, 128, 128, 0.5);
+}
+.web_redesign_box .web_contents .box .link_box img {
+  width: 11px;
+}
+
+/****************************************************************************************************
+  Media Query 
+****************************************************************************************************/
 @media screen and (max-height: 600px) {
   .home_screen .top_inner {
     gap: 10px;

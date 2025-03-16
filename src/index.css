@@ -8,6 +8,10 @@ html,
 body {
   overflow: hidden;
   height: 100vh;
+  -webkit-user-select:none;
+  -moz-user-select:none;
+  -ms-user-select:none;
+  user-select:none
 }
 
 body::-webkit-scrollbar {
@@ -34,5 +38,11 @@ figure {
 }
 
 button {
+  display: block;
   cursor: pointer;
+  border: none;
+  background-color: transparent;
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
 }

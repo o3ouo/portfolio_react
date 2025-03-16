@@ -7,6 +7,7 @@ import useTouchSwipe from "../customHook/useTouchSwipe";
 import LockScreen from "../mobile/LockScreen";
 import HomeScreen from "../mobile/HomeScreen";
 import About from "../mobile/About";
+import WebRedesign from "../mobile/WebRedesign";
 
 gsap.registerPlugin(ScrollToPlugin);
 
@@ -90,6 +91,7 @@ function Mobile() {
           <Route path="/" element={<HomeScreen />} />
           <Route path="/home" element={<HomeScreen />} />
           <Route path="/about/*" element={<About />} />
+          <Route path="/web_redesign" element={<WebRedesign />} />
         </Routes>
       </div>
     </div>

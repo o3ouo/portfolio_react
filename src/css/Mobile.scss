@@ -9,7 +9,9 @@
   }
 }
 
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////Lock Screen
+/****************************************************************************************************
+  Lock Screen 
+****************************************************************************************************/
 .lock_screen {
   overflow: auto;
   position: absolute;
@@ -27,9 +29,11 @@
   z-index: 10;
   transition: opacity 0.3s ease-out, transform 0.5s ease-out;
   background-image: url(/public/image/iphone_bg.jpg);
+
   &::-webkit-scrollbar {
     display: none;
   }
+
   background-size: cover;
 
   /* Today Weather css */
@@ -331,19 +335,26 @@
   }
 }
 
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// Home Screen
+/****************************************************************************************************
+  Home Screen 
+****************************************************************************************************/
 .home_screen {
   overflow-y: auto;
   -ms-overflow-style: none;
   /* for Internet Explorer, Edge */
   scrollbar-width: none;
   /* for Firefox */
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  height: 100%;
+  height: 100dvh;
   font-size: 12px;
   font-weight: 500;
   text-align: center;
@@ -351,6 +362,7 @@
   z-index: 1;
   opacity: 1;
   transition: opacity 0.3s ease-out, transform 0.5s ease-out;
+
   &::-webkit-scrollbar {
     display: none;
   }
@@ -551,7 +563,40 @@
   }
 }
 
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// About Page
+/****************************************************************************************************
+  Nav Bar Component 
+****************************************************************************************************/
+.nav_bar {
+  padding-top: 24px;
+
+  .back_box {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 11px 8px;
+    font-size: 17px;
+    font-weight: 500;
+    line-height: 22px;
+    letter-spacing: -0.43px;
+    color: #007AFF;
+    cursor: pointer;
+  }
+
+  .title_box {
+    padding-top: 3px;
+    padding-bottom: 8px;
+    padding-left: 16px;
+    font-size: 32px;
+    font-weight: bold;
+    line-height: 41px;
+    letter-spacing: 0.4px;
+  }
+}
+
+
+/****************************************************************************************************
+  About Page 
+****************************************************************************************************/
 .about_page {
   overflow-y: hidden;
   height: 100dvh;
@@ -564,37 +609,12 @@
     height: 100%;
   }
 
-  .nav_bar {
-    padding-top: 24px;
-
-    .back_box {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      padding: 11px 8px;
-      font-size: 17px;
-      line-height: 22px;
-      letter-spacing: -0.43px;
-      color: #007AFF;
-      cursor: pointer;
-    }
-
-    .title_box {
-      padding-top: 3px;
-      padding-bottom: 8px;
-      padding-left: 16px;
-      font-size: 34px;
-      font-weight: bold;
-      line-height: 41px;
-      letter-spacing: 0.4px;
-    }
-  }
-
   .contents {
     overflow-y: auto;
     height: 100%;
     padding: 16px;
     background-color: #F2F2F7;
+
     &::-webkit-scrollbar {
       display: none;
     }
@@ -655,6 +675,7 @@
       flex-direction: column;
       gap: 16px;
       height: 100%;
+
       &::-webkit-scrollbar {
         display: none;
       }
@@ -669,6 +690,7 @@
 
       li {
         padding: 10px 0;
+
         &:not(:last-child) {
           border-bottom: 0.33px solid rgba(86, 86, 86, .2);
         }
@@ -692,6 +714,7 @@
         display: flex;
         align-items: center;
         gap: 12px;
+
         &:last-child .skill_name {
           border: none;
         }
@@ -712,7 +735,7 @@
         min-height: 44px;
         align-content: center;
         border-bottom: 0.33px solid rgba(86, 86, 86, .2);
-     
+
       }
     }
   }
@@ -723,15 +746,119 @@
     ul {
       display: flex;
       justify-content: space-between;
-      padding: 12px 0;
+      padding: 12px 16px;
+
+      .box {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 6px;
+        font-size: 12px;
+        font-weight: 500;
+        color: #999999;
+      }
+
+      .active {
+        color: #007AFF;
+
+      }
+
+      img {
+        width: 30px;
+      }
     }
   }
-
-  .web_redesign_page {
-  }
-
 }
 
+/****************************************************************************************************
+  Web Redesign Page 
+****************************************************************************************************/
+.web_redesign_box {
+  overflow-y: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100dvh;
+  background-color: #fff;
+
+  .nav_bar {
+    border-bottom: 0.3px solid rgba(0, 0, 0, .3);
+    box-shadow: 0 3px 3px rgba(0,0,0,0.2);
+  }
+
+  .web_contents {
+    overflow: hidden;
+    height: 100%;
+    background-color: #F2F2F7;
+
+    .inner {
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      padding-bottom: 16px;
+      &::-webkit-scrollbar {
+        display: none;
+      }
+    }
+
+    .box {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 15px;
+      padding: 16px;
+
+      .overflow_box {
+        overflow-y: auto;
+        height: 35vh;
+        border-radius: 10px;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+        transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+        &:hover {
+          box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+        }
+        &::-webkit-scrollbar {
+          display: none;
+        }
+
+        
+      }
+      
+      .link_box {
+        min-width: 250px;
+        border-radius: 12px;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+        transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+        font-size: 17px;
+        line-height: 22px;
+        letter-spacing: -0.43px;
+
+        button.link_btn {
+          width: 100%;
+        }
+
+        .link_btn {
+          display: flex;
+          justify-content: space-between;
+          padding: 10px 16px;
+          &:not(:last-child) {
+            border-bottom: .5px solid rgba(128, 128, 128, .5);
+          }
+
+        }
+
+        img {
+          width: 11px;
+        }
+      }
+    }
+  }
+}
+
+/****************************************************************************************************
+  Media Query 
+****************************************************************************************************/
 @media screen and (max-height: 600px) {
 
   // Home Screen
@@ -756,7 +883,7 @@
       }
 
       .home_widegets {
-        
+
         .inner {
           min-height: 148px;
           padding-top: 8px;
