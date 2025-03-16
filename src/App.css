@@ -1,21 +1,21 @@
 .fullscreen {
-	height: calc(var(--vh) * 100);
-  height: 100dvh;
-  max-height: 1024px;
+	height: calc(var(--vh, 1vh) * 100);
   min-height: 100vh;
+  max-height: 1024px;
 	min-height: -webkit-fill-available; /* iOC Safari 대응 */
 	padding-bottom: env(safe-area-inset-bottom);
 }
 
+/* 가로 모드일 때 최소 높이 및 스크롤 허용 */
 @media screen and (orientation: landscape) {
   .fullscreen {
     min-height: 480px;
-    max-height: 768px;
     height: auto;
     overflow-x: auto;
   }
 }
 
+/* 배경 설정 */
 @media screen and (min-width: 320px) {
   .fullscreen {
     background-image: url(/public/image/iphone_bg.jpg);

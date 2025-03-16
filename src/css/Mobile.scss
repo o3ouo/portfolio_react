@@ -1,16 +1,17 @@
 .mobile {
-  overflow-y: none;
+  overflow-y: hidden;
   width: 100%;
   min-width: 320px;
-  height: 100vh;
+  height: 100%;
 
-  &::-webkit-scollbar {
-    display: none;
+  .mobile_inner {
+    height: 100%;
   }
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////Lock Screen
 .lock_screen {
+  overflow: auto;
   position: absolute;
   top: 0;
   left: 0;
@@ -26,6 +27,9 @@
   z-index: 10;
   transition: opacity 0.3s ease-out, transform 0.5s ease-out;
   background-image: url(/public/image/iphone_bg.jpg);
+  &::-webkit-scrollbar {
+    display: none;
+  }
   background-size: cover;
 
   /* Today Weather css */
@@ -269,7 +273,7 @@
       display: flex;
       justify-content: space-between;
       padding: 0 46px;
-      padding-bottom: 10vh;
+      // padding-bottom: 10vh;
 
       .flash,
       .camera {
@@ -290,16 +294,15 @@
     /* Swipe Box */
     .swipe_box {
       width: 100%;
-      transform: translateY(-80px);
-      animation: updownMove .7s linear 0s infinite alternate;
+      animation: lockUpDownMove .7s linear 0s infinite alternate;
 
-      @keyframes updownMove {
+      @keyframes lockUpDownMove {
         from {
-          transform: translateY(-80px)
+          transform: translateY(-5px)
         }
 
         to {
-          transform: translateY(-90px)
+          transform: translateY(-15px)
         }
       }
 
@@ -348,8 +351,6 @@
   z-index: 1;
   opacity: 1;
   transition: opacity 0.3s ease-out, transform 0.5s ease-out;
-
-  // transition: opacity 0.3s ease-in-out;
   &::-webkit-scrollbar {
     display: none;
   }
@@ -396,6 +397,7 @@
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         gap: 19px;
+        font-size: 2.5vw;
         text-align: center;
 
         .work_content {
@@ -498,7 +500,7 @@
 
   .bottom_inner {
     width: 100%;
-    padding-bottom: 10vh;
+    margin-bottom: 10px;
 
     /* Swipe Text */
     .swipe_text {
@@ -508,6 +510,18 @@
       border-radius: 100px;
       background-color: rgba(51, 51, 51, .35);
       font-family: "SF-Pro-Text-Semibold";
+      animation: homeUpDownMove .7s linear 0s infinite alternate;
+
+      @keyframes homeUpDownMove {
+        from {
+          transform: translateY(0)
+        }
+
+        to {
+          transform: translateY(-8px)
+        }
+      }
+
     }
 
     /* Dock Bar */
@@ -524,6 +538,10 @@
         border-radius: 42px;
         background-color: rgba(51, 51, 51, .35);
 
+        .work_icon {
+          margin-bottom: 0;
+        }
+
         .kakao {
           background-color: #FAE200;
           padding: 5px;
@@ -536,7 +554,7 @@
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// About Page
 .about_page {
   overflow-y: hidden;
-  height: 100vh;
+  height: 100dvh;
   background-color: #fff;
 
   .inner {
@@ -573,10 +591,13 @@
   }
 
   .contents {
+    overflow-y: auto;
     height: 100%;
-    padding: 0 16px;
-    padding-top: 16px;
+    padding: 16px;
     background-color: #F2F2F7;
+    &::-webkit-scrollbar {
+      display: none;
+    }
 
     .list {
       display: flex;
@@ -629,10 +650,14 @@
     }
 
     .education_and_certifications {
+      overflow-y: auto;
       display: flex;
       flex-direction: column;
       gap: 16px;
       height: 100%;
+      &::-webkit-scrollbar {
+        display: none;
+      }
 
       .header_title {
         padding: 0 16px;
@@ -689,25 +714,69 @@
         border-bottom: 0.33px solid rgba(86, 86, 86, .2);
      
       }
-
-      
     }
-
-
   }
 
   .tab_menu {
     padding: 0 16px;
-    padding-bottom: 10vh;
 
     ul {
       display: flex;
       justify-content: space-between;
-      padding-top: 7px;
+      padding: 12px 0;
     }
   }
 
   .web_redesign_page {
+  }
+
+}
+
+@media screen and (max-height: 600px) {
+
+  // Home Screen
+  .home_screen {
+
+    .top_inner {
+      gap: 10px;
+      margin-bottom: 10px;
+      padding-bottom: 0;
+
+      .top_contents {
+        gap: 12px;
+        padding-top: 12px;
+
+        .about {
+
+          .about_icon {
+            width: 151px;
+            height: 151px;
+          }
+        }
+      }
+
+      .home_widegets {
+        
+        .inner {
+          min-height: 148px;
+          padding-top: 8px;
+          padding-bottom: 8px;
+        }
+      }
+    }
+
+    .bottom_inner {
+
+      .dock_bar {
+        width: calc(100% - 12px);
+        padding-top: 4px;
+
+        .inner {
+          padding-top: 12px;
+          padding-bottom: 12px;
+        }
+      }
+    }
   }
 
 }

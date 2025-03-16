@@ -28,7 +28,7 @@ function HomeContainer() {
       </div>
       <div className="bottom_inner">
         <div className="swipe_text">
-          <p className="txt">Swipe up to see the lock screen</p>
+          <p className="txt">Swipe down to display the lock screen</p>
         </div>
         <DockBar />
       </div>
