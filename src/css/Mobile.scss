@@ -495,13 +495,14 @@
       }
     }
 
-    /* Notion & TodoList */
-
-
     /* Link App */
     .link_app_list {
       display: flex;
       justify-content: space-between;
+
+      .work_content {
+        cursor: pointer;
+      }
 
       .notion {
         background-color: #fff;
@@ -549,6 +550,10 @@
         padding: 19px 21px;
         border-radius: 42px;
         background-color: rgba(51, 51, 51, .35);
+
+        .work_content {
+          cursor: pointer;
+        }
 
         .work_icon {
           margin-bottom: 0;
@@ -783,7 +788,7 @@
 
   .nav_bar {
     border-bottom: 0.3px solid rgba(0, 0, 0, .3);
-    box-shadow: 0 3px 3px rgba(0,0,0,0.2);
+    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
   }
 
   .web_contents {
@@ -797,6 +802,7 @@
       flex-direction: column;
       height: 100%;
       padding-bottom: 16px;
+
       &::-webkit-scrollbar {
         display: none;
       }
@@ -813,21 +819,23 @@
         overflow-y: auto;
         height: 35vh;
         border-radius: 10px;
-        box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-        transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+        transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
+
         &:hover {
-          box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+          box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
         }
+
         &::-webkit-scrollbar {
           display: none;
         }
       }
-      
+
       .link_box {
         min-width: 250px;
         border-radius: 12px;
-        box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-        transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+        transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
         font-size: 17px;
         line-height: 22px;
         letter-spacing: -0.43px;
@@ -840,6 +848,7 @@
           display: flex;
           justify-content: space-between;
           padding: 10px 16px;
+
           &:not(:last-child) {
             border-bottom: .5px solid rgba(128, 128, 128, .5);
           }
@@ -887,7 +896,7 @@
         background-color: rgb(255 255 255 / 90%);
         box-shadow: 0 10px 100px rgb(0 0 0 / 30%);
         backdrop-filter: blur(130px);
-      
+
       }
 
       .title_and_description {
@@ -901,7 +910,7 @@
           margin-bottom: 4px;
           font-weight: 600;
           text-align: center;
- 
+
         }
       }
 
