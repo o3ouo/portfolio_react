@@ -1,20 +1,19 @@
 {
   "files": {
-    "main.css": "/portfolio_react/static/css/main.88a472fd.css",
-    "main.js": "/portfolio_react/static/js/main.ba98f2c6.js",
+    "main.css": "/portfolio_react/static/css/main.0e145a5a.css",
+    "main.js": "/portfolio_react/static/js/main.e456ad52.js",
     "static/js/453.906b0208.chunk.js": "/portfolio_react/static/js/453.906b0208.chunk.js",
     "static/media/SF-Pro.ttf": "/portfolio_react/static/media/SF-Pro.28d1cfc2d99a9a4b19ac.ttf",
     "static/media/SF-Pro-Text-Semibold.otf": "/portfolio_react/static/media/SF-Pro-Text-Semibold.288d5eb3fd7bf0174807.otf",
     "static/media/SF-Pro-Display-Bold.otf": "/portfolio_react/static/media/SF-Pro-Display-Bold.07a7fd83dabf0d1a6353.otf",
-    "static/media/ipad_bg.jpg": "/portfolio_react/static/media/ipad_bg.9a8939c2238d5ccd8704.jpg",
-    "static/media/iphone_bg.jpg": "/portfolio_react/static/media/iphone_bg.02c09ce505c3539ada29.jpg",
+    "static/media/iphone_bg.webp": "/portfolio_react/static/media/iphone_bg.05b92ca9b5ec8fbc9d70.webp",
     "index.html": "/portfolio_react/index.html",
-    "main.88a472fd.css.map": "/portfolio_react/static/css/main.88a472fd.css.map",
-    "main.ba98f2c6.js.map": "/portfolio_react/static/js/main.ba98f2c6.js.map",
+    "main.0e145a5a.css.map": "/portfolio_react/static/css/main.0e145a5a.css.map",
+    "main.e456ad52.js.map": "/portfolio_react/static/js/main.e456ad52.js.map",
     "453.906b0208.chunk.js.map": "/portfolio_react/static/js/453.906b0208.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.88a472fd.css",
-    "static/js/main.ba98f2c6.js"
+    "static/css/main.0e145a5a.css",
+    "static/js/main.e456ad52.js"
   ]
 }
