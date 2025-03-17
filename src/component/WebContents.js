@@ -58,8 +58,8 @@ const IntroducePopup = ({ introduce, onClose }) => {
     <div className="popup_overlay" onClick={onclose}>
       <motion.div
         className="popup_content"
-        initial={{ y: "100%", opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
+        initial={{ y: "100%", opacity: 1 }}
+        animate={{ y: "-17%", opacity: 1 }}
         exit={{ y: "100%", opacity: 0 }}
         transition={{ duration: 0.5, ease: "easeInOut" }}
         onClick={(e) => e.stopPropagation()} // 배경 클릭 방지
@@ -70,13 +70,13 @@ const IntroducePopup = ({ introduce, onClose }) => {
             <p className="description">{introduce.description}</p>
           </div>
           <div className="details">
-            <p className="device_width">Device Width: 1920px</p>
-            <p className="container_txt">{introduce.container}</p>
-            <div className="vieport">{introduce.viewport}</div>
-            <div className="page">{introduce.page}</div>
-            <div className="tool">Tool: HTML5 / CSS3 / JS / Figma</div>
-            <div className="cuntribution">개인 작업 100%</div>
-            <div className="close-btn" onClick={onClose}>Close</div>
+            <p className="txt device_width">Device Width: 1920px</p>
+            <p className="txt container_txt">{introduce.container}</p>
+            <p className="txt vieport">{introduce.viewport}</p>
+            <p className="txt page">{introduce.page}</p>
+            <p className="txt tool">Tool: HTML5 / CSS3 / JS / Figma</p>
+            <p className="txt cuntribution">개인 작업 100%</p>
+            <p className="txt close-btn" onClick={onClose}>Close</p>
           </div>
         </div>
       </motion.div>

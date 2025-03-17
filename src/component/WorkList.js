@@ -1,5 +1,5 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import WorkContent from './WorkContent';
 
 function WorkList() {
@@ -13,7 +13,9 @@ function WorkList() {
         onClick={() => navigate("/web_redesign")}
       />
       <WorkContent title={"Clone Codding"} icon={"phils"} />
-      <WorkContent title={"Play Press"} icon={"play_press"} />
+      <Link to="https://o3ouo.github.io/news_weather/" target="_blank">
+        <WorkContent title={"Play Press"} icon={"play_press"} />    
+      </Link>
       <WorkContent title={"Portfolio 2024"} icon={"portfolio"} />
     </div>
   );
