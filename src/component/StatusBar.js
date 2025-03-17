@@ -8,13 +8,13 @@ function StatusBar({ time }) {
         <p className="time">{time}</p>
         <div className="levels">
           <figure className='data_icon'>
-            <img src={`${process.env.PUBLIC_URL}/image/data-icon.png`} alt="data_icon" />
+            <img src={`${process.env.PUBLIC_URL}/image/data-icon.webp`} alt="data_icon" />
           </figure>
           <figure className='wifi-icon'>
-            <img src={`${process.env.PUBLIC_URL}/image/wifi_icon.png`} alt="wifi_icon" />
+            <img src={`${process.env.PUBLIC_URL}/image/wifi_icon.webp`} alt="wifi_icon" />
           </figure>
           <figure className='battery-icon'>
-            <img src={`${process.env.PUBLIC_URL}/image/battery_icon.png`} alt="battery_icon" />
+            <img src={`${process.env.PUBLIC_URL}/image/battery_icon.webp`} alt="battery_icon" />
           </figure>
         </div>
       </div>

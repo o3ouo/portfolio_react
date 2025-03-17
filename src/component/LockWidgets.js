@@ -13,7 +13,7 @@ export const getTime = (timeUnix) => {
       <p className="am_pm">{period}</p>
       <p className="time">{formattedHours}:{minutes}</p>
       <figure className="sun_icon">
-        <img src={`${process.env.PUBLIC_URL}/weather/${icon}.png`} alt={`${icon}_icon`} />
+        <img src={`${process.env.PUBLIC_URL}/image/${icon}.webp`} alt={`${icon}_icon`} />
       </figure>
     </>
   )
@@ -30,13 +30,13 @@ function LockWidgets() {
     hourlyError,
   } = useWeatherContext();
   
-  if (!activeWeatherData && !dailyTemperatureStats && !dailyRainProbability) return <div className='error'><img src={`${process.env.PUBLIC_URL}/image/error.jpeg`} alt="error_img" /></div>
+  if (!activeWeatherData && !dailyTemperatureStats && !dailyRainProbability) return <div className='error'><img src={`${process.env.PUBLIC_URL}/image/error.webp`} alt="error_img" /></div>
 
   if (currentLoading || hourlyLoading) {
-    <div className='loding'><img src={`${process.env.PUBLIC_URL}/image/spinner_icon.png`} alt="spinner_icon" /></div>
+    <div className='loding'><img src={`${process.env.PUBLIC_URL}/image/spinner_icon.webp`} alt="spinner_icon" /></div>
   }
   if (currentError || hourlyError) {
-    <div className='error'><img src={`${process.env.PUBLIC_URL}/image/error.jpeg`} alt="error_img" /></div>
+    <div className='error'><img src={`${process.env.PUBLIC_URL}/image/error.webp`} alt="error_img" /></div>
   }
 
   const { main = {}, weather = [], sys = {} } = activeWeatherData || {};
@@ -51,7 +51,7 @@ function LockWidgets() {
       <div className="left">
         <div className="top">
           <figure className="weather_icon">
-            <img src={`${process.env.PUBLIC_URL}/weather/${weather.length > 0 ? weather[0]?.icon : "default"}.png`} alt={weatherMain} />
+            <img src={`${process.env.PUBLIC_URL}/image/${weather.length > 0 ? weather[0]?.icon : "default"}.webp`} alt={weatherMain} />
           </figure>
           <p className="temp">{Math.round(main?.temp)}°</p>
         </div>
@@ -65,7 +65,7 @@ function LockWidgets() {
       <div className="right">
         <div className="rain">
           <figure className="rain_icon">
-            <img src={`${process.env.PUBLIC_URL}/weather/rain_probability.png`} alt="rain_probability" />
+            <img src={`${process.env.PUBLIC_URL}/image/rain_probability.webp`} alt="rain_probability" />
           </figure>
           <p className="rain_txt">{dailyRainProbability}%</p>
         </div>

@@ -2,7 +2,7 @@ import React from 'react';
 
 function Tablet() {
   return (
-    <div>
+    <div className="tablet">
       
     </div>
   );

@@ -55,7 +55,7 @@ const IntroducePopup = ({ introduce, onClose }) => {
   if (!introduce) return null;
 
   return (
-    <div className="popup_overlay" onClick={onclose}>
+    <div className="popup_overlay">
       <motion.div
         className="popup_content"
         initial={{ y: "100%", opacity: 1 }}
@@ -95,22 +95,22 @@ const WebContents = () => {
             <div key={index} className={`${con.name} box`}>
               <div className="overflow_box">
                 <figure className="web_img">
-                  <img src={`${process.env.PUBLIC_URL}/image/${con.img}.png`} alt={con.img} />
+                  <img src={`${process.env.PUBLIC_URL}/image/${con.img}.webp`} alt={con.img} />
                 </figure>
               </div>
 
               <div className="link_box">
-                <Link to={con.webLink} target="_blank" className="link_btn">
+                <a to={con.webLink} target="_blank" className="link_btn" rel="noopener noreferrer" >
                   <span className="link">Web Site</span>
-                  <img src={`${process.env.PUBLIC_URL}/image/arrow_icon.png`} alt="arrow_icon" />
-                </Link>
-                <Link to={con.figmaLink} target="_blank" className="link_btn">
+                  <img src={`${process.env.PUBLIC_URL}/image/arrow_icon.webp`} alt="arrow_icon" />
+                </a>
+                <a to={con.figmaLink} target="_blank" className="link_btn" rel="noopener noreferrer">
                   <span className="link">Figma</span>
-                  <img src={`${process.env.PUBLIC_URL}/image/arrow_icon.png`} alt="arrow_icon" />
-                </Link>
+                  <img src={`${process.env.PUBLIC_URL}/image/arrow_icon.webp`} alt="arrow_icon" />
+                </a>
                 <button className="link_btn" onClick={() => setSelectedIntroduce(introduces[index])}>
                   <span className="link">Introduce</span>
-                  <img src={`${process.env.PUBLIC_URL}/image/arrow_icon.png`} alt="arrow_icon" />
+                  <img src={`${process.env.PUBLIC_URL}/image/arrow_icon.webp`} alt="arrow_icon" />
                 </button>
               </div>
             </div>

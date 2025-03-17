@@ -16,10 +16,10 @@ function LockScreen() {
       <div className="bottom">
         <div className="flash_camera_box">
           <figure className="flash">
-            <img src={`${process.env.PUBLIC_URL}/image/flashlight_icon.png`} alt="flashlight_icon" />
+            <img src={`${process.env.PUBLIC_URL}/image/flashlight_icon.webp`} alt="flashlight_icon" />
           </figure>
           <figure className="camera">
-            <img src={`${process.env.PUBLIC_URL}/image/camera_icon.png`} alt="flashlight_icon" />
+            <img src={`${process.env.PUBLIC_URL}/image/camera_icon.webp`} alt="camera_icon" />
           </figure>
         </div>
         <div className="swipe_box">

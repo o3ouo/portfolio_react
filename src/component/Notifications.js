@@ -4,7 +4,7 @@ function Content({ title, description, icon }) {
   return (
     <div className="inner">
       <figure className="con_img">
-        <img src={`${process.env.PUBLIC_URL}/image/${icon}`} alt={title} />
+        <img src={`${process.env.PUBLIC_URL}/image/${icon}.webp`} alt={title} />
       </figure>
       <div className="text_box">
         <p className="title">{title}</p>
@@ -16,11 +16,11 @@ function Content({ title, description, icon }) {
 
 function Notifications() {
   const list = [
-    {title: "About Me", description: "나에 대한 정보", icon: "about_icon.jpg"},
-    {title: "Web Redesign", description: "홈페이지 리뉴얼", icon: "file_icon.jpg"},
-    {title: "Phil’s Finest", description: "클론 코딩", icon: "phils_icon.png"},
-    {title: "Play Press", description: "뉴스, 날씨, 미니게임 구성 (React)", icon: "play_press_icon.png"},
-    {title: "Portfolio 2024", description: "Vanilla JavaScript로 제작되었습니다", icon: "portfolio_icon.png"},
+    {title: "About Me", description: "나에 대한 정보", icon: "about_icon"},
+    {title: "Web Redesign", description: "홈페이지 리뉴얼", icon: "file_icon"},
+    {title: "Phil’s Finest", description: "클론 코딩", icon: "phils_icon"},
+    {title: "Play Press", description: "뉴스, 날씨, 미니게임 구성 (React)", icon: "play_press_icon"},
+    {title: "Portfolio 2024", description: "Vanilla JavaScript로 제작되었습니다", icon: "portfolio_icon"},
   ];
 
   return (

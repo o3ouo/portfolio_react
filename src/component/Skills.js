@@ -4,7 +4,7 @@ const Skill = ({ title ,name }) => {
   return (
     <li>
       <figure className="img">
-        <img src={`${process.env.PUBLIC_URL}/image/${name}_icon.png`} alt={`${name}_icon`} />
+        <img src={`${process.env.PUBLIC_URL}/image/${name}_icon.webp`} alt={`${name}_icon`} />
       </figure>
       <p className="skill_name">{title}</p>
     </li>

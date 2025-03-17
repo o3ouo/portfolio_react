@@ -4,7 +4,7 @@ function Info() {
   return (
     <div className="info">
       <figure className='img'>
-        <img src={`${process.env.PUBLIC_URL}/image/about_img.png`} alt="about_me" />
+        <img src={`${process.env.PUBLIC_URL}/image/about_img.webp`} alt="about_me" />
       </figure>
       <div className="list">
         <div className="name">

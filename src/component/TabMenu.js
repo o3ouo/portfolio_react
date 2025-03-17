@@ -15,7 +15,7 @@ const TabMenu = ({ tabs, basePath }) => {
         {tabs.map(({ path, label }) => (
           <li key={path}>
             <Link to={`${basePath}/${path}`}  className={`${getTabClassName(path)} box`}>
-              <img src={`${process.env.PUBLIC_URL}/image/${getTabImage(path)}_icon.png`} alt={`${label}_icon`}></img>
+              <img src={`${process.env.PUBLIC_URL}/image/${getTabImage(path)}_icon.webp`} alt={`${label}_icon`}></img>
               <p className="txt">{label}</p>
             </Link>
           </li>

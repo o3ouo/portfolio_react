@@ -16,7 +16,7 @@ function HomeContainer() {
           <div className="top_contents">
             <div className="about" onClick={() => navigate("/about")}>
               <figure className="about_icon">
-                <img src={`${process.env.PUBLIC_URL}/image/about_icon.jpg`} alt="about_icon" />
+                <img src={`${process.env.PUBLIC_URL}/image/about_icon.webp`} alt="about_icon" />
               </figure>
               <p className="title">About Me</p>
             </div>

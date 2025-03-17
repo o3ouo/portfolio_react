@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 function CertiAndEduc() {
   return (
@@ -39,7 +39,7 @@ function CertiAndEduc() {
         </ul>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default CertiAndEduc
+export default CertiAndEduc;

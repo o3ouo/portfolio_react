@@ -8,7 +8,7 @@ function NavBar({ title }) {
     <div className="nav_bar">
       <div className="back_box" onClick={() => navigate("/home")}>
         <figure>
-          <img src={`${process.env.PUBLIC_URL}/image/back_icon.png`} alt="back_icon" />
+          <img src={`${process.env.PUBLIC_URL}/image/back_icon.webp`} alt="back_icon" />
         </figure>
         <p>Back</p>
       </div>
