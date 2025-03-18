@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/portfolio_react/static/css/main.ed4e532f.css",
-    "main.js": "/portfolio_react/static/js/main.94b18daa.js",
-    "static/js/453.906b0208.chunk.js": "/portfolio_react/static/js/453.906b0208.chunk.js",
+    "main.css": "/portfolio_react/static/css/main.5a52c7d6.css",
+    "main.js": "/portfolio_react/static/js/main.16e9edb7.js",
+    "static/js/453.5721f686.chunk.js": "/portfolio_react/static/js/453.5721f686.chunk.js",
     "static/media/SF-Pro.ttf": "/portfolio_react/static/media/SF-Pro.28d1cfc2d99a9a4b19ac.ttf",
     "static/media/SF-Pro-Text-Semibold.otf": "/portfolio_react/static/media/SF-Pro-Text-Semibold.288d5eb3fd7bf0174807.otf",
     "static/media/SF-Pro-Display-Bold.otf": "/portfolio_react/static/media/SF-Pro-Display-Bold.07a7fd83dabf0d1a6353.otf",
-    "static/media/iphone_bg.webp": "/portfolio_react/static/media/iphone_bg.05b92ca9b5ec8fbc9d70.webp",
     "static/media/sand_icon.webp": "/portfolio_react/static/media/sand_icon.5a95a7cac5bac7d8ebd5.webp",
+    "static/media/rain_probability.webp": "/portfolio_react/static/media/rain_probability.b0fda3a487c14899cf23.webp",
     "index.html": "/portfolio_react/index.html",
-    "main.ed4e532f.css.map": "/portfolio_react/static/css/main.ed4e532f.css.map",
-    "main.94b18daa.js.map": "/portfolio_react/static/js/main.94b18daa.js.map",
-    "453.906b0208.chunk.js.map": "/portfolio_react/static/js/453.906b0208.chunk.js.map"
+    "main.5a52c7d6.css.map": "/portfolio_react/static/css/main.5a52c7d6.css.map",
+    "main.16e9edb7.js.map": "/portfolio_react/static/js/main.16e9edb7.js.map",
+    "453.5721f686.chunk.js.map": "/portfolio_react/static/js/453.5721f686.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.ed4e532f.css",
-    "static/js/main.94b18daa.js"
+    "static/css/main.5a52c7d6.css",
+    "static/js/main.16e9edb7.js"
   ]
 }
