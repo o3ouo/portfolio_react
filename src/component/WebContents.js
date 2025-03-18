@@ -59,7 +59,7 @@ const IntroducePopup = ({ introduce, onClose }) => {
       <motion.div
         className="popup_content"
         initial={{ y: "100%", opacity: 1 }}
-        animate={{ y: "-25%", opacity: 1 }}
+        animate={{ y: "-35%", opacity: 1 }}
         exit={{ y: "100%", opacity: 0 }}
         transition={{ duration: 0.5, ease: "easeInOut" }}
         onClick={(e) => e.stopPropagation()} // 배경 클릭 방지

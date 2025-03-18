@@ -1,8 +1,8 @@
 import React from 'react';
 
-function WorkContent({ title, icon, onClick }) {
+function WorkContent({ title, icon, onClick, className }) {
   return (
-    <div className="work_content" onClick={onClick}>
+    <div className={`work_content ${className}`} onClick={onClick}>
       <figure className={`work_icon ${icon}`}>
         <img src={`${process.env.PUBLIC_URL}/image/${icon}_icon.webp`} alt={title} />
       </figure>

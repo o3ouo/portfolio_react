@@ -620,7 +620,8 @@
   .contents {
     overflow-y: auto;
     height: 100%;
-    padding: 16px;
+    padding: 0 16px;
+    padding-top: 16px;
     background-color: #F2F2F7;
 
     &::-webkit-scrollbar {
@@ -951,6 +952,11 @@
   background-color: rgb(19, 19, 38, .3);
   backdrop-filter: blur(12px);
 
+  .notion_content {
+    margin-top: 88px;
+    margin-left: 10%;
+  }
+
   .notion_inner {
     width: 250px;
     border-radius: 12px;
@@ -961,7 +967,47 @@
 
   .row {
     display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 44px;
+    padding: 0 16px;
+    font-size: 17px;
+    line-height: 22px;
+    letter-spacing: -0.43px;
+    color: #000;
+    &:not(:last-child) {
+      border-bottom: .5px solid rgba(128, 128, 128, .55);
+    }
+
+    img {
+      width: 20px;
+    }
+
+    .arrow_icon {
+      width: 11px;
+      height: 22px;
+    }
   }
+
+  .close_row {
+    color: #FF3B30;
+    cursor: pointer;
+  }
+
+  .icons_row {
+    figure {
+      &:nth-child(3),
+      &:nth-child(4) {
+        img {
+          width: auto;
+        }
+      }
+    }
+  }
+
+
+
+
 
 }
 

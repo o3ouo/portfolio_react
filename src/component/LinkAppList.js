@@ -16,7 +16,7 @@ const NotionLinkMenu = ({ url, title }) => {
       rel="noopener noreferrer"
     >
       <span>{title}</span>
-      <img src={`${process.env.PUBLIC_URL}/image/arrow_icon.webp`} alt="arrow_icon" />
+      <img src={`${process.env.PUBLIC_URL}/image/arrow_icon.webp`} alt="arrow_icon" className="arrow_icon" />
     </a>
   );
 };
@@ -29,10 +29,10 @@ const NotionMenu = ({ notionClick, onClose }) => {
     <div className="notion_overlay">
       <motion.div
         className="notion_content"
-        initial={{ y: "100%", opacity: 1 }}
+        initial={{ y: 90, opacity: 1 }}
         animate={{ y: 0, opacity: 1 }}
-        exit={{ y: "100%", opacity: 0 }}
-        transition={{ duration: 0.5, ease: "easeInOut" }}
+        exit={{ y: 90, opacity: 0 }}
+        transition={{ duration: 0.3, ease: "easeInOut" }}
         onClick={(e) => e.stopPropagation()}
       >
         <div className="notion_inner">
@@ -64,17 +64,23 @@ const NotionMenu = ({ notionClick, onClose }) => {
         </div>
       </motion.div>
     </div>
-  )
-}
+  );
+};
+
+
 
 function LinkAppList() {
   const [notionClick, setNotionClick] = useState(false);
 
+  const handleClick = () => {
+    document.querySelector(".notion_click").style.zIndex = "10";
+    setNotionClick(true);
+  }
 
   return (
     <div className="link_app_list">
       <div className="inner">
-        <WorkContent title={"Notion"} icon={"notion"} onClick={() => setNotionClick(true)} />
+        <WorkContent className={"notion_click"} title={"Notion"} icon={"notion"} onClick={() => handleClick()} />
 
         <Link to="https://www.naver.com/" target="_blank">
           <WorkContent title={"Naver"} icon={"naver"} />
