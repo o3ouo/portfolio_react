@@ -3,7 +3,6 @@ import { BrowserRouter } from 'react-router-dom';
 import { WeatherProvider } from '../weather/WeatherContext';
 import '../css/Main.css';
 import Mobile from './Mobile';
-import Tablet from './Tablet';
 import useWindowDimensions from '../customHook/useWindowDimensions';
 
 function Main() {
@@ -14,7 +13,7 @@ function Main() {
     <BrowserRouter basename="/portfolio_react">
       <WeatherProvider>
         <div className='main'>
-          {mobile ? <Mobile /> : <Tablet />}
+          <Mobile />
         </div>
       </WeatherProvider>
 

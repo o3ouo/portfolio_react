@@ -1,0 +1,76 @@
+@media screen and (min-width: 768px) {
+  .lock_screen .lock_widgets .right .rain .rain_icon {
+    background-image: url("/public/image/rain_probability_tablet.png");
+  }
+  .lock_screen .lock_widgets .right .sun_time {
+    background-color: rgba(74, 196, 255, 0.6);
+  }
+  .lock_screen .con_bottom .notifications {
+    min-width: 594px;
+    margin: auto;
+  }
+  .home_screen .top_inner {
+    gap: 58px;
+  }
+  .home_screen .top_inner .top_content {
+    gap: 58px;
+  }
+  .home_screen .top_inner .top_content .about .about_icon {
+    width: 200px;
+    height: 200px;
+  }
+  .home_screen .top_inner .top_content .work_list {
+    gap: 58px;
+  }
+  .home_screen .bottom_inner .dock_bar {
+    padding-top: 18px;
+    padding-bottom: 20px;
+  }
+  .home_screen .bottom_inner .dock_bar .inner {
+    width: 50vw;
+    margin: auto;
+    padding: 17px 26px;
+  }
+  .about_page .contents .info .img {
+    max-height: 60vh;
+  }
+}
+@media screen and (min-width: 1080px) {
+  .lock_screen .lock_widgets {
+    position: absolute;
+    top: 210px;
+    left: 0;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 18px;
+    padding: 0 46px;
+  }
+  .lock_screen .con_bottom {
+    height: 100%;
+  }
+  .lock_screen .con_bottom .notifications {
+    min-width: 594px;
+    margin-top: 47px;
+  }
+  .lock_screen .bottom {
+    margin-bottom: 32px;
+  }
+  .home_screen .top_inner {
+    gap: 58px;
+  }
+  .home_screen .top_inner .top_content {
+    gap: 58px;
+  }
+  .home_screen .top_inner .top_content .about .about_icon {
+    width: 300px;
+    height: 300px;
+  }
+  .home_screen .top_inner .top_content .work_list {
+    gap: 156px;
+  }
+  .home_screen .work_icon {
+    margin: 0 42px;
+  }
+}
+
+/*# sourceMappingURL=Tablet.css.map */

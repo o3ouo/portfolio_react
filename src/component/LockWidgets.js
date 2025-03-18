@@ -29,7 +29,7 @@ function LockWidgets() {
     currentError,
     hourlyError,
   } = useWeatherContext();
-  
+
   if (!activeWeatherData && !dailyTemperatureStats && !dailyRainProbability) return <div className='error'><img src={`${process.env.PUBLIC_URL}/image/error.webp`} alt="error_img" /></div>
 
   if (currentLoading || hourlyLoading) {
@@ -64,9 +64,7 @@ function LockWidgets() {
 
       <div className="right">
         <div className="rain">
-          <figure className="rain_icon">
-            <img src={`${process.env.PUBLIC_URL}/image/rain_probability.webp`} alt="rain_probability" />
-          </figure>
+          <div className="rain_icon"></div>
           <p className="rain_txt">{dailyRainProbability}%</p>
         </div>
         {
