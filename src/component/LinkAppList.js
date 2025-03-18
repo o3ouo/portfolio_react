@@ -26,7 +26,7 @@ const NotionMenu = ({ notionClick, onClose }) => {
   if (!notionClick) return null;
 
   return (
-    <div className="notion_overlay">
+    <div className="home_overlay">
       <motion.div
         className="notion_content"
         initial={{ y: 90, opacity: 1 }}
@@ -67,15 +67,20 @@ const NotionMenu = ({ notionClick, onClose }) => {
   );
 };
 
-
-
 function LinkAppList() {
   const [notionClick, setNotionClick] = useState(false);
 
   const handleClick = () => {
     document.querySelector(".notion_click").style.zIndex = "10";
+    document.querySelector(".swipe_text").style.opacity = "0";
     setNotionClick(true);
-  }
+  };
+
+  const handleClose = () => {
+    document.querySelector(".notion_click").style.zIndex = "auto";
+    document.querySelector(".swipe_text").style.opacity = "1";
+    setNotionClick(false);
+  };
 
   return (
     <div className="link_app_list">
@@ -95,7 +100,7 @@ function LinkAppList() {
         </Link>
       </div>
 
-      <NotionMenu notionClick={notionClick} onClose={() => setNotionClick(false)} />
+      <NotionMenu notionClick={notionClick} onClose={() => handleClose()} />
     </div>
   );
 }

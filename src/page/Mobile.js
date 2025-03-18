@@ -8,6 +8,7 @@ import LockScreen from "../mobile/LockScreen";
 import HomeScreen from "../mobile/HomeScreen";
 import About from "../mobile/About";
 import WebRedesign from "../mobile/WebRedesign";
+import Mail from "../component/Mail";
 
 gsap.registerPlugin(ScrollToPlugin);
 
@@ -92,6 +93,7 @@ function Mobile() {
           <Route path="/home" element={<HomeScreen />} />
           <Route path="/about/*" element={<About />} />
           <Route path="/web_redesign" element={<WebRedesign />} />
+          <Route path="/mail" element={<Mail />} />
         </Routes>
       </div>
     </div>

@@ -772,7 +772,7 @@
 /****************************************************************************************************
   Notion Quick Menu 
 ****************************************************************************************************/
-.notion_overlay {
+.home_overlay {
   position: absolute;
   top: 0;
   left: 0;
@@ -781,18 +781,18 @@
   background-color: rgba(19, 19, 38, 0.3);
   backdrop-filter: blur(12px);
 }
-.notion_overlay .notion_content {
+.home_overlay .notion_content {
   margin-top: 88px;
   margin-left: 10%;
 }
-.notion_overlay .notion_inner {
+.home_overlay .notion_inner {
   width: 250px;
   border-radius: 12px;
   background-color: rgba(255, 255, 255, 0.9);
   box-shadow: 0 0 32pxpx rgba(0, 0, 0, 0.2);
   backdrop-filter: blur(150px);
 }
-.notion_overlay .row {
+.home_overlay .row {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -803,22 +803,72 @@
   letter-spacing: -0.43px;
   color: #000;
 }
-.notion_overlay .row:not(:last-child) {
+.home_overlay .row:not(:last-child) {
   border-bottom: 0.5px solid rgba(128, 128, 128, 0.55);
 }
-.notion_overlay .row img {
+.home_overlay .row img {
   width: 20px;
 }
-.notion_overlay .row .arrow_icon {
+.home_overlay .row .arrow_icon {
   width: 11px;
   height: 22px;
 }
-.notion_overlay .close_row {
+.home_overlay .close_row {
   color: #FF3B30;
   cursor: pointer;
 }
-.notion_overlay .icons_row figure:nth-child(3) img, .notion_overlay .icons_row figure:nth-child(4) img {
+.home_overlay .icons_row figure:nth-child(3) img, .home_overlay .icons_row figure:nth-child(4) img {
   width: auto;
+}
+
+/****************************************************************************************************
+  Dock Bar Popup
+****************************************************************************************************/
+.dock_pop_content {
+  width: 100%;
+  height: 100%;
+}
+.dock_pop_content .popup_inner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.dock_pop_content .popup_box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 270px;
+  height: 183px;
+  border-radius: 14px;
+  background-color: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 0 32pxpx rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(150px);
+  font-family: "SF-Pro-Text-Semibold";
+  font-size: 17px;
+  line-height: 22px;
+  line-height: -0.43px;
+}
+.dock_pop_content .popup_box .icon img {
+  width: 44px;
+}
+.dock_pop_content .popup_box .detail {
+  padding: 13px 16px 19px 16px;
+  color: #000;
+}
+.dock_pop_content .popup_box .detail .txt {
+  font-family: "SF-Pro";
+  font-size: 13px;
+  line-height: 18px;
+  letter-spacing: 0.08px;
+}
+.dock_pop_content .popup_box .close_btn {
+  width: 100%;
+  padding: 10px 0;
+  border-top: 0.33px solid rgba(84, 84, 86, 0.34);
+  color: #007AFF;
+  cursor: pointer;
 }
 
 /****************************************************************************************************
