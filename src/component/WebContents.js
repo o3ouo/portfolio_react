@@ -100,11 +100,11 @@ const WebContents = () => {
               </div>
 
               <div className="link_box">
-                <a to={con.webLink} target="_blank" className="link_btn" rel="noopener noreferrer" >
+                <a href={con.webLink} target="_blank" className="link_btn" rel="noopener noreferrer" >
                   <span className="link">Web Site</span>
                   <img src={`${process.env.PUBLIC_URL}/image/arrow_icon.webp`} alt="arrow_icon" />
                 </a>
-                <a to={con.figmaLink} target="_blank" className="link_btn" rel="noopener noreferrer">
+                <a href={con.figmaLink} target="_blank" className="link_btn" rel="noopener noreferrer">
                   <span className="link">Figma</span>
                   <img src={`${process.env.PUBLIC_URL}/image/arrow_icon.webp`} alt="arrow_icon" />
                 </a>
