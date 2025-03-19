@@ -12,13 +12,13 @@ function WorkList() {
         icon={"web_redesign"}
         onClick={() => navigate("/web_redesign")}
       />
-      <a to="https://o3ouo.github.io/phils/" target="_blank" rel="noopener noreferrer">
+      <a href="https://o3ouo.github.io/phils/" target="_blank" rel="noopener noreferrer">
         <WorkContent title={"Clone Codding"} icon={"phils"} />
       </a>
-      <a to="https://o3ouo.github.io/news_weather/" target="_blank" rel="noopener noreferrer">
+      <a href="https://o3ouo.github.io/news_weather/" target="_blank" rel="noopener noreferrer">
         <WorkContent title={"Play Press"} icon={"play_press"} />
       </a>
-      <a to="https://o3ouo.github.io/portfolio_vjs/" target='blank' rel="noopener noreferrer">
+      <a href="https://o3ouo.github.io/portfolio_vjs/" target='blank' rel="noopener noreferrer">
         <WorkContent title={"Portfolio 2024"} icon={"portfolio"} />
       </a>
     </div>

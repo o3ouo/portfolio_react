@@ -87,6 +87,7 @@
     padding-bottom: 20px;
   }
   .home_screen .bottom_inner .dock_bar .inner {
+    max-width: 670px;
     margin: auto;
     padding: 17px 26px;
   }
@@ -139,8 +140,26 @@
   .home_screen .top_inner .top_content .work_list {
     gap: 156px;
   }
-  .home_screen .work_icon {
+  .home_screen .top_inner .top_content .work_icon {
     margin: 0 42px;
+  }
+}
+@media screen and (min-width: 1210px) {
+  .home_screen .top_inner {
+    gap: 21px;
+  }
+  .home_screen .top_inner .top_contents .about .about_icon {
+    width: 300px;
+    height: 300px;
+  }
+  .home_screen .top_inner .top_contents .work_list {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .home_screen .top_inner .home_widegets {
+    position: absolute;
+    top: 21.6%;
+    left: calc(20% + 24vw);
+    width: 514px;
   }
 }
 

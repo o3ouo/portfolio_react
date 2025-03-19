@@ -317,6 +317,9 @@
   padding: 0 16px;
   padding-bottom: 2px;
 }
+.sidebar .ul_box li:first-child p {
+  color: #007AFF;
+}
 .sidebar .ul_box li p {
   margin: 10px 8px;
   font-family: "SF-Pro-Text-Semibold";
@@ -356,7 +359,7 @@
     background-color: #fff;
   }
   .sidebar {
-    min-width: 32vw;
+    min-width: 23vw;
   }
 }
 /****************************************************************************************************
@@ -403,7 +406,7 @@
     padding-left: 12px;
   }
   .about_page .contents .education_and_certifications {
-    width: 31vw;
+    width: 43vw;
   }
   .about_page .contents .education_and_certifications .list {
     border-left: 1px solid #eee;
@@ -414,7 +417,16 @@
     padding-right: 12px;
   }
   .about_page .contents .skills {
-    width: 20vw;
+    width: 26vw;
+  }
+  .about_page .contents .skills::before {
+    content: "SKILLS";
+    display: block;
+    padding: 0 16px;
+    padding-bottom: 7px;
+    font-size: 13px;
+    line-height: 16px;
+    color: rgba(60, 60, 60, 0.6);
   }
   .about_page .contents .skills li {
     border-bottom: 0.33px solid rgba(86, 86, 86, 0.2);

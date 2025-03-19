@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import useWindowDimensions from '../customHook/useWindowDimensions';
 import WorkContent from './WorkContent';
 
 // 노션 아이콘 이미지
@@ -23,15 +24,28 @@ const NotionLinkMenu = ({ url, title }) => {
 
 // 노션 메뉴
 const NotionMenu = ({ notionClick, onClose }) => {
+  const { width } = useWindowDimensions();
+  
+  // 화면 크기에 따라 애니메이션 값 동적 설정
+  const startPosition = {
+    x: width < 768 ? 0 : width < 1210 ? 100 : 200,
+    y: width < 768 ? 110 : width < 1210 ? 300 : 100,
+  };
+
+  const endPosition = {
+    x: width < 768 ? 0 : width < 1210 ? 100 : 200,
+    y: width < 768 ? 0 : width < 1210 ?150 : -30,
+  };
+
   if (!notionClick) return null;
 
   return (
     <div className="home_overlay">
       <motion.div
         className="notion_content"
-        initial={{ y: 90, opacity: 1 }}
-        animate={{ y: 0, opacity: 1 }}
-        exit={{ y: 90, opacity: 0 }}
+        initial={{ x: startPosition.x, y: startPosition.y, opacity: 0 }}
+        animate={{ x: endPosition.x, y: endPosition.y, opacity: 1 }}
+        exit={{ x: startPosition.x, y: startPosition.y, opacity: 0 }}
         transition={{ duration: 0.3, ease: "easeInOut" }}
         onClick={(e) => e.stopPropagation()}
       >

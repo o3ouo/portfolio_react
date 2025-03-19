@@ -24,8 +24,6 @@
   }
 }
 
-
-
 .status_bar {
   position: absolute;
   top: 0;
@@ -65,10 +63,6 @@
   }
 }
 
-
-
-
-
 @media screen and (min-width: 768px) {
 
   // Lock Screen 
@@ -100,6 +94,17 @@
       .notifications {
         min-width: 594px;
         margin: auto;
+      }
+
+      .bottom {
+        // &::before {
+        //   content: '';
+        //   display: block;
+        //   width: 100px;
+        //   height: 100px;
+        //   background-image: url(/public/image/qr.png);
+        //   background-size: cover;
+        // }
       }
     }
   }
@@ -135,7 +140,7 @@
         padding-bottom: 20px;
 
         .inner {
-          // width: 50vw;
+          max-width: 670px;
           margin: auto;
           padding: 17px 26px;
         }
@@ -215,12 +220,48 @@
         .work_list {
           gap: 156px;
         }
+
+        .work_icon {
+          margin: 0 42px;
+        }
       }
     }
+  }
+}
+
+@media screen and (min-width: 1210px) {
+
+  // Home Screen
+  .home_screen {
     
-    .work_icon {
-      margin: 0 42px;
+    .top_inner {
+      gap: 21px;
+
+      .top_contents {
+
+        .about {
+
+          .about_icon {
+            width: 300px;
+            height: 300px;
+          }
+        }
+
+        .work_list {
+          grid-template-columns: repeat(4, 1fr);
+        }
+      }
+
+      .home_widegets {
+        position: absolute;
+        top: 21.6%;
+        // left: 44.25%;
+        // left: 43.55vw;
+        left: calc(20% + 24vw);
+        // left: calc(20% + 24.7vw);
+        width: 514px;
+      } 
+
     }
   }
-
 }

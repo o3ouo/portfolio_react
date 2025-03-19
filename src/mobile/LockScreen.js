@@ -35,7 +35,7 @@ function LockScreen() {
           </div>
           <div className="swipe_box">
             <div className="swipe_up">
-              <p>Swipe up to</p>
+              <p>swipe up to unlock</p>
             </div>
             <div className="indicator">
               <div className="bar"></div>
