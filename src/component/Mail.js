@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import emailjs from 'emailjs-com';
 import { useNavigate } from 'react-router-dom';
 import PageTransition from './PageTansition';
@@ -6,6 +6,24 @@ import PageTransition from './PageTansition';
 function Mail() {
   const formRef = useRef(null);
   const navigator = useNavigate();
+
+  // 모바일에서 공백 생기는 문제 State로 텍스트 관리
+  const [to, setTo] = useState('');
+  const [from, setFrom] = useState('');
+  const [title, setTitle] = useState('');
+
+  const handleToTextChange = (e) => {
+    setTo(e.target.value);
+  };
+
+  const handleFromTextChange = (e) => {
+    setFrom(e.target.value);
+  };
+
+  const handleTitleTextChange = (e) => {
+    setTitle(e.target.value);
+  };
+
 
   const sendEmail = (e) => {
     e.preventDefault();
@@ -43,23 +61,52 @@ function Mail() {
                 <div className="title_button">
                   <p className="title">새로운 메시지</p>
                   <div className="button_box">
-                    <input id="button" type="submit" value=" " className='submit_btn' />
+                    <input
+                      type="submit" 
+                      id="button" 
+                      value=" " 
+                      className='submit_btn' 
+                    />
                   </div>
                 </div>
 
                 <div className="to">
                   <label htmlFor="to_name">받는 사람:</label>
-                  <input id="to_name" type="text" name="to_name" className="name_txt" placeholder="유아정" />
+                  <input 
+                    type="text" 
+                    id="to_name" 
+                    name="to_name" 
+                    value={to}
+                    onChange={handleToTextChange}
+                    placeholder="유아정" 
+                    className="name_txt" 
+                  />
                 </div>
 
                 <div className="from">
                   <label htmlFor="from_name">보낸 사람:</label>
-                  <input id="from_name" type="email" name="from_name" className="from_txt" placeholder="example@gmail.com" />
+                  <input 
+                    type="email" 
+                    id="from_name" 
+                    name="from_name"                     
+                    value={from}
+                    onChange={handleFromTextChange}
+                    placeholder="example@gmail.com" 
+                    className="from_txt" 
+                  />
                 </div>
 
                 <div className="from_title email">
                   <label htmlFor="title">제목:</label>
-                  <input id="title" type="text" name="title" className="title_txt" placeholder="제목을 입력하세요." />
+                  <input 
+                    type="text" 
+                    id="title" 
+                    name="title" 
+                    value={title}
+                    onChange={handleTitleTextChange}
+                    placeholder="제목을 입력하세요." 
+                    className="title_txt" 
+                  />
                 </div>
 
                 <textarea id="message" name="message" className="text_area" placeholder="나의 iPhone에서 보냄"></textarea>

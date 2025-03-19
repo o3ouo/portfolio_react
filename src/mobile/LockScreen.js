@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import useWindowDimensions from '../customHook/useWindowDimensions'
+import StatusBar from '../component/StatusBar';
 import NowDate from '../component/NowDate';
 import Notifications from '../component/Notifications';
 import LockWidgets from '../component/LockWidgets';
@@ -7,6 +8,7 @@ import LockWidgets from '../component/LockWidgets';
 function LockScreen() {
   // useWindowDimensions 훅을 사용하여 윈도우 크기 가져오기
   const { width } = useWindowDimensions();
+  const mobile = width <= 768;
 
   // 반응형 배경 이미지
   const bgImage = width >= 768
@@ -15,6 +17,7 @@ function LockScreen() {
 
   return (
     <div className='lock_screen'  style={{ backgroundImage: `url(${bgImage})`, backgroundSize: 'cover'}}>
+      {mobile ? null : <StatusBar />}
       <div className="today_weather">
         <NowDate />
         <LockWidgets />

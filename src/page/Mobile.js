@@ -1,19 +1,24 @@
-import React, { useRef } from "react";
+import React from "react";
 import { Routes, Route, useNavigate, useLocation } from "react-router-dom";
 import gsap from "gsap";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
+import useWindowDimensions from "../customHook/useWindowDimensions";
 import "../css/Mobile.css";
 import '../css/Tablet.css';
 import useSwipeScroll from "../customHook/useSwipeScroll";
 import LockScreen from "../mobile/LockScreen";
 import HomeScreen from "../mobile/HomeScreen";
 import About from "../mobile/About";
+import AboutTablet from "../tablet/AboutTablet";
 import WebRedesign from "../mobile/WebRedesign";
 import Mail from "../component/Mail";
 
 gsap.registerPlugin(ScrollToPlugin);
 
 function Mobile() {
+  const { width } = useWindowDimensions();
+  const mobile = width <= 1079;
+
   // LockScreen과 HomeScreen에서만 스크롤 & 스와이프 감지
   const allowedSwipePages = ["/", "/home"];
   const { lockScreenRef, toggleLockScreen } = useSwipeScroll(allowedSwipePages);
@@ -27,7 +32,7 @@ function Mobile() {
         <Routes>
           <Route path="/" element={<HomeScreen />} />
           <Route path="/home" element={<HomeScreen />} />
-          <Route path="/about/*" element={<About />} />
+          <Route path="/about/*" element={mobile ? <About /> : <AboutTablet /> } />
           <Route path="/web_redesign" element={<WebRedesign />} />
           <Route path="/mail" element={<Mail />} />
         </Routes>

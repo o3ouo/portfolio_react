@@ -16,7 +16,6 @@ function Main() {
           <Mobile />
         </div>
       </WeatherProvider>
-
     </BrowserRouter>
   );
 }

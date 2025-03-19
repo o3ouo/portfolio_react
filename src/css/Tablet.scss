@@ -1,7 +1,52 @@
+// Status Bar
+.status_bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.lock_screen>.status_bar {
+  color: white;
+}
+
+.home_screen>.top_inner>.status_bar {
+  font-size: 15px;
+}
+
+.status_bar .inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 50px;
+}
+
+.status_bar .now_day_box {
+  display: flex;
+  font-weight: 600;
+}
+
+.status_bar .time {
+  padding-right: 6px;
+  padding-left: 16px;
+  font-family: "SF-Pro-Text-Semibold";
+}
+
+.status_bar .levels {
+  display: flex;
+  gap: 7px;
+  padding-right: 16px;
+  padding-left: 6px;
+}
+
 @media screen and (min-width: 768px) {
 
   // Lock Screen 
   .lock_screen {
+
+    .now_date {
+      padding-top: 76px;
+    }
 
     .lock_widgets {
 
@@ -35,8 +80,9 @@
     .top_inner {
       gap: 58px;
 
-      .top_content {
+      .top_contents {
         gap: 58px;
+        padding-top: 56px;
 
         .about {
 
@@ -59,28 +105,13 @@
         padding-bottom: 20px;
 
         .inner {
-          width: 50vw;
+          // width: 50vw;
           margin: auto;
           padding: 17px 26px;
         }
       }
     }
   }
-
-  // About Page 
-  .about_page {
-
-    .contents {
-
-      .info {
-
-        .img {
-          max-height: 60vh;
-        }
-      }
-    }
-  }
-
 }
 
 @media screen and (min-width: 1080px) {
@@ -134,7 +165,6 @@
         }
       }
     }
-    
     
     .work_icon {
       margin: 0 42px;

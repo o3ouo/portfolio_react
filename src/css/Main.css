@@ -4,12 +4,270 @@
   flex-direction: column;
   height: calc(var(--vh, 1vh) * 100);
   min-height: 100vh;
-  min-height: -webkit-fill-available; /* iOS Safari에서 주소창 문제 해결*/
-  max-height: 1024px; /* 너무 긴 화면 방지 */
-  padding-bottom: env(safe-area-inset-bottom); /* iPhone X 이후 홈바 고려 */
+  min-height: -webkit-fill-available;
+  /* iOS Safari에서 주소창 문제 해결*/
+  max-height: 1024px;
+  /* 너무 긴 화면 방지 */
+  padding-bottom: env(safe-area-inset-bottom);
+  /* iPhone X 이후 홈바 고려 */
 }
 .main::-webkit-scrollbar {
   display: none;
+}
+
+/****************************************************************************************************
+  About Page 
+****************************************************************************************************/
+.about_page {
+  overflow-y: hidden;
+  height: 100dvh;
+  background-color: #fff;
+}
+.about_page .inner {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+.about_page .contents {
+  overflow-y: auto;
+  height: 100%;
+  padding: 0 16px;
+  padding-top: 16px;
+  background-color: #F2F2F7;
+}
+.about_page .contents::-webkit-scrollbar {
+  display: none;
+}
+.about_page .contents .list {
+  display: flex;
+  flex-direction: column;
+  padding-left: 16px;
+  border-radius: 10px;
+  background-color: #fff;
+  font-size: 16px;
+  line-height: 22px;
+  letter-spacing: -0.43px;
+}
+.about_page .contents .info .img {
+  overflow: hidden;
+  max-height: 50vh;
+  margin-bottom: 16px;
+  border-radius: 10px;
+}
+.about_page .contents .info .list div {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+}
+.about_page .contents .info .list div:not(:last-child) {
+  border-bottom: 0.33px solid rgba(86, 86, 86, 0.2);
+}
+.about_page .contents .info .list .title {
+  color: rgba(60, 60, 60, 0.6);
+}
+.about_page .contents .info .list .detail {
+  padding-right: 16px;
+}
+.about_page .contents .education_and_certifications {
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  height: 100%;
+  padding-bottom: 16px;
+}
+.about_page .contents .education_and_certifications::-webkit-scrollbar {
+  display: none;
+}
+.about_page .contents .education_and_certifications .header_title {
+  padding: 0 16px;
+  padding-bottom: 7px;
+  font-size: 13px;
+  line-height: 16px;
+  color: rgba(60, 60, 60, 0.6);
+}
+.about_page .contents .education_and_certifications li {
+  padding: 10px 0;
+}
+.about_page .contents .education_and_certifications li:not(:last-child) {
+  border-bottom: 0.33px solid rgba(86, 86, 86, 0.2);
+}
+.about_page .contents .education_and_certifications .education .period {
+  font-size: 13px;
+  line-height: 18px;
+  letter-spacing: -0.08px;
+  color: rgba(60, 60, 60, 0.6);
+}
+.about_page .contents .skills li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.about_page .contents .skills li:last-child .skill_name {
+  border: none;
+}
+.about_page .contents .skills .img {
+  margin-left: 8px;
+}
+.about_page .contents .skills .img img {
+  width: 30px;
+}
+.about_page .contents .skills .skill_name {
+  width: 100%;
+  min-height: 44px;
+  align-content: center;
+  border-bottom: 0.33px solid rgba(86, 86, 86, 0.2);
+}
+.about_page .tab_menu {
+  padding: 0 16px;
+}
+.about_page .tab_menu ul {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 16px;
+}
+.about_page .tab_menu ul .box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 500;
+  color: #999999;
+}
+.about_page .tab_menu ul .active {
+  color: #007AFF;
+}
+.about_page .tab_menu ul img {
+  width: 30px;
+}
+
+@media screen and (min-width: 768px) {
+  .about_page .contents .info .img {
+    max-height: 60vh;
+    margin: auto;
+    margin-bottom: 16px;
+  }
+}
+@media screen and (min-width: 1080px) {
+  div:has(.about_page) {
+    height: 100%;
+  }
+  .about_page {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+  }
+  .about_page .inner {
+    width: 100%;
+  }
+  .about_page .sidebar {
+    min-width: 22vw;
+    padding-top: 50px;
+    background-color: #F2F2F7;
+    font-size: 17px;
+    line-height: 22px;
+    letter-spacing: -0.43px;
+  }
+  .about_page .sidebar .back_box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 16px;
+    padding-right: 10px;
+  }
+  .about_page .sidebar .back_box .back {
+    display: flex;
+    gap: 6px;
+    padding: 11px 8px;
+    color: #007AFF;
+    cursor: pointer;
+  }
+  .about_page .sidebar .back_box .side_btn img {
+    width: 31px;
+  }
+  .about_page .sidebar .title {
+    margin-top: 10px;
+    padding: 4px 0 4px 24px;
+    font-size: 34px;
+    line-height: 41px;
+    letter-spacing: 0.4px;
+  }
+  .about_page .sidebar .ul_box li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 16px;
+    padding-bottom: 2px;
+  }
+  .about_page .sidebar .ul_box li p {
+    margin: 10px 8px;
+    font-family: "SF-Pro-Text-Semibold";
+    color: rgba(60, 60, 67, 0.6);
+  }
+  .about_page .sidebar .ul_box li img {
+    width: 16px;
+  }
+  .about_page .sidebar .add_box {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 24px;
+  }
+  .about_page .sidebar .add_box img {
+    width: 28px;
+  }
+  .about_page .contents {
+    display: flex;
+    gap: 16px;
+    width: 100%;
+    padding: 16px;
+    padding-top: 66px;
+    background-color: #fff;
+  }
+  .about_page .contents .list {
+    padding-left: 0;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  }
+  .about_page .contents .info .img {
+    overflow: hidden;
+    border-radius: 12px;
+  }
+  .about_page .contents .info .img img {
+    width: 21vw;
+  }
+  .about_page .contents .info .list {
+    margin-top: 16px;
+    padding-left: 0;
+    border-radius: 12px;
+  }
+  .about_page .contents .info .list div {
+    padding-left: 12px;
+  }
+  .about_page .contents .education_and_certifications {
+    width: 31vw;
+  }
+  .about_page .contents .education_and_certifications .list {
+    border-left: 1px solid #eee;
+    border-right: 1px solid #eee;
+  }
+  .about_page .contents .education_and_certifications .list li {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+  .about_page .contents .skills {
+    width: 20vw;
+  }
+  .about_page .contents .skills li {
+    border-bottom: 0.33px solid rgba(86, 86, 86, 0.2);
+    padding-left: 8px;
+    padding-right: 12px;
+  }
+  .about_page .contents .skills .skill_name {
+    border: none;
+  }
 }
 
 /*# sourceMappingURL=Main.css.map */

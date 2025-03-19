@@ -35,6 +35,13 @@ const useSwipeScroll = (allowedSwipePages) => {
     }
   };
 
+  // URL을 /portfolio_react로 강제로 리디렉션
+  useEffect(() => {
+    if (location.pathname !== "/") {
+      navigate("/");
+    }
+  }, [isLockScreenVisible])
+
   // 스크롤 또는 스와이프 이벤트 처리
   const handleScrollOrSwipe = (direction) => {
     if (!allowedSwipePages.includes(location.pathname)) return;

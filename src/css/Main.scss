@@ -3,10 +3,363 @@
   flex-direction: column;
   height: calc(var(--vh, 1vh) * 100);
   min-height: 100vh;
-  min-height: -webkit-fill-available; /* iOS Safari에서 주소창 문제 해결*/
-  max-height: 1024px; /* 너무 긴 화면 방지 */
-  padding-bottom: env(safe-area-inset-bottom); /* iPhone X 이후 홈바 고려 */
+  min-height: -webkit-fill-available;
+  /* iOS Safari에서 주소창 문제 해결*/
+  max-height: 1024px;
+  /* 너무 긴 화면 방지 */
+  padding-bottom: env(safe-area-inset-bottom);
+
+  /* iPhone X 이후 홈바 고려 */
   &::-webkit-scrollbar {
     display: none;
+  }
+}
+
+/****************************************************************************************************
+  About Page 
+****************************************************************************************************/
+// Mobile
+.about_page {
+  overflow-y: hidden;
+  height: 100dvh;
+  background-color: #fff;
+
+  .inner {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+  }
+
+  .contents {
+    overflow-y: auto;
+    height: 100%;
+    padding: 0 16px;
+    padding-top: 16px;
+    background-color: #F2F2F7;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    .list {
+      display: flex;
+      flex-direction: column;
+      padding-left: 16px;
+      border-radius: 10px;
+      background-color: #fff;
+      font-size: 16px;
+      line-height: 22px;
+      letter-spacing: -0.43px;
+    }
+
+    .info {
+
+      .img {
+        overflow: hidden;
+        max-height: 50vh;
+        margin-bottom: 16px;
+        border-radius: 10px;
+      }
+
+      .list {
+
+        div {
+          display: flex;
+          justify-content: space-between;
+          padding: 10px 0;
+
+          &:not(:last-child) {
+            border-bottom: .33px solid rgba(86, 86, 86, .2);
+          }
+        }
+
+        .title {
+          color: rgba(60, 60, 60, .6);
+        }
+
+        .detail {
+          padding-right: 16px;
+        }
+      }
+
+    }
+
+    .education_and_certifications {
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      height: 100%;
+      padding-bottom: 16px;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+
+      .header_title {
+        padding: 0 16px;
+        padding-bottom: 7px;
+        font-size: 13px;
+        line-height: 16px;
+        color: rgba(60, 60, 60, .6);
+      }
+
+      li {
+        padding: 10px 0;
+
+        &:not(:last-child) {
+          border-bottom: 0.33px solid rgba(86, 86, 86, .2);
+        }
+      }
+
+      .education {
+
+        .period {
+          font-size: 13px;
+          line-height: 18px;
+          letter-spacing: -0.08px;
+          color: rgba(60, 60, 60, .6);
+        }
+      }
+
+    }
+
+    .skills {
+
+      li {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+
+        &:last-child .skill_name {
+          border: none;
+        }
+
+
+      }
+
+      .img {
+        margin-left: 8px;
+
+        img {
+          width: 30px;
+        }
+      }
+
+      .skill_name {
+        width: 100%;
+        min-height: 44px;
+        align-content: center;
+        border-bottom: 0.33px solid rgba(86, 86, 86, .2);
+
+      }
+    }
+  }
+
+  .tab_menu {
+    padding: 0 16px;
+
+    ul {
+      display: flex;
+      justify-content: space-between;
+      padding: 12px 16px;
+
+      .box {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 6px;
+        font-size: 12px;
+        font-weight: 500;
+        color: #999999;
+      }
+
+      .active {
+        color: #007AFF;
+
+      }
+
+      img {
+        width: 30px;
+      }
+    }
+  }
+}
+
+// Tablet
+@media screen and (min-width: 768px) {
+
+  .about_page {
+
+    .contents {
+       
+      .info {
+
+        .img {
+          max-height: 60vh;
+          margin: auto;
+          margin-bottom: 16px;
+        }
+      }
+    }
+  }
+
+}
+
+@media screen and (min-width: 1080px) {
+
+  // About Page
+  div:has(.about_page) {
+    height: 100%;
+  }
+
+  .about_page {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+
+    .inner {
+      width: 100%;
+    }
+
+    .sidebar {
+      min-width: 22vw;
+      padding-top: 50px;
+      background-color: #F2F2F7;
+      font-size: 17px;
+      line-height: 22px;
+      letter-spacing: -0.43px;
+
+      .back_box {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-left: 16px;
+        padding-right: 10px;
+
+        .back {
+          display: flex;
+          gap: 6px;
+          padding: 11px 8px;
+          color: #007AFF;
+          cursor: pointer;
+        }
+
+        .side_btn {
+
+          img {
+            width: 31px;
+          }
+        }
+      }
+
+      .title {
+        margin-top: 10px;
+        padding: 4px 0 4px 24px;
+        font-size: 34px;
+        line-height: 41px;
+        letter-spacing: 0.4px;
+      }
+
+      .ul_box {
+
+        li {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          padding: 0 16px;
+          padding-bottom: 2px;
+
+          p {
+            margin: 10px 8px;
+            font-family: "SF-Pro-Text-Semibold";
+            color: rgba(60, 60, 67, .6);
+          }
+
+          img {
+            width: 16px;
+          }
+        }
+      }
+
+      .add_box {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 8px 24px;
+
+        img {
+          width: 28px;
+        }
+      }
+    }
+
+    .contents {
+      display: flex;
+      gap: 16px;
+      width: 100%;
+      padding: 16px;
+      padding-top: 66px;
+      background-color: #fff;
+
+      .list {
+        padding-left: 0;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+      }
+
+      .info {
+
+        .img {
+          overflow: hidden;
+          border-radius: 12px;
+
+          img {
+            width: 21vw;
+          }
+        }
+
+        .list {
+          margin-top: 16px;
+          padding-left: 0;
+          border-radius: 12px;
+
+          div {
+            padding-left: 12px;
+          }
+        }
+      }
+
+      .education_and_certifications {
+        width: 31vw;
+
+        .list {
+          border-left: 1px solid #eee;
+          border-right: 1px solid #eee;
+
+          li {
+            padding-left: 12px;
+            padding-right: 12px;
+          }
+        }
+
+      }
+
+      .skills {
+        width: 20vw;
+
+        li {
+          border-bottom: 0.33px solid rgba(86, 86, 86, 0.2);
+          padding-left: 8px;
+          padding-right: 12px;
+      
+        }
+
+        .skill_name {
+          border: none;
+        }
+      }
+    }
   }
 }
