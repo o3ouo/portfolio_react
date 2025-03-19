@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState, useCallback } from 'react';
 import emailjs from 'emailjs-com';
 import { useNavigate } from 'react-router-dom';
 import PageTransition from './PageTansition';
@@ -8,22 +8,18 @@ function Mail() {
   const navigator = useNavigate();
 
   // 모바일에서 공백 생기는 문제 State로 텍스트 관리
-  const [to, setTo] = useState('');
-  const [from, setFrom] = useState('');
-  const [title, setTitle] = useState('');
+  const [inputText, setInputText] = useState({
+    to_name: '',
+    from_name: '',
+    title: '',
+    message: '',
+  });
 
-  const handleToTextChange = (e) => {
-    setTo(e.target.value);
-  };
+  const handleChange = useCallback(({ target }) => {
+    setInputText((prev) => ({ ...prev, [target.name]: target.value }));
+  }, []); 
 
-  const handleFromTextChange = (e) => {
-    setFrom(e.target.value);
-  };
-
-  const handleTitleTextChange = (e) => {
-    setTitle(e.target.value);
-  };
-
+  console.log(inputText);
 
   const sendEmail = (e) => {
     e.preventDefault();
@@ -76,8 +72,8 @@ function Mail() {
                     type="text" 
                     id="to_name" 
                     name="to_name" 
-                    value={to}
-                    onChange={handleToTextChange}
+                    value={inputText.to_name}
+                    onChange={handleChange}
                     placeholder="유아정" 
                     className="name_txt" 
                   />
@@ -89,8 +85,8 @@ function Mail() {
                     type="email" 
                     id="from_name" 
                     name="from_name"                     
-                    value={from}
-                    onChange={handleFromTextChange}
+                    value={inputText.from_name}
+                    onChange={handleChange}
                     placeholder="example@gmail.com" 
                     className="from_txt" 
                   />
@@ -102,14 +98,21 @@ function Mail() {
                     type="text" 
                     id="title" 
                     name="title" 
-                    value={title}
-                    onChange={handleTitleTextChange}
+                    value={inputText.title}
+                    onChange={handleChange}
                     placeholder="제목을 입력하세요." 
                     className="title_txt" 
                   />
                 </div>
 
-                <textarea id="message" name="message" className="text_area" placeholder="나의 iPhone에서 보냄"></textarea>
+                <textarea 
+                  id="message" 
+                  name="message" 
+                  value={inputText.message}
+                  onChange={handleChange}
+                  placeholder="나의 iPhone에서 보냄"
+                  className="text_area" 
+                ></textarea>
               </form>
             </div>
           </div>

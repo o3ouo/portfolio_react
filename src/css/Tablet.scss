@@ -1,43 +1,73 @@
 // Status Bar
+.lock_screen>.status_bar {
+  color: white;
+}
+
+.lock_screen>.status_bar,
+.home_screen>.top_inner>.status_bar {
+  .data_icon {
+    width: 17px;
+    height: 10px;
+    background-image: url(/public/image/data_icon.webp);
+  }
+  
+  .wifi_icon {
+    width: 14px;
+    height: 10px;
+    background-image: url(/public/image/wifi_icon.webp);
+  }
+  
+  .battery_icon {
+    width: 27px;
+    height: 12px;
+    background-image: url(/public/image/battery_icon.webp);
+  }
+}
+
+
+
 .status_bar {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
+  font-size: 12px;
+  font-weight: 500;
+
+  .inner {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 0;
+  }
+
+  .now_day_box {
+    display: flex;
+    font-weight: 600;
+  }
+
+  .time {
+    padding-right: 6px;
+    padding-left: 16px;
+  }
+
+  
+  .levels {
+    display: flex;
+    gap: 7px;
+    padding-right: 16px;
+    padding-left: 6px;
+
+    .status_bar_icon {
+      background-size: cover;
+    }
+  }
 }
 
-.lock_screen>.status_bar {
-  color: white;
-}
 
-.home_screen>.top_inner>.status_bar {
-  font-size: 15px;
-}
 
-.status_bar .inner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: 50px;
-}
 
-.status_bar .now_day_box {
-  display: flex;
-  font-weight: 600;
-}
-
-.status_bar .time {
-  padding-right: 6px;
-  padding-left: 16px;
-  font-family: "SF-Pro-Text-Semibold";
-}
-
-.status_bar .levels {
-  display: flex;
-  gap: 7px;
-  padding-right: 16px;
-  padding-left: 6px;
-}
 
 @media screen and (min-width: 768px) {
 
@@ -55,7 +85,7 @@
         .rain {
 
           .rain_icon {
-            background-image: url('/public/image/rain_probability_tablet.png');
+            background-image: url('/public/image/rain_probability_tablet.webp');
           }
         }
 
@@ -110,6 +140,28 @@
           padding: 17px 26px;
         }
       }
+    }
+  }
+
+  // Status Bar
+  .status_bar {
+
+    .data_icon {
+      width: 17px;
+      height: 10px;
+      background-image: url(/public/image/data_icon_black.webp);
+    }
+
+    .wifi_icon {
+      width: 14px;
+      height: 10px;
+      background-image: url(/public/image/wifi_icon_black.webp);
+    }
+
+    .battery_icon {
+      width: 27px;
+      height: 12px;
+      background-image: url(/public/image/battery_icon_black.webp);
     }
   }
 }

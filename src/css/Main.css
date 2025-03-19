@@ -49,6 +49,9 @@
   line-height: 22px;
   letter-spacing: -0.43px;
 }
+.about_page .contents .info {
+  padding-bottom: 16px;
+}
 .about_page .contents .info .img {
   overflow: hidden;
   max-height: 50vh;
@@ -99,6 +102,9 @@
   letter-spacing: -0.08px;
   color: rgba(60, 60, 60, 0.6);
 }
+.about_page .contents .skills {
+  padding-bottom: 16px;
+}
 .about_page .contents .skills li {
   display: flex;
   align-items: center;
@@ -143,13 +149,219 @@
   width: 30px;
 }
 
+/****************************************************************************************************
+  Web Redesign Page 
+****************************************************************************************************/
+.web_redesign_box {
+  overflow-y: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100dvh;
+  background-color: #fff;
+}
+.web_redesign_box .nav_bar {
+  border-bottom: 0.3px solid rgba(0, 0, 0, 0.3);
+  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+}
+.web_redesign_box .web_contents {
+  overflow: hidden;
+  height: 100%;
+  background-color: #F2F2F7;
+}
+.web_redesign_box .web_contents .inner {
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding-bottom: 16px;
+}
+.web_redesign_box .web_contents .inner::-webkit-scrollbar {
+  display: none;
+}
+.web_redesign_box .web_contents .box {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 15px;
+  padding: 16px;
+}
+.web_redesign_box .web_contents .box .overflow_box {
+  overflow-y: auto;
+  height: 35vh;
+  border-radius: 10px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+.web_redesign_box .web_contents .box .overflow_box:hover {
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+.web_redesign_box .web_contents .box .overflow_box::-webkit-scrollbar {
+  display: none;
+}
+.web_redesign_box .web_contents .box .link_box {
+  min-width: 250px;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  font-size: 17px;
+  line-height: 22px;
+  letter-spacing: -0.43px;
+}
+.web_redesign_box .web_contents .box .link_box button.link_btn {
+  width: 100%;
+}
+.web_redesign_box .web_contents .box .link_box .link_btn {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 16px;
+}
+.web_redesign_box .web_contents .box .link_box .link_btn:not(:last-child) {
+  border-bottom: 0.5px solid rgba(128, 128, 128, 0.5);
+}
+.web_redesign_box .web_contents .box .link_box img {
+  width: 11px;
+}
+.web_redesign_box .popup_overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(115, 115, 115, 0.2);
+  backdrop-filter: blur(2px);
+  transform: translate(-50%, -50%);
+}
+.web_redesign_box .popup_overlay .popup_content {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  border-radius: 13px;
+}
+.web_redesign_box .popup_overlay .popup_content .popup_inner {
+  overflow: hidden;
+  max-width: 85%;
+  margin: auto;
+  border-radius: 13px;
+  background-color: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 10px 100px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(130px);
+}
+.web_redesign_box .popup_overlay .popup_content .title_and_description {
+  padding: 12px 20px 14px 20px;
+  font-size: 13px;
+  line-height: 18px;
+  letter-spacing: -0.08px;
+  color: rgba(61, 61, 61, 0.8);
+}
+.web_redesign_box .popup_overlay .popup_content .title_and_description .title {
+  margin-bottom: 4px;
+  font-weight: 600;
+  text-align: center;
+}
+.web_redesign_box .popup_overlay .popup_content .details {
+  font-size: 17px;
+  text-align: center;
+  line-height: 22px;
+  letter-spacing: -0.043px;
+  color: #007AFF;
+}
+.web_redesign_box .popup_overlay .popup_content .details .txt {
+  padding: 17px 0;
+  border-top: 0.03px solid rgba(128, 128, 128, 0.5);
+}
+.web_redesign_box .popup_overlay .popup_content .close-btn {
+  color: #FF3B30;
+  cursor: pointer;
+}
+
+/****************************************************************************************************
+  Side Bar
+****************************************************************************************************/
+.sidebar {
+  min-width: 22vw;
+  padding-top: 50px;
+  background-color: #F2F2F7;
+  font-size: 17px;
+  line-height: 22px;
+  letter-spacing: -0.43px;
+}
+.sidebar .back_box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 16px;
+  padding-right: 10px;
+}
+.sidebar .back_box .back {
+  display: flex;
+  gap: 6px;
+  padding: 11px 8px;
+  color: #007AFF;
+  cursor: pointer;
+}
+.sidebar .back_box .side_btn img {
+  width: 31px;
+}
+.sidebar .title {
+  margin-top: 10px;
+  padding: 4px 0 4px 24px;
+  font-size: 34px;
+  line-height: 41px;
+  letter-spacing: 0.4px;
+}
+.sidebar .ul_box li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 16px;
+  padding-bottom: 2px;
+}
+.sidebar .ul_box li p {
+  margin: 10px 8px;
+  font-family: "SF-Pro-Text-Semibold";
+  color: rgba(60, 60, 67, 0.6);
+}
+.sidebar .ul_box li img {
+  width: 16px;
+}
+.sidebar .add_box {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 24px;
+}
+.sidebar .add_box img {
+  width: 28px;
+}
+
+/****************************************************************************************************
+  Tablet min-width: 768px 
+****************************************************************************************************/
 @media screen and (min-width: 768px) {
   .about_page .contents .info .img {
     max-height: 60vh;
     margin: auto;
     margin-bottom: 16px;
   }
+  .about_page .contents .info .list {
+    max-width: 740px;
+    margin: auto;
+  }
+  .web_redesign_box {
+    flex-direction: row;
+  }
+  .web_redesign_box .web_contents {
+    padding-top: 66px;
+    background-color: #fff;
+  }
+  .sidebar {
+    min-width: 32vw;
+  }
 }
+/****************************************************************************************************
+  Tablet min-width: 1080px 
+****************************************************************************************************/
 @media screen and (min-width: 1080px) {
   div:has(.about_page) {
     height: 100%;
@@ -162,62 +374,6 @@
   }
   .about_page .inner {
     width: 100%;
-  }
-  .about_page .sidebar {
-    min-width: 22vw;
-    padding-top: 50px;
-    background-color: #F2F2F7;
-    font-size: 17px;
-    line-height: 22px;
-    letter-spacing: -0.43px;
-  }
-  .about_page .sidebar .back_box {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding-left: 16px;
-    padding-right: 10px;
-  }
-  .about_page .sidebar .back_box .back {
-    display: flex;
-    gap: 6px;
-    padding: 11px 8px;
-    color: #007AFF;
-    cursor: pointer;
-  }
-  .about_page .sidebar .back_box .side_btn img {
-    width: 31px;
-  }
-  .about_page .sidebar .title {
-    margin-top: 10px;
-    padding: 4px 0 4px 24px;
-    font-size: 34px;
-    line-height: 41px;
-    letter-spacing: 0.4px;
-  }
-  .about_page .sidebar .ul_box li {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 16px;
-    padding-bottom: 2px;
-  }
-  .about_page .sidebar .ul_box li p {
-    margin: 10px 8px;
-    font-family: "SF-Pro-Text-Semibold";
-    color: rgba(60, 60, 67, 0.6);
-  }
-  .about_page .sidebar .ul_box li img {
-    width: 16px;
-  }
-  .about_page .sidebar .add_box {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    padding: 8px 24px;
-  }
-  .about_page .sidebar .add_box img {
-    width: 28px;
   }
   .about_page .contents {
     display: flex;

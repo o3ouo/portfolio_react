@@ -1,41 +1,57 @@
+.lock_screen > .status_bar {
+  color: white;
+}
+
+.lock_screen > .status_bar .data_icon,
+.home_screen > .top_inner > .status_bar .data_icon {
+  width: 17px;
+  height: 10px;
+  background-image: url(/public/image/data_icon.webp);
+}
+.lock_screen > .status_bar .wifi_icon,
+.home_screen > .top_inner > .status_bar .wifi_icon {
+  width: 14px;
+  height: 10px;
+  background-image: url(/public/image/wifi_icon.webp);
+}
+.lock_screen > .status_bar .battery_icon,
+.home_screen > .top_inner > .status_bar .battery_icon {
+  width: 27px;
+  height: 12px;
+  background-image: url(/public/image/battery_icon.webp);
+}
+
 .status_bar {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
+  font-size: 12px;
+  font-weight: 500;
 }
-
-.lock_screen > .status_bar {
-  color: white;
-}
-
-.home_screen > .top_inner > .status_bar {
-  font-size: 15px;
-}
-
 .status_bar .inner {
   display: flex;
+  flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  height: 50px;
+  padding: 16px 0;
 }
-
 .status_bar .now_day_box {
   display: flex;
   font-weight: 600;
 }
-
 .status_bar .time {
   padding-right: 6px;
   padding-left: 16px;
-  font-family: "SF-Pro-Text-Semibold";
 }
-
 .status_bar .levels {
   display: flex;
   gap: 7px;
   padding-right: 16px;
   padding-left: 6px;
+}
+.status_bar .levels .status_bar_icon {
+  background-size: cover;
 }
 
 @media screen and (min-width: 768px) {
@@ -43,7 +59,7 @@
     padding-top: 76px;
   }
   .lock_screen .lock_widgets .right .rain .rain_icon {
-    background-image: url("/public/image/rain_probability_tablet.png");
+    background-image: url("/public/image/rain_probability_tablet.webp");
   }
   .lock_screen .lock_widgets .right .sun_time {
     background-color: rgba(74, 196, 255, 0.6);
@@ -73,6 +89,21 @@
   .home_screen .bottom_inner .dock_bar .inner {
     margin: auto;
     padding: 17px 26px;
+  }
+  .status_bar .data_icon {
+    width: 17px;
+    height: 10px;
+    background-image: url(/public/image/data_icon_black.webp);
+  }
+  .status_bar .wifi_icon {
+    width: 14px;
+    height: 10px;
+    background-image: url(/public/image/wifi_icon_black.webp);
+  }
+  .status_bar .battery_icon {
+    width: 27px;
+    height: 12px;
+    background-image: url(/public/image/battery_icon_black.webp);
   }
 }
 @media screen and (min-width: 1080px) {
