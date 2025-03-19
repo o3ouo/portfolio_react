@@ -1,13 +1,14 @@
 {
   "files": {
-    "main.css": "/portfolio_react/static/css/main.a33d2647.css",
-    "main.js": "/portfolio_react/static/js/main.7ad33790.js",
+    "main.css": "/portfolio_react/static/css/main.3e7749e0.css",
+    "main.js": "/portfolio_react/static/js/main.f67c679b.js",
     "static/js/453.5721f686.chunk.js": "/portfolio_react/static/js/453.5721f686.chunk.js",
     "static/media/SF-Pro.ttf": "/portfolio_react/static/media/SF-Pro.28d1cfc2d99a9a4b19ac.ttf",
     "static/media/SF-Pro-Text-Semibold.otf": "/portfolio_react/static/media/SF-Pro-Text-Semibold.288d5eb3fd7bf0174807.otf",
     "static/media/SF-Pro-Display-Bold.otf": "/portfolio_react/static/media/SF-Pro-Display-Bold.07a7fd83dabf0d1a6353.otf",
-    "static/media/qr.png": "/portfolio_react/static/media/qr.fcbbe270f18e20af4faa.png",
     "static/media/rain_probability_tablet.webp": "/portfolio_react/static/media/rain_probability_tablet.8358f386f93d4d53ade5.webp",
+    "static/media/sand_icon.webp": "/portfolio_react/static/media/sand_icon.5a95a7cac5bac7d8ebd5.webp",
+    "static/media/rain_probability.webp": "/portfolio_react/static/media/rain_probability.b0fda3a487c14899cf23.webp",
     "index.html": "/portfolio_react/index.html",
     "static/media/wifi_icon_black.webp": "/portfolio_react/static/media/wifi_icon_black.5f3ee6e0741411d38dea.webp",
     "static/media/battery_icon_black.webp": "/portfolio_react/static/media/battery_icon_black.05d4cf8e15093f4586d2.webp",
@@ -15,12 +16,12 @@
     "static/media/wifi_icon.webp": "/portfolio_react/static/media/wifi_icon.7038a5ce2a123a887005.webp",
     "static/media/data_icon_black.webp": "/portfolio_react/static/media/data_icon_black.8d07f130c19040cc0be2.webp",
     "static/media/data_icon.webp": "/portfolio_react/static/media/data_icon.adccd24eb26f1a869034.webp",
-    "main.a33d2647.css.map": "/portfolio_react/static/css/main.a33d2647.css.map",
-    "main.7ad33790.js.map": "/portfolio_react/static/js/main.7ad33790.js.map",
+    "main.3e7749e0.css.map": "/portfolio_react/static/css/main.3e7749e0.css.map",
+    "main.f67c679b.js.map": "/portfolio_react/static/js/main.f67c679b.js.map",
     "453.5721f686.chunk.js.map": "/portfolio_react/static/js/453.5721f686.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.a33d2647.css",
-    "static/js/main.7ad33790.js"
+    "static/css/main.3e7749e0.css",
+    "static/js/main.f67c679b.js"
   ]
 }
