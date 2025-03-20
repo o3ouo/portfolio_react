@@ -16,30 +16,31 @@ function LockScreen() {
     : `${process.env.PUBLIC_URL}/image/iphone_bg.webp`;
 
   return (
-    <div className='lock_screen'  style={{ backgroundImage: `url(${bgImage})`, backgroundSize: 'cover'}}>
-      {mobile ? null : <StatusBar />}
-      <div className="today_weather">
-        <NowDate />
-        <LockWidgets />
-      </div>
-      <div className="con_bottom">
+    <div className='lock_screen' style={{ backgroundImage: `url(${bgImage})`, backgroundSize: 'cover' }}>
+      <div className="top_inner">
+        {mobile ? null : <StatusBar color={"white_theme"}/>}
+        <div className="today_weather">
+          <NowDate />
+          <LockWidgets />
+        </div>
         <Notifications />
-        <div className="bottom">
-          <div className="flash_camera_box">
-            <figure className="flash">
-              <img src={`${process.env.PUBLIC_URL}/image/flashlight_icon.webp`} alt="flashlight_icon" />
-            </figure>
-            <figure className="camera">
-              <img src={`${process.env.PUBLIC_URL}/image/camera_icon.webp`} alt="camera_icon" />
-            </figure>
+      </div>
+
+      <div className="bottom_inner">
+        <div className="flash_camera_box">
+          <figure className="flash">
+            <img src={`${process.env.PUBLIC_URL}/image/flashlight_icon.webp`} alt="flashlight_icon" />
+          </figure>
+          <figure className="camera">
+            <img src={`${process.env.PUBLIC_URL}/image/camera_icon.webp`} alt="camera_icon" />
+          </figure>
+        </div>
+        <div className="swipe_box">
+          <div className="swipe_up">
+            <p>swipe up to unlock</p>
           </div>
-          <div className="swipe_box">
-            <div className="swipe_up">
-              <p>swipe up to unlock</p>
-            </div>
-            <div className="indicator">
-              <div className="bar"></div>
-            </div>
+          <div className="indicator">
+            <div className="bar"></div>
           </div>
         </div>
       </div>

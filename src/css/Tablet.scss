@@ -1,22 +1,22 @@
 // Status Bar
-.lock_screen>.status_bar {
+.lock_screen>.top_inner>.status_bar {
   color: white;
 }
 
-.lock_screen>.status_bar,
+.lock_screen>.top_inner>.status_bar,
 .home_screen>.top_inner>.status_bar {
   .data_icon {
     width: 17px;
     height: 10px;
     background-image: url(/public/image/data_icon.webp);
   }
-  
+
   .wifi_icon {
     width: 14px;
     height: 10px;
     background-image: url(/public/image/wifi_icon.webp);
   }
-  
+
   .battery_icon {
     width: 27px;
     height: 12px;
@@ -50,7 +50,7 @@
     padding-left: 16px;
   }
 
-  
+
   .levels {
     display: flex;
     gap: 7px;
@@ -67,6 +67,11 @@
 
   // Lock Screen 
   .lock_screen {
+
+    .top_inner {
+      display: grid;
+      row-gap: 32px;
+    }
 
     .now_date {
       padding-top: 76px;
@@ -89,24 +94,47 @@
       }
     }
 
-    .con_bottom {
 
-      .notifications {
-        min-width: 594px;
-        margin: auto;
+    .notifications {
+      min-width: 594px;
+      margin: auto;
+
+
+      .first_content {
+        .inner {
+          background-color: rgb(211 211 211 / 60%);
+        }
       }
 
-      .bottom {
-        // &::before {
-        //   content: '';
-        //   display: block;
-        //   width: 100px;
-        //   height: 100px;
-        //   background-image: url(/public/image/qr.png);
-        //   background-size: cover;
-        // }
+      .middle_content {
+        .inner {
+          background-color: rgb(211 211 211 / 60%);
+        }
+      }
+
+      .last_contents {
+
+        .content:first-child {
+          .inner {
+            background-color: rgb(211 211 211 / 40%);
+          }
+        }
+
+        .content:nth-child(2) {
+          .inner {
+            background-color: rgb(211 211 211 / 30%);
+          }
+        }
+
+        .content:nth-child(3) {
+          .inner {
+            background-color: rgb(211 211 211 / 20%);
+          }
+        }
+        
       }
     }
+
   }
 
   // Home Screen
@@ -114,6 +142,7 @@
 
     .top_inner {
       gap: 58px;
+      margin-top: 66px;
 
       .top_contents {
         gap: 58px;
@@ -132,7 +161,7 @@
         }
       }
     }
-    
+
     .bottom_inner {
 
       .dock_bar {
@@ -140,7 +169,8 @@
         padding-bottom: 20px;
 
         .inner {
-          max-width: 670px;
+          width: fit-content;
+          gap: 16px;
           margin: auto;
           padding: 17px 26px;
         }
@@ -233,7 +263,7 @@
 
   // Home Screen
   .home_screen {
-    
+
     .top_inner {
       gap: 21px;
 
@@ -252,15 +282,7 @@
         }
       }
 
-      .home_widegets {
-        position: absolute;
-        top: 21.6%;
-        // left: 44.25%;
-        // left: 43.55vw;
-        left: calc(20% + 24vw);
-        // left: calc(20% + 24.7vw);
-        width: 514px;
-      } 
+      .home_widegets {}
 
     }
   }

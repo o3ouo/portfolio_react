@@ -34,7 +34,7 @@ function Notifications() {
       <div className="last_contents">
         {
           list.map((con, index) => (
-            index >= 0 && index < 6 ? (
+            index >= 0 && index < 4 ? (
               <div className="content" key={index}>
                 <Content  title={con.title} description={con.description} icon={con.icon}/>
               </div>
