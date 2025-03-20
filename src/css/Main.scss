@@ -305,7 +305,7 @@
 
       .popup_inner {
         overflow: hidden;
-        max-width: 85%;
+        max-width: 55vw;
         margin: auto;
         border-radius: 13px;
         background-color: rgb(255 255 255 / 90%);
@@ -464,6 +464,11 @@
     .web_contents {
       padding-top: 66px;
       background-color: #fff;
+
+
+      .popup_inner {
+        max-width: 35vw;
+      }
     }
 
   }
@@ -571,4 +576,18 @@
       }
     }
   }
+}
+
+@media screen and (min-width: 1210px) {
+
+  .web_redesign_box {
+    .popup_overlay {
+      .popup_content {
+        .popup_inner {
+          max-width: 25vw;
+        }
+      }
+    }
+  }
+
 }
