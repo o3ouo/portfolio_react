@@ -2,7 +2,6 @@ import { useState, useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { useNavigate, useLocation } from 'react-router-dom';
 import useTouchSwipe from './useTouchSwipe';
-import { isVisible } from '@testing-library/user-event/dist/utils';
 
 const useSwipeScroll = (allowedSwipePages) => {
   const lockScreenRef = useRef();
@@ -71,6 +70,7 @@ const useSwipeScroll = (allowedSwipePages) => {
   return {
     lockScreenRef,
     isLockScreenVisible,
+    setIsLockScreenVisible,
     toggleLockScreen,
   };
 };

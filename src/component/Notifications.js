@@ -16,8 +16,8 @@ function Content({ title, description, icon }) {
 
 function Notifications() {
   const list = [
-    {title: "About Me", description: "나에 대한 정보", icon: "about_icon"},
     {title: "Web Redesign", description: "홈페이지 리뉴얼", icon: "file_icon"},
+    {title: "About Me", description: "나에 대한 정보", icon: "about_icon"},
     {title: "Phil’s Finest", description: "클론 코딩", icon: "phils_icon"},
     {title: "Play Press", description: "뉴스, 날씨, 미니게임 구성 (React)", icon: "play_press_icon"},
     {title: "Portfolio 2024", description: "Vanilla JavaScript로 제작되었습니다", icon: "portfolio_icon"},

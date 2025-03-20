@@ -49,6 +49,22 @@ function App() {
     ? `${process.env.PUBLIC_URL}/image/ipad_bg.webp`
     : `${process.env.PUBLIC_URL}/image/iphone_bg.webp`;
 
+  // 새로고침 시 확인창 띄우기
+ const preventClose = (e) => {
+  e.preventDefault();
+  e.returnValue = ""; // 크롬에서는 이 값이 있어야 경고창이 뜸
+};
+
+useEffect(() => {
+  (() => {
+    window.addEventListener("beforeunload", preventClose);
+  })();
+
+  return () => {
+    window.removeEventListener("beforeunload", preventClose);
+  };
+}, []);
+
   return (
     <div className="App fullscreen" style={{ backgroundImage: `url(${bgImage})`, backgroundSize: 'cover'}}>
       <Main />

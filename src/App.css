@@ -1,7 +1,6 @@
 .fullscreen {
 	height: calc(var(--vh, 1vh) * 100);
   min-height: 100vh;
-  max-height: 1024px;
 	min-height: -webkit-fill-available; /* iOC Safari 대응 */
 	padding-bottom: env(safe-area-inset-bottom);
 }
