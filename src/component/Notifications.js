@@ -16,7 +16,7 @@ function Content({ title, description, icon }) {
 
 function Notifications() {
   const list = [
-    {title: "Web Redesign", description: "홈페이지 리뉴얼", icon: "file_icon"},
+    {title: "Web Redesign", description: "홈페이지 리디자인", icon: "file_icon"},
     {title: "About Me", description: "나에 대한 정보", icon: "about_icon"},
     {title: "Phil’s Finest", description: "클론 코딩", icon: "phils_icon"},
     {title: "Play Press", description: "뉴스, 날씨, 미니게임 구성 (React)", icon: "play_press_icon"},
@@ -26,7 +26,7 @@ function Notifications() {
   return (
     <div className="notifications">
       <div className="first_content">
-        <Content title={"Hello, this is Yoo A-jeong."} description={"Wellcome to my Portfolio 2025."} />
+        <Content title={"Hello, this is Yoo A-jeong."} description={"Welcome to my Portfolio 2025."} />
       </div>
       <div className="middle_content">
         <Content title={list[1].title} description={list[1].description} icon={list[1].icon}/>
