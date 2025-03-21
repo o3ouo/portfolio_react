@@ -18,7 +18,7 @@ gsap.registerPlugin(ScrollToPlugin);
 
 function Mobile() {
   const { width } = useWindowDimensions();
-  const mobile = width <= 768; 
+  const mobile = width <= 767; 
   const Tablet = width >= 1079;
 
   // LockScreen과 HomeScreen에서만 스크롤 & 스와이프 감지

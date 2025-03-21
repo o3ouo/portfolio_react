@@ -4,7 +4,7 @@ function Content({ title, description, icon }) {
   return (
     <div className="inner">
       <figure className="con_img">
-        <img src={`${process.env.PUBLIC_URL}/image/${icon}.webp`} alt={title} />
+        <img src={`${process.env.PUBLIC_URL}/image/${icon}.webp`} alt={icon} />
       </figure>
       <div className="text_box">
         <p className="title">{title}</p>

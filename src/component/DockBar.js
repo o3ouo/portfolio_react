@@ -30,7 +30,7 @@ const DockBarPopup = ({ dockBarClick, onClose }) => {
         <div className="popup_inner">
           <div className="popup_box">
             <figure className="icon">
-              <img src={`${process.env.PUBLIC_URL}/image/${selectedItem.img}.webp`} alt="" />
+              <img src={`${process.env.PUBLIC_URL}/image/${selectedItem.img}.webp`} alt={selectedItem.img} />
             </figure>
             <div className="detail">
               <p className="title">{selectedItem.title}</p>

@@ -17,14 +17,12 @@ function LockScreen() {
 
   return (
     <div className='lock_screen' style={{ backgroundImage: `url(${bgImage})`, backgroundSize: 'cover' }}>
-      <div className="top_inner">
         {mobile ? null : <StatusBar color={"white_theme"}/>}
         <div className="today_weather">
           <NowDate />
           <LockWidgets />
         </div>
         <Notifications />
-      </div>
 
       <div className="bottom_inner">
         <div className="flash_camera_box">

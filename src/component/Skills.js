@@ -17,6 +17,7 @@ function Skills() {
       <ul className="list">
         <Skill title={"HTML"} name={"html"}/>
         <Skill title={"CSS"} name={"css"}/>
+        <Skill title={"SASS"} name={"sass"}/>
         <Skill title={"JavaScript"} name={"js"}/>
         <Skill title={"jQuery"} name={"jquery"}/>
         <Skill title={"React"} name={"react"}/>

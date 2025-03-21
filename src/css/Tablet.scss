@@ -1,9 +1,9 @@
 // Status Bar
-.lock_screen>.top_inner>.status_bar {
+.lock_screen>.status_bar {
   color: white;
 }
 
-.lock_screen>.top_inner>.status_bar,
+.lock_screen>.status_bar,
 .home_screen>.top_inner>.status_bar {
   .data_icon {
     width: 17px;
@@ -96,7 +96,7 @@
 
 
     .notifications {
-      min-width: 594px;
+      width: 90%;
       margin: auto;
 
 
@@ -177,6 +177,15 @@
       }
     }
   }
+
+  // Notion Popup
+  .home_overlay {
+
+    .notion_content {
+      margin-top: 58px;
+    }
+  }
+
 
   // Status Bar
   .status_bar {

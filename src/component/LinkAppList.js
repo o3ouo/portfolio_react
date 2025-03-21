@@ -51,30 +51,27 @@ const NotionMenu = ({ notionClick, onClose }) => {
       >
         <div className="notion_inner">
           <div className="quickActions">
-            <div className="close_row row" onClick={onClose}>
-              <span>Close</span>
-              <figure>
-                <img src={`${process.env.PUBLIC_URL}/image/close_icon.webp`} alt="close_icon" />
-              </figure>
-            </div>
             <div className="notion_row row">
               <span>Notion</span>
-              <figure>
-                <img src={`${process.env.PUBLIC_URL}/image/controller_icon.webp`} alt="controller_icon" />
-              </figure>
-            </div>
-            <div className="icons_row row">
-              {icons.map((con, index) => (
-                <figure key={index}>
-                  <img src={`${process.env.PUBLIC_URL}/image/${con}.webp`} alt="icon_img" />
-                </figure>
-              ))}
             </div>
             <NotionLinkMenu url={"https://fishy-allosaurus-c8b.notion.site/185d592f15a18042b670f2ab5abf2a04?pvs=4"} title={"Study"} />
             <NotionLinkMenu url={"https://fishy-allosaurus-c8b.notion.site/REACT-19ad592f15a18008b716d8e43a821100?pvs=4"} title={"React"} />
             <NotionLinkMenu url={"https://fishy-allosaurus-c8b.notion.site/News-Weather-App-100-Project-22eb38b3efad4b0ea7c4ca24983591fa?pvs=4"} title={"Play Press"} />
             <NotionLinkMenu url={"https://fishy-allosaurus-c8b.notion.site/React-1a8d592f15a180bf8974c4254114a649?pvs=4"} title={"Portfolio 2025"} />
           </div>
+          <div className="icons_row row">
+              {icons.map((con, index) => (
+                <figure key={index}>
+                  <img src={`${process.env.PUBLIC_URL}/image/${con}.webp`} alt="icon_img" />
+                </figure>
+              ))}
+            </div>
+          <div className="close_row row" onClick={onClose}>
+              <span>Close</span>
+              <figure>
+                <img src={`${process.env.PUBLIC_URL}/image/close_icon.webp`} alt="close_icon" />
+              </figure>
+            </div>
         </div>
       </motion.div>
     </div>
