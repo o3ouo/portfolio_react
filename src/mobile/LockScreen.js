@@ -8,7 +8,7 @@ import LockWidgets from '../component/LockWidgets';
 function LockScreen() {
   // useWindowDimensions 훅을 사용하여 윈도우 크기 가져오기
   const { width } = useWindowDimensions();
-  const mobile = width <= 768;
+  const mobile = width <= 767;
 
   // 반응형 배경 이미지
   const bgImage = width >= 768

@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import useWindowDimensions from './customHook/useWindowDimensions';
 import './App.css';
-import './css/base.css'
 import Main from './page/Main';
 
 function setFullScreenHeight() {

@@ -12,7 +12,7 @@ import HomeWidgets from '../component/HomeWidgets';
 function HomeContainer() {
   // useWindowDimensions 훅을 사용하여 윈도우 크기 가져오기
   const { width } = useWindowDimensions();
-  const mobile = width <= 768;
+  const mobile = width <= 767;
   const navigate = useNavigate();
 
   return (

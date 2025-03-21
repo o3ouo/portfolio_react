@@ -1,23 +1,789 @@
 @charset "UTF-8";
+/****************************************************************************************************
+공통 Layout
+****************************************************************************************************/
 .main {
   display: flex;
   flex-direction: column;
   height: calc(var(--vh, 1vh) * 100);
   min-height: 100vh;
   min-height: -webkit-fill-available;
-  /* iOS Safari에서 주소창 문제 해결*/
   max-height: 1024px;
-  /* 너무 긴 화면 방지 */
   padding-bottom: env(safe-area-inset-bottom);
-  /* iPhone X 이후 홈바 고려 */
 }
-.main::-webkit-scrollbar {
-  display: none;
+
+.mobile {
+  overflow-y: hidden;
+  width: 100%;
+  min-width: 320px;
+  height: 100%;
+}
+.mobile .mobile_inner {
+  height: 100%;
+}
+
+.lock_screen,
+.home_screen {
+  overflow-y: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  opacity: 1;
+  transition: opacity 0.3s ease-out, transform 0.5s ease-out;
 }
 
 /****************************************************************************************************
-  About Page 
+  Lock Screen 
 ****************************************************************************************************/
+.lock_screen {
+  align-content: space-between;
+  justify-content: center;
+  gap: 8px;
+  height: 100%;
+  background-size: cover;
+  z-index: 10;
+}
+.lock_screen .now_date {
+  padding-top: 24px;
+  color: white;
+}
+.lock_screen .now_date .today {
+  display: flex;
+  justify-content: center;
+  font-size: 22px;
+  font-weight: 500;
+}
+.lock_screen .now_date .today .day,
+.lock_screen .now_date .today .month,
+.lock_screen .now_date .today .day,
+.lock_screen .now_date .today .big-time {
+  backdrop-filter: blur(40px);
+}
+.lock_screen .now_date .big_time {
+  font-family: "SF-Pro-Display-bold";
+  font-size: calc(60px + 2vw);
+  text-align: center;
+}
+.lock_screen .lock_widgets {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 33px;
+  color: white;
+}
+.lock_screen .lock_widgets .left {
+  margin: 6px;
+  font-weight: 500;
+}
+.lock_screen .lock_widgets .left .top {
+  display: flex;
+  justify-content: flex-start;
+  gap: 3px;
+}
+.lock_screen .lock_widgets .left .top .weather_icon img {
+  width: 25px;
+  filter: brightness(10);
+}
+.lock_screen .lock_widgets .left .top .temp {
+  line-height: 20px;
+}
+.lock_screen .lock_widgets .left .top .city {
+  text-align: start;
+  text-transform: capitalize;
+}
+.lock_screen .lock_widgets .left .max_min_temp {
+  display: flex;
+  letter-spacing: 0.5px;
+}
+.lock_screen .lock_widgets .right {
+  display: flex;
+  gap: 16px;
+  height: 60px;
+  margin: 7px 0;
+  font-weight: 500;
+}
+.lock_screen .lock_widgets .right .rain {
+  position: relative;
+  margin: 0 7px;
+}
+.lock_screen .lock_widgets .right .rain .rain_icon {
+  background-image: url("/public/image/rain_probability.webp");
+  width: 58px;
+  height: 59px;
+  background-size: cover;
+}
+.lock_screen .lock_widgets .right .rain .rain_txt {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 17px;
+}
+.lock_screen .lock_widgets .right .sun_time {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 60px;
+  margin: 0 7px;
+  border-radius: 100%;
+  background-color: rgba(180, 159, 167, 0.5);
+  backdrop-filter: blur(50px);
+}
+.lock_screen .lock_widgets .right .sun_time .am_pm {
+  font-size: 9px;
+  line-height: 13px;
+}
+.lock_screen .lock_widgets .right .sun_time .sun_icon img {
+  width: 17px;
+  filter: brightness(10);
+}
+.lock_screen .notifications {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  gap: 8px;
+  justify-content: flex-end;
+  width: 100%;
+  margin-top: 6px;
+  padding: 0 8px;
+  padding-bottom: 8px;
+  line-height: 20px;
+  letter-spacing: -0.23px;
+}
+.lock_screen .notifications .inner {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+  padding: 14px;
+  padding-bottom: 12px;
+  border-radius: 24px;
+  background-color: rgba(166, 166, 166, 0.5);
+  backdrop-filter: blur(150px);
+}
+.lock_screen .notifications .con_img {
+  overflow: hidden;
+  width: 38px;
+  height: 38px;
+  border-radius: 8.5px;
+  background-color: #fff;
+  align-content: center;
+}
+.lock_screen .notifications .con_img img {
+  width: 100%;
+  height: 100%;
+}
+.lock_screen .notifications .title {
+  font-family: "SF-Pro-Text-Semibold";
+}
+.lock_screen .notifications .first_content {
+  position: relative;
+}
+.lock_screen .notifications .first_content .inner {
+  background-color: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(150px);
+}
+.lock_screen .notifications .first_content::before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 50%;
+  width: 95%;
+  height: 75px;
+  border-radius: 24px;
+  backdrop-filter: blur(120px);
+  transform: translateX(-50%);
+  z-index: 0;
+}
+.lock_screen .notifications .first_content .con_img {
+  display: none;
+}
+.lock_screen .notifications .first_content .text_box {
+  padding-left: 6px;
+}
+.lock_screen .notifications .middle_content .inner {
+  margin-top: 8px;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+.lock_screen .notifications .last_contents {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  min-height: 100px;
+}
+.lock_screen .notifications .last_contents .content {
+  position: absolute;
+  width: 100%;
+}
+.lock_screen .notifications .last_contents .content:first-child {
+  width: 100%;
+  z-index: 5;
+}
+.lock_screen .notifications .last_contents .content:first-child .inner {
+  background-color: rgba(255, 255, 255, 0.2784313725);
+}
+.lock_screen .notifications .last_contents .content:nth-child(2) {
+  top: 30px;
+  top: 10px;
+  width: 97%;
+  z-index: 4;
+}
+.lock_screen .notifications .last_contents .content:nth-child(2) .inner {
+  backdrop-filter: blur(20px);
+}
+.lock_screen .notifications .last_contents .content:nth-child(3) {
+  top: 60px;
+  top: 20px;
+  width: 95%;
+  z-index: 3;
+}
+.lock_screen .notifications .last_contents .content:nth-child(3) .inner {
+  backdrop-filter: blur(50px);
+}
+.lock_screen .notifications .last_contents .content:nth-child(4) {
+  overflow: hidden;
+  top: 90px;
+  top: 30px;
+  width: 92%;
+  z-index: 2;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.lock_screen .notifications .last_contents .content:nth-child(4) .inner {
+  backdrop-filter: blur(70px);
+}
+.lock_screen .flash_camera_box {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 46px;
+}
+.lock_screen .flash_camera_box .flash,
+.lock_screen .flash_camera_box .camera {
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+  background-color: rgba(0, 0, 0, 0.26);
+  backdrop-filter: blur(67.96px);
+  align-content: center;
+}
+.lock_screen .flash_camera_box .flash img,
+.lock_screen .flash_camera_box .camera img {
+  margin: auto;
+}
+
+.swipe_box {
+  width: 100%;
+  animation: lockUpDownMove 0.7s linear 0s infinite alternate;
+}
+@keyframes lockUpDownMove {
+  from {
+    transform: translateY(-5px);
+  }
+  to {
+    transform: translateY(-15px);
+  }
+}
+.swipe_box .swipe_up {
+  text-align: center;
+  color: white;
+}
+
+.indicator {
+  width: 100%;
+  height: 16px;
+  align-content: end;
+}
+.indicator .bar {
+  width: 50%;
+  height: 5px;
+  margin: auto;
+  border-radius: 100px;
+  background-color: white;
+}
+
+/****************************************************************************************************
+  Home Screen 
+****************************************************************************************************/
+div:has(.home_screen) {
+  height: 100%;
+}
+
+.home_screen {
+  -ms-overflow-style: none;
+  /* for Internet Explorer, Edge */
+  scrollbar-width: none;
+  /* for Firefox */
+  align-items: center;
+  justify-content: space-between;
+  height: 100dvh;
+  font-size: 12px;
+  font-weight: 500;
+  text-align: center;
+  color: white;
+  z-index: 1;
+}
+.home_screen .work_icon {
+  overflow: hidden;
+  width: 60px;
+  height: 60px;
+  margin: auto;
+  margin-bottom: 5px;
+  border-radius: 14px;
+  align-content: center;
+}
+.home_screen .work_icon img {
+  width: 100%;
+  height: 100%;
+}
+.home_screen .top_inner {
+  display: grid;
+  grid-template-rows: repeat(1fr, 1fr);
+  gap: 19px;
+  margin-top: 10px;
+  margin-bottom: 19px;
+  padding: 0 16px;
+}
+.home_screen .top_inner .about {
+  text-align: center;
+  cursor: pointer;
+}
+.home_screen .top_inner .about .about_icon {
+  overflow: hidden;
+  width: 158px;
+  height: 158px;
+  margin-bottom: 5px;
+  border-radius: 21px;
+  background-image: url(/public/image/about_icon.webp);
+  background-size: cover;
+}
+.home_screen .top_inner .work_list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 19px;
+  text-align: center;
+}
+.home_screen .top_inner .work_list .work_content {
+  cursor: pointer;
+}
+.home_screen .top_inner .work_list .work_content .title {
+  text-wrap: nowrap;
+}
+.home_screen .top_inner .home_widegets {
+  grid-column: 1/3;
+  text-align: center;
+}
+.home_screen .top_inner .home_widegets .inner {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 158px;
+  padding: 12px 16px;
+  margin-bottom: 5px;
+  border-radius: 21px;
+  background-image: linear-gradient(180deg, rgb(16, 88, 178) 0%, rgb(49, 155, 230) 100%);
+  font-size: 14px;
+}
+.home_screen .top_inner .home_widegets .current_weather {
+  display: flex;
+  justify-content: space-between;
+}
+.home_screen .top_inner .home_widegets .current_weather .current_temp {
+  font-size: 40px;
+  text-align: start;
+}
+.home_screen .top_inner .home_widegets .icon_description_box {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+.home_screen .top_inner .home_widegets .icon_description_box .weather_icon img {
+  width: 25px;
+  filter: brightness(10);
+}
+.home_screen .top_inner .home_widegets .hourly_weather {
+  display: flex;
+  justify-content: space-between;
+}
+.home_screen .top_inner .home_widegets .hourly_weather li {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+.home_screen .top_inner .home_widegets .hourly_weather li .time {
+  font-size: 12px;
+  color: #eee;
+}
+.home_screen .top_inner .home_widegets .hourly_weather li .time-icon img {
+  width: 25px;
+  filter: brightness(10);
+}
+.home_screen .top_inner .link_app_list {
+  grid-column: 1/3;
+}
+.home_screen .top_inner .link_app_list .inner {
+  display: flex;
+  justify-content: space-between;
+}
+.home_screen .top_inner .link_app_list .work_content {
+  cursor: pointer;
+}
+.home_screen .top_inner .link_app_list .notion {
+  background-color: #fff;
+  padding: 5px;
+}
+.home_screen .bottom_inner {
+  width: 100%;
+  margin-bottom: 10px;
+  /* Dock Bar */
+}
+.home_screen .bottom_inner .swipe_text {
+  width: fit-content;
+  margin: auto;
+  padding: 7px 11px;
+  border-radius: 100px;
+  background-color: rgba(51, 51, 51, 0.35);
+  font-family: "SF-Pro-Text-Semibold";
+  animation: homeUpDownMove 0.7s linear 0s infinite alternate;
+}
+@keyframes homeUpDownMove {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-8px);
+  }
+}
+.home_screen .bottom_inner .dock_bar {
+  width: calc(100% - 24px);
+  margin: auto;
+  padding-top: 10px;
+}
+.home_screen .bottom_inner .dock_bar .inner {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 19px 21px;
+  border-radius: 36px;
+  background-color: rgba(51, 51, 51, 0.35);
+}
+.home_screen .bottom_inner .dock_bar .inner .work_content {
+  cursor: pointer;
+}
+.home_screen .bottom_inner .dock_bar .inner .work_icon {
+  margin-bottom: 0;
+}
+
+/****************************************************************************************************
+  Status Bar
+****************************************************************************************************/
+.lock_screen > .status_bar {
+  color: white;
+}
+
+.lock_screen > .status_bar .data_icon,
+.home_screen > .top_inner > .status_bar .data_icon {
+  width: 17px;
+  height: 10px;
+  background-image: url(/public/image/data_icon.webp);
+}
+.lock_screen > .status_bar .wifi_icon,
+.home_screen > .top_inner > .status_bar .wifi_icon {
+  width: 14px;
+  height: 10px;
+  background-image: url(/public/image/wifi_icon.webp);
+}
+.lock_screen > .status_bar .battery_icon,
+.home_screen > .top_inner > .status_bar .battery_icon {
+  width: 27px;
+  height: 12px;
+  background-image: url(/public/image/battery_icon.webp);
+}
+
+.status_bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  font-size: 12px;
+  font-weight: 500;
+}
+.status_bar .inner {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 0;
+}
+.status_bar .now_day_box {
+  display: flex;
+  font-weight: 600;
+}
+.status_bar .time {
+  padding-right: 6px;
+  padding-left: 16px;
+}
+.status_bar .levels {
+  display: flex;
+  gap: 7px;
+  padding-right: 16px;
+  padding-left: 6px;
+}
+.status_bar .levels .status_bar_icon {
+  background-size: cover;
+}
+
+/****************************************************************************************************
+  Nav Bar
+****************************************************************************************************/
+.nav_bar {
+  padding-top: 34px;
+}
+.nav_bar .back_box {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 11px 8px;
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 22px;
+  letter-spacing: -0.43px;
+  color: #007AFF;
+  cursor: pointer;
+}
+.nav_bar .title_box {
+  padding-top: 3px;
+  padding-bottom: 8px;
+  padding-left: 16px;
+  font-size: 32px;
+  font-weight: bold;
+  line-height: 41px;
+  letter-spacing: 0.4px;
+}
+
+.home_overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(19, 19, 38, 0.3);
+  backdrop-filter: blur(12px);
+}
+.home_overlay .notion_content {
+  margin-top: 78px;
+  margin-left: 10%;
+}
+.home_overlay .notion_inner {
+  width: 250px;
+  border-radius: 12px;
+  background-color: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 0 32pxpx rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(150px);
+}
+.home_overlay .row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 44px;
+  padding: 0 16px;
+  border-bottom: 0.5px solid rgba(128, 128, 128, 0.55);
+  font-size: 17px;
+  line-height: 22px;
+  letter-spacing: -0.43px;
+  color: #000;
+}
+.home_overlay .row img {
+  width: 20px;
+}
+.home_overlay .row .arrow_icon {
+  width: 11px;
+  height: 22px;
+}
+.home_overlay .close_row {
+  color: #FF3B30;
+  cursor: pointer;
+}
+.home_overlay .icons_row figure:nth-child(3) img, .home_overlay .icons_row figure:nth-child(4) img {
+  width: auto;
+}
+
+.dock_pop_content {
+  width: 100%;
+  height: 100%;
+}
+.dock_pop_content .popup_inner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.dock_pop_content .popup_box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 270px;
+  height: 183px;
+  border-radius: 14px;
+  background-color: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 0 32pxpx rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(150px);
+  font-family: "SF-Pro-Text-Semibold";
+  font-size: 17px;
+  line-height: 22px;
+  line-height: -0.43px;
+}
+.dock_pop_content .popup_box .icon img {
+  width: 44px;
+}
+.dock_pop_content .popup_box .detail {
+  padding: 13px 16px 19px 16px;
+  color: #000;
+}
+.dock_pop_content .popup_box .detail .txt {
+  font-family: "SF-Pro";
+  font-size: 13px;
+  line-height: 18px;
+  letter-spacing: 0.08px;
+}
+.dock_pop_content .popup_box .close_btn {
+  width: 100%;
+  padding: 10px 0;
+  border-top: 0.33px solid rgba(84, 84, 86, 0.34);
+  color: #007AFF;
+  cursor: pointer;
+}
+
+div:has(.mail_wrap) {
+  height: 100%;
+}
+
+.mail_wrap {
+  height: 100%;
+  background-color: #1C1C1E;
+  align-content: end;
+}
+.mail_wrap .inner {
+  height: calc(100% - 32px);
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+  background-color: rgba(37, 37, 37, 0.9);
+  backdrop-filter: blur(50px);
+}
+.mail_wrap .inner .contents {
+  overflow-x: hidden;
+  margin: 0;
+  padding-left: 16px;
+  padding-right: 11px;
+  font-size: 15px;
+  line-height: 22px;
+  letter-spacing: -0.5px;
+}
+.mail_wrap .close {
+  padding-top: 11px;
+  padding-right: 8px;
+  font-size: 15px;
+  line-height: 22px;
+  letter-spacing: -0.43px;
+  color: #0A84FF;
+  cursor: pointer;
+}
+.mail_wrap .close::before {
+  content: "";
+  display: block;
+  width: 46px;
+  height: 5px;
+  margin: auto;
+  margin-bottom: 10px;
+  border-radius: 2.5px;
+  background-color: rgba(235, 235, 245, 0.3);
+}
+.mail_wrap .mail_form {
+  color: #97969C;
+}
+.mail_wrap .mail_form input,
+.mail_wrap .mail_form textarea {
+  overflow: visible;
+  /* 입력 시 글자가 잘리지 않도록 */
+  text-overflow: clip;
+  /* 텍스트가 끝까지 보이도록 */
+  display: block;
+  width: 100%;
+  min-height: 60px;
+  padding: 0 10px;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  font-family: "SF-Pro", sans-serif;
+  font-size: 10px;
+  line-height: inherit;
+  letter-spacing: inherit;
+  color: white;
+  resize: none;
+  white-space: normal;
+  /* 줄바꿈 허용 */
+  touch-action: manipulation;
+  /* 키보드 관련 인터페이스 조정 */
+  -webkit-user-modify: read-write-plaintext-only;
+  /* iOS 자동 확대 방지 */
+}
+.mail_wrap .mail_form::placeholder {
+  color: rgba(151, 150, 156, 0.5);
+}
+.mail_wrap .mail_form:focus {
+  background-color: rgba(37, 37, 37, 0.9);
+}
+.mail_wrap label {
+  text-wrap: nowrap;
+}
+.mail_wrap .title_button {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 11px;
+  padding-right: 5px;
+  padding-bottom: 8px;
+}
+.mail_wrap .title_button .title {
+  font-size: 32px;
+  font-weight: bold;
+  line-height: 41px;
+  letter-spacing: -0.4px;
+  color: white;
+}
+.mail_wrap .title_button .submit_btn {
+  display: block;
+  width: 40px;
+  height: 40px;
+  min-height: 40px;
+  border: none;
+  background-color: transparent;
+  background-image: url(/public/image/sand_icon.webp);
+  background-size: contain;
+  cursor: pointer;
+}
+.mail_wrap .to,
+.mail_wrap .from,
+.mail_wrap .from_title {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  height: 60px;
+  border-bottom: 0.33px solid rgba(84, 84, 86, 0.6);
+  align-content: center;
+}
+.mail_wrap .text_area {
+  width: 100%;
+  height: 200px;
+  margin-top: 50px;
+}
+
 .about_page {
   overflow-y: hidden;
   height: 100dvh;
@@ -340,9 +1106,141 @@
 }
 
 /****************************************************************************************************
+  Mobile max-width: 375px 
+****************************************************************************************************/
+@media screen and (max-width: 375px) {
+  .home_screen {
+    margin: auto;
+    padding: 0;
+  }
+  .home_screen .top_inner {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .home_screen .top_inner .about {
+    order: 1;
+  }
+  .home_screen .top_inner .about .about_icon {
+    width: 148px;
+    height: 148px;
+    background-image: url(/public/image/about_icon_width.webp);
+    background-position-x: center;
+  }
+  .home_screen .top_inner .work_list {
+    grid-column: 1/3;
+    order: 3;
+  }
+  .home_screen .top_inner .home_widegets {
+    grid-column: auto;
+    order: 2;
+  }
+  .home_screen .top_inner .home_widegets .inner {
+    padding: 12px 6px;
+  }
+  .home_screen .top_inner .home_widegets .hourly_weather {
+    overflow: hidden;
+    flex-shrink: 1;
+    gap: 7px;
+    width: 140px;
+  }
+  .home_screen .top_inner .link_app_list {
+    grid-column: 1/3;
+    order: 4;
+  }
+  .home_screen .top_inner .link_app_list .inner {
+    gap: 19px;
+  }
+  .bottom_inner .dock_bar .inner {
+    padding: 12px 16px;
+  }
+}
+/****************************************************************************************************
+  Mobile max-width: 480px 
+****************************************************************************************************/
+@media screen and (min-width: 480px) {
+  .home_screen .top_inner .top_contents .work_content {
+    font-size: 12px;
+  }
+}
+/****************************************************************************************************
   Tablet min-width: 768px 
 ****************************************************************************************************/
 @media screen and (min-width: 768px) {
+  .status_bar .data_icon {
+    width: 17px;
+    height: 10px;
+    background-image: url(/public/image/data_icon_black.webp);
+  }
+  .status_bar .wifi_icon {
+    width: 14px;
+    height: 10px;
+    background-image: url(/public/image/wifi_icon_black.webp);
+  }
+  .status_bar .battery_icon {
+    width: 27px;
+    height: 12px;
+    background-image: url(/public/image/battery_icon_black.webp);
+  }
+  .lock_screen .top_inner {
+    display: grid;
+    row-gap: 32px;
+  }
+  .lock_screen .now_date {
+    padding-top: 76px;
+  }
+  .lock_screen .lock_widgets .right .rain .rain_icon {
+    background-image: url("/public/image/rain_probability_tablet.webp");
+  }
+  .lock_screen .lock_widgets .right .sun_time {
+    background-color: rgba(74, 196, 255, 0.6);
+  }
+  .lock_screen .notifications {
+    width: 90%;
+    max-width: 594px;
+    margin: auto;
+  }
+  .lock_screen .notifications .first_content .inner {
+    background-color: rgba(211, 211, 211, 0.6);
+  }
+  .lock_screen .notifications .middle_content .inner {
+    background-color: rgba(211, 211, 211, 0.6);
+  }
+  .lock_screen .notifications .last_contents .content:first-child .inner {
+    background-color: rgba(211, 211, 211, 0.4);
+  }
+  .lock_screen .notifications .last_contents .content:nth-child(2) .inner {
+    background-color: rgba(211, 211, 211, 0.3);
+  }
+  .lock_screen .notifications .last_contents .content:nth-child(3) .inner {
+    background-color: rgba(211, 211, 211, 0.2);
+  }
+  .home_screen .top_inner {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 58px;
+    margin-top: 66px;
+  }
+  .home_screen .top_inner .top_contents {
+    gap: 58px;
+    padding-top: 56px;
+  }
+  .home_screen .top_inner .top_contents .about {
+    grid-column: 1/3;
+  }
+  .home_screen .top_inner .top_contents .about .about_icon {
+    width: 100%;
+  }
+  .home_screen .top_inner .top_contents .work_list {
+    gap: 58px;
+  }
+  .home_screen .bottom_inner .dock_bar {
+    padding-top: 18px;
+    padding-bottom: 20px;
+  }
+  .home_screen .bottom_inner .dock_bar .inner {
+    width: fit-content;
+    gap: 16px;
+    margin: auto;
+    padding: 17px 26px;
+  }
   .about_page .contents .info .img {
     max-height: 60vh;
     margin: auto;
@@ -364,11 +1262,49 @@
   .sidebar {
     min-width: 23vw;
   }
+  .home_overlay .notion_content {
+    margin-top: 58px;
+  }
 }
 /****************************************************************************************************
   Tablet min-width: 1080px 
 ****************************************************************************************************/
 @media screen and (min-width: 1080px) {
+  .lock_screen .lock_widgets {
+    position: absolute;
+    top: 210px;
+    left: 0;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 18px;
+    padding: 0 46px;
+  }
+  .lock_screen .con_bottom {
+    height: 100%;
+  }
+  .lock_screen .con_bottom .notifications {
+    min-width: 594px;
+    margin-top: 47px;
+  }
+  .lock_screen .bottom {
+    margin-bottom: 32px;
+  }
+  .home_screen .top_inner {
+    gap: 58px;
+  }
+  .home_screen .top_inner .top_content {
+    gap: 58px;
+  }
+  .home_screen .top_inner .top_content .about .about_icon {
+    width: 300px;
+    height: 300px;
+  }
+  .home_screen .top_inner .top_content .work_list {
+    gap: 156px;
+  }
+  .home_screen .top_inner .top_content .work_icon {
+    margin: 0 42px;
+  }
   div:has(.about_page) {
     height: 100%;
   }
@@ -440,9 +1376,81 @@
     border: none;
   }
 }
+/****************************************************************************************************
+  Tablet min-width: 1210px 
+****************************************************************************************************/
 @media screen and (min-width: 1210px) {
+  .home_screen .top_inner {
+    gap: 21px;
+  }
+  .home_screen .top_inner .top_contents .about .about_icon {
+    width: 300px;
+    height: 300px;
+  }
+  .home_screen .top_inner .top_contents .work_list {
+    grid-template-columns: repeat(4, 1fr);
+  }
   .web_redesign_box .popup_overlay .popup_content .popup_inner {
     max-width: 25vw;
+  }
+}
+/****************************************************************************************************
+ max-height: 600px 
+****************************************************************************************************/
+@media screen and (max-height: 600px) {
+  .home_screen .top_inner {
+    gap: 10px;
+    margin-bottom: 10px;
+    padding-bottom: 0;
+  }
+  .home_screen .top_inner .top_contents {
+    gap: 12px;
+    padding-top: 12px;
+  }
+  .home_screen .top_inner .top_contents .about .about_icon {
+    width: 151px;
+    height: 151px;
+  }
+  .home_screen .top_inner .home_widegets .inner {
+    min-height: 148px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+  }
+  .home_screen .bottom_inner .dock_bar {
+    width: calc(100% - 12px);
+    padding-top: 4px;
+  }
+  .home_screen .bottom_inner .dock_bar .inner {
+    padding-top: 12px;
+    padding-bottom: 12px;
+  }
+}
+@media screen and (max-height: 430px) {
+  .lock_screen {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .lock_screen .notifications {
+    padding-top: 50px;
+  }
+  .lock_screen .bottom_inner {
+    grid-column: 1/3;
+  }
+}
+@media screen and (max-height: 375px) {
+  .lock_screen .notifications {
+    padding-top: 20px;
+  }
+}
+@media screen and (max-height: 360px) {
+  .lock_screen {
+    row-gap: 0;
+  }
+  .lock_screen .notifications {
+    padding: 0;
+  }
+  .status_bar {
+    display: none;
   }
 }
 
