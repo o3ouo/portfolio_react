@@ -17,7 +17,7 @@ const NotionLinkMenu = ({ url, title }) => {
       rel="noopener noreferrer"
     >
       <span>{title}</span>
-      <img src={`${process.env.PUBLIC_URL}/image/arrow_icon.webp`} alt="arrow_icon" className="arrow_icon" />
+      <img src={`${process.env.PUBLIC_URL}/image/arrow_icon.webp`} alt={`${title}_icon`} className="arrow_icon" />
     </a>
   );
 };
@@ -62,7 +62,7 @@ const NotionMenu = ({ notionClick, onClose }) => {
           <div className="icons_row row">
               {icons.map((con, index) => (
                 <figure key={index}>
-                  <img src={`${process.env.PUBLIC_URL}/image/${con}.webp`} alt="icon_img" />
+                  <img src={`${process.env.PUBLIC_URL}/image/${con}.webp`} alt={`icon_img_${index}`} />
                 </figure>
               ))}
             </div>

@@ -18,7 +18,6 @@ function HomeContainer() {
   return (
     <PageTansition>
       <div className="home_screen">
-
         <div className="top_inner">
           {mobile ? null : <StatusBar />}
           {/* <div className="top_contents"> */}

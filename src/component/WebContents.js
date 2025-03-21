@@ -102,15 +102,15 @@ const WebContents = () => {
               <div className="link_box">
                 <a href={con.webLink} target="_blank" className="link_btn" rel="noopener noreferrer" >
                   <span className="link">Web Site</span>
-                  <img src={`${process.env.PUBLIC_URL}/image/arrow_icon.webp`} alt="arrow_icon" />
+                  <img src={`${process.env.PUBLIC_URL}/image/arrow_icon.webp`} alt="web_arrow_icon" />
                 </a>
                 <a href={con.figmaLink} target="_blank" className="link_btn" rel="noopener noreferrer">
                   <span className="link">Figma</span>
-                  <img src={`${process.env.PUBLIC_URL}/image/arrow_icon.webp`} alt="arrow_icon" />
+                  <img src={`${process.env.PUBLIC_URL}/image/arrow_icon.webp`} alt="figma)arrow_icon" />
                 </a>
                 <button className="link_btn" onClick={() => setSelectedIntroduce(introduces[index])}>
                   <span className="link">Introduce</span>
-                  <img src={`${process.env.PUBLIC_URL}/image/arrow_icon.webp`} alt="arrow_icon" />
+                  <img src={`${process.env.PUBLIC_URL}/image/arrow_icon.webp`} alt="intro_arrow_icon" />
                 </button>
               </div>
             </div>

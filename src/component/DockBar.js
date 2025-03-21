@@ -59,6 +59,7 @@ function DockBar() {
         <WorkContent
           icon={"phone"}
           onClick={() => setDockBarClick("phone")}
+
         />
         <WorkContent
           icon={"insta"}

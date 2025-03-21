@@ -51,7 +51,7 @@ function HomeWidgets() {
             <li key={index}>
               <p className="time">{hour.dt_txt?.substring(11, 13)}</p>
               <figure className="time-icon">
-                <img src={`${process.env.PUBLIC_URL}/image/${hour?.weather?.[0]?.icon}.png`} alt={hour.dt_txt} />
+                <img src={`${process.env.PUBLIC_URL}/image/${hour?.weather?.[0]?.icon}.webp`} alt={hour.dt_txt} />
               </figure>
               <p className="hourly_temp">{Math.round(hour.main?.temp)}°</p>
             </li>

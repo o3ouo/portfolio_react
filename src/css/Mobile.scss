@@ -184,6 +184,11 @@
       border-radius: 8.5px;
       background-color: #fff;
       align-content: center;
+
+      img {
+        width: 100%;
+        height: 100%;
+      }
     }
 
     .title {
@@ -241,6 +246,7 @@
         &:first-child {
           width: 100%;
           z-index: 5;
+
           .inner {
             background-color: #ffffff47;
           }
@@ -310,45 +316,46 @@
       margin: auto;
     }
   }
+}
 
-  /* Swipe Box */
-  .swipe_box {
-    width: 100%;
-    animation: lockUpDownMove .7s linear 0s infinite alternate;
+/* Swipe Box */
+.swipe_box {
+  width: 100%;
+  animation: lockUpDownMove .7s linear 0s infinite alternate;
 
-    @keyframes lockUpDownMove {
-      from {
-        transform: translateY(-5px)
-      }
-
-      to {
-        transform: translateY(-15px)
-      }
+  @keyframes lockUpDownMove {
+    from {
+      transform: translateY(-5px)
     }
 
-    .swipe_up {
-      text-align: center;
-      color: white;
+    to {
+      transform: translateY(-15px)
     }
   }
 
-  /* indicator */
-  .indicator {
-    /* position: absolute;
-    bottom: -34px; */
-    width: 100%;
-    height: 16px;
-    align-content: end;
-
-    .bar {
-      width: 50%;
-      height: 5px;
-      margin: auto;
-      border-radius: 100px;
-      background-color: white;
-    }
+  .swipe_up {
+    text-align: center;
+    color: white;
   }
 }
+
+/* indicator */
+.indicator {
+  /* position: absolute;
+    bottom: -34px; */
+  width: 100%;
+  height: 16px;
+  align-content: end;
+
+  .bar {
+    width: 50%;
+    height: 5px;
+    margin: auto;
+    border-radius: 100px;
+    background-color: white;
+  }
+}
+
 
 /****************************************************************************************************
   Home Screen 
@@ -394,6 +401,11 @@ div:has(.home_screen) {
     margin-bottom: 5px;
     border-radius: 14px;
     align-content: center;
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
   }
 
   .top_inner {
@@ -433,21 +445,6 @@ div:has(.home_screen) {
         .title {
           text-wrap: nowrap;
         }
-      }
-
-      .phils {
-        padding: 5px;
-        background-color: #fff;
-      }
-
-      .play_press {
-        padding: 5px;
-        background-color: #F4F1EA;
-      }
-
-      .portfolio {
-        background-color: #fff;
-        padding: 5px;
       }
     }
 
@@ -518,6 +515,7 @@ div:has(.home_screen) {
     /* Link App */
     .link_app_list {
       grid-column: 1/3;
+
       .inner {
         display: flex;
         justify-content: space-between;
@@ -580,11 +578,6 @@ div:has(.home_screen) {
 
         .work_icon {
           margin-bottom: 0;
-        }
-
-        .kakao {
-          background-color: #FAE200;
-          padding: 5px;
         }
       }
     }
@@ -812,7 +805,7 @@ div:has(.mail_wrap) {
       outline: none;
       background-color: transparent;
       font-family: "SF-Pro", sans-serif;
-      font-size: 14px;
+      font-size: 10px;
       line-height: inherit;
       letter-spacing: inherit;
       color: white;
@@ -891,7 +884,7 @@ div:has(.mail_wrap) {
   Media Query 
 ****************************************************************************************************/
 @media screen and (max-width: 375px) {
-  
+
   .home_screen {
     margin: auto;
     padding: 0;
@@ -900,12 +893,12 @@ div:has(.mail_wrap) {
       grid-template-columns: repeat(2, 1fr);
 
       .about {
-        order: 1;        
+        order: 1;
 
         .about_icon {
           width: 148px;
           height: 148px;
-          background-image: url(/public/image/about_icon_width.png);
+          background-image: url(/public/image/about_icon_width.webp);
           background-position-x: center;
         }
       }
@@ -931,7 +924,7 @@ div:has(.mail_wrap) {
         }
 
       }
-      
+
       .link_app_list {
         grid-column: 1/3;
         order: 4;
@@ -940,9 +933,9 @@ div:has(.mail_wrap) {
           gap: 19px;
         }
 
-      }  
+      }
     }
-  } 
+  }
 
   .bottom_inner {
 
@@ -1045,7 +1038,7 @@ div:has(.mail_wrap) {
 
   // Lock Screen
   .lock_screen {
-    
+
     .notifications {
       padding-top: 20px;
     }
@@ -1056,7 +1049,7 @@ div:has(.mail_wrap) {
 
   // Lock Screen
   .lock_screen {
-    
+
     .notifications {
       padding-top: 0px;
     }
@@ -1078,5 +1071,3 @@ div:has(.mail_wrap) {
     display: none;
   }
 }
-
-

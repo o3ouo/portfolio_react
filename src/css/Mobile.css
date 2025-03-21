@@ -34,8 +34,6 @@
   /* Weather Forecast */
   /* Content Bottom */
   /* Flash Camera */
-  /* Swipe Box */
-  /* indicator */
 }
 .lock_screen::-webkit-scrollbar {
   display: none;
@@ -166,6 +164,10 @@
   background-color: #fff;
   align-content: center;
 }
+.lock_screen .notifications .con_img img {
+  width: 100%;
+  height: 100%;
+}
 .lock_screen .notifications .title {
   font-family: "SF-Pro-Text-Semibold";
 }
@@ -264,7 +266,9 @@
 .lock_screen .flash_camera_box .camera img {
   margin: auto;
 }
-.lock_screen .swipe_box {
+
+/* Swipe Box */
+.swipe_box {
   width: 100%;
   animation: lockUpDownMove 0.7s linear 0s infinite alternate;
 }
@@ -276,18 +280,20 @@
     transform: translateY(-15px);
   }
 }
-.lock_screen .swipe_box .swipe_up {
+.swipe_box .swipe_up {
   text-align: center;
   color: white;
 }
-.lock_screen .indicator {
+
+/* indicator */
+.indicator {
   /* position: absolute;
-  bottom: -34px; */
+    bottom: -34px; */
   width: 100%;
   height: 16px;
   align-content: end;
 }
-.lock_screen .indicator .bar {
+.indicator .bar {
   width: 50%;
   height: 5px;
   margin: auto;
@@ -339,6 +345,10 @@ div:has(.home_screen) {
   border-radius: 14px;
   align-content: center;
 }
+.home_screen .work_icon img {
+  width: 100%;
+  height: 100%;
+}
 .home_screen .top_inner {
   display: grid;
   grid-template-rows: repeat(1fr, 1fr);
@@ -374,18 +384,6 @@ div:has(.home_screen) {
 }
 .home_screen .top_inner .work_list .work_content .title {
   text-wrap: nowrap;
-}
-.home_screen .top_inner .work_list .phils {
-  padding: 5px;
-  background-color: #fff;
-}
-.home_screen .top_inner .work_list .play_press {
-  padding: 5px;
-  background-color: #F4F1EA;
-}
-.home_screen .top_inner .work_list .portfolio {
-  background-color: #fff;
-  padding: 5px;
 }
 .home_screen .top_inner .home_widegets {
   grid-column: 1/3;
@@ -493,10 +491,6 @@ div:has(.home_screen) {
 }
 .home_screen .bottom_inner .dock_bar .inner .work_icon {
   margin-bottom: 0;
-}
-.home_screen .bottom_inner .dock_bar .inner .kakao {
-  background-color: #FAE200;
-  padding: 5px;
 }
 
 /****************************************************************************************************
@@ -691,7 +685,7 @@ div:has(.mail_wrap) {
   outline: none;
   background-color: transparent;
   font-family: "SF-Pro", sans-serif;
-  font-size: 14px;
+  font-size: 10px;
   line-height: inherit;
   letter-spacing: inherit;
   color: white;
@@ -770,7 +764,7 @@ div:has(.mail_wrap) {
   .home_screen .top_inner .about .about_icon {
     width: 148px;
     height: 148px;
-    background-image: url(/public/image/about_icon_width.png);
+    background-image: url(/public/image/about_icon_width.webp);
     background-position-x: center;
   }
   .home_screen .top_inner .work_list {

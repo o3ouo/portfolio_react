@@ -70,6 +70,7 @@
   }
   .lock_screen .notifications {
     width: 90%;
+    max-width: 594px;
     margin: auto;
   }
   .lock_screen .notifications .first_content .inner {
