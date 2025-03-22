@@ -75,8 +75,8 @@
     }
 
     .big_time {
-      font-family: "SF-Pro-Display-bold";
       font-size: calc(60px + 2vw);
+      font-weight: bold;
       text-align: center;
     }
   }
@@ -212,7 +212,7 @@
     }
 
     .title {
-      font-family: "SF-Pro-Text-Semibold";
+      font-weight: 700;
     }
 
     .first_content {
@@ -485,6 +485,7 @@ div:has(.home_screen) {
 
         .weather_icon img {
           width: 25px;
+          height: 100%;
           filter: brightness(10)
         }
       }
@@ -543,7 +544,7 @@ div:has(.home_screen) {
       padding: 7px 11px;
       border-radius: 100px;
       background-color: rgba(51, 51, 51, .35);
-      font-family: "SF-Pro-Text-Semibold";
+      font-weight: 700;
       animation: homeUpDownMove .7s linear 0s infinite alternate;
 
       @keyframes homeUpDownMove {
@@ -765,12 +766,12 @@ div:has(.home_screen) {
     height: 183px;
     border-radius: 14px;
     background-color: rgb(255 255 255 / 90%);
-    box-shadow: 0 0 32pxpx rgb(0 0 0 / 20%);
+    box-shadow: 0 0 32px rgb(0 0 0 / 20%);
     backdrop-filter: blur(150px);
-    font-family: "SF-Pro-Text-Semibold";
     font-size: 17px;
+    font-weight: 700;
     line-height: 22px;
-    line-height: -0.43px;
+    letter-spacing: -0.43px;
 
     .icon {
       img {
@@ -785,6 +786,7 @@ div:has(.home_screen) {
       .txt {
         font-family: "SF-Pro";
         font-size: 13px;
+        font-weight: 400;
         line-height: 18px;
         letter-spacing: 0.08px;
       }
@@ -1310,7 +1312,7 @@ div:has(.mail_wrap) {
 
       p {
         margin: 10px 8px;
-        font-family: "SF-Pro-Text-Semibold";
+        font-weight: 700;
         color: rgba(60, 60, 67, .6);
       }
 
@@ -1627,20 +1629,12 @@ div:has(.mail_wrap) {
 
   // Home Screen
   .home_screen {
-    .about {
-      .about_icon {
-        width: 300px;
-        height: 300px;
-      }
-    }
 
     .work_list .work_icon,
     .link_app_list .work_icon {
       margin: 0 42px;
     }
   }
-
-
 
   // About Page
   div:has(.about_page) {

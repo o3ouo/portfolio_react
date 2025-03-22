@@ -3,18 +3,21 @@
   font-family: "SF-Pro-Display-bold";
   src: url(/public/font/SF-Pro-Fonts/SF-Pro-Display-Bold.otf);
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
   font-family: "SF-Pro-Text-Semibold";
   src: url(/public/font/SF-Pro-Fonts/SF-Pro-Text-Semibold.otf);
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
   font-family: "SF-Pro";
-  src: url(/public/font/SF-Pro-Fonts/SF-Pro.ttf);
+  src: url(/public/font/SF-Pro-Fonts/SF-Pro.woff2) format('woff2');
   font-style: normal;
+  font-display: swap;
 }
 
 :root {

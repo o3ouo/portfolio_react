@@ -70,8 +70,8 @@
   backdrop-filter: blur(40px);
 }
 .lock_screen .now_date .big_time {
-  font-family: "SF-Pro-Display-bold";
   font-size: calc(60px + 2vw);
+  font-weight: bold;
   text-align: center;
 }
 .lock_screen .lock_widgets {
@@ -186,7 +186,7 @@
   height: 100%;
 }
 .lock_screen .notifications .title {
-  font-family: "SF-Pro-Text-Semibold";
+  font-weight: 700;
 }
 .lock_screen .notifications .first_content {
   position: relative;
@@ -414,6 +414,7 @@ div:has(.home_screen) {
 }
 .home_screen .top_inner .home_widegets .icon_description_box .weather_icon img {
   width: 25px;
+  height: 100%;
   filter: brightness(10);
 }
 .home_screen .top_inner .home_widegets .hourly_weather {
@@ -459,7 +460,7 @@ div:has(.home_screen) {
   padding: 7px 11px;
   border-radius: 100px;
   background-color: rgba(51, 51, 51, 0.35);
-  font-family: "SF-Pro-Text-Semibold";
+  font-weight: 700;
   animation: homeUpDownMove 0.7s linear 0s infinite alternate;
 }
 @keyframes homeUpDownMove {
@@ -643,12 +644,12 @@ div:has(.home_screen) {
   height: 183px;
   border-radius: 14px;
   background-color: rgba(255, 255, 255, 0.9);
-  box-shadow: 0 0 32pxpx rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 32px rgba(0, 0, 0, 0.2);
   backdrop-filter: blur(150px);
-  font-family: "SF-Pro-Text-Semibold";
   font-size: 17px;
+  font-weight: 700;
   line-height: 22px;
-  line-height: -0.43px;
+  letter-spacing: -0.43px;
 }
 .dock_pop_content .popup_box .icon img {
   width: 44px;
@@ -660,6 +661,7 @@ div:has(.home_screen) {
 .dock_pop_content .popup_box .detail .txt {
   font-family: "SF-Pro";
   font-size: 13px;
+  font-weight: 400;
   line-height: 18px;
   letter-spacing: 0.08px;
 }
@@ -1099,7 +1101,7 @@ div:has(.mail_wrap) {
 }
 .sidebar .ul_box li p {
   margin: 10px 8px;
-  font-family: "SF-Pro-Text-Semibold";
+  font-weight: 700;
   color: rgba(60, 60, 67, 0.6);
 }
 .sidebar .ul_box li img {
@@ -1298,10 +1300,6 @@ div:has(.mail_wrap) {
   }
   .lock_screen .bottom {
     margin-bottom: 32px;
-  }
-  .home_screen .about .about_icon {
-    width: 300px;
-    height: 300px;
   }
   .home_screen .work_list .work_icon,
   .home_screen .link_app_list .work_icon {

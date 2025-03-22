@@ -51,7 +51,7 @@ function LockWidgets() {
       <div className="left">
         <div className="top">
           <figure className="weather_icon">
-            <img src={`${process.env.PUBLIC_URL}/image/${weather.length > 0 ? weather[0]?.icon : "default"}.webp`} alt={weatherMain} />
+            <img src={`${process.env.PUBLIC_URL}/image/${weather.length > 0 ? weather[0]?.icon : null}.webp`} alt="now_weather" />
           </figure>
           <p className="temp">{Math.round(main?.temp)}°</p>
         </div>
