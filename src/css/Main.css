@@ -37,6 +37,11 @@
   transition: opacity 0.3s ease-out, transform 0.5s ease-out;
 }
 
+.error img {
+  min-width: 414px;
+  min-height: 300px;
+}
+
 /****************************************************************************************************
   Lock Screen 
 ****************************************************************************************************/
@@ -87,6 +92,7 @@
 }
 .lock_screen .lock_widgets .left .top .weather_icon img {
   width: 25px;
+  height: 100%;
   filter: brightness(10);
 }
 .lock_screen .lock_widgets .left .top .temp {
@@ -141,6 +147,7 @@
 }
 .lock_screen .lock_widgets .right .sun_time .sun_icon img {
   width: 17px;
+  height: 100%;
   filter: brightness(10);
 }
 .lock_screen .notifications {
@@ -274,6 +281,8 @@
 }
 .lock_screen .flash_camera_box .flash img,
 .lock_screen .flash_camera_box .camera img {
+  width: 100%;
+  height: 100%;
   margin: auto;
 }
 
@@ -422,6 +431,7 @@ div:has(.home_screen) {
 }
 .home_screen .top_inner .home_widegets .hourly_weather li .time-icon img {
   width: 25px;
+  height: 100%;
   filter: brightness(10);
 }
 .home_screen .top_inner .link_app_list {
@@ -789,7 +799,7 @@ div:has(.mail_wrap) {
   height: 100dvh;
   background-color: #fff;
 }
-.about_page .inner {
+.about_page .about_inner {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -1214,22 +1224,22 @@ div:has(.mail_wrap) {
     background-color: rgba(211, 211, 211, 0.2);
   }
   .home_screen .top_inner {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 58px;
+    grid-template-rows: 109px;
+    gap: 32px;
     margin-top: 66px;
   }
-  .home_screen .top_inner .top_contents {
-    gap: 58px;
-    padding-top: 56px;
+  .home_screen .top_inner .about {
+    grid-row: 1/3;
   }
-  .home_screen .top_inner .top_contents .about {
-    grid-column: 1/3;
+  .home_screen .top_inner .about .about_icon {
+    width: 300px;
+    height: 300px;
   }
-  .home_screen .top_inner .top_contents .about .about_icon {
-    width: 100%;
+  .home_screen .top_inner .work_list {
+    grid-template-columns: repeat(4, 1fr);
   }
-  .home_screen .top_inner .top_contents .work_list {
-    gap: 58px;
+  .home_screen .top_inner .home_widegets {
+    grid-column: 2/3;
   }
   .home_screen .bottom_inner .dock_bar {
     padding-top: 18px;
@@ -1289,20 +1299,12 @@ div:has(.mail_wrap) {
   .lock_screen .bottom {
     margin-bottom: 32px;
   }
-  .home_screen .top_inner {
-    gap: 58px;
-  }
-  .home_screen .top_inner .top_content {
-    gap: 58px;
-  }
-  .home_screen .top_inner .top_content .about .about_icon {
+  .home_screen .about .about_icon {
     width: 300px;
     height: 300px;
   }
-  .home_screen .top_inner .top_content .work_list {
-    gap: 156px;
-  }
-  .home_screen .top_inner .top_content .work_icon {
+  .home_screen .work_list .work_icon,
+  .home_screen .link_app_list .work_icon {
     margin: 0 42px;
   }
   div:has(.about_page) {
@@ -1314,7 +1316,7 @@ div:has(.mail_wrap) {
     height: 100%;
     background-color: #fff;
   }
-  .about_page .inner {
+  .about_page .about_inner {
     width: 100%;
   }
   .about_page .contents {
@@ -1380,16 +1382,6 @@ div:has(.mail_wrap) {
   Tablet min-width: 1210px 
 ****************************************************************************************************/
 @media screen and (min-width: 1210px) {
-  .home_screen .top_inner {
-    gap: 21px;
-  }
-  .home_screen .top_inner .top_contents .about .about_icon {
-    width: 300px;
-    height: 300px;
-  }
-  .home_screen .top_inner .top_contents .work_list {
-    grid-template-columns: repeat(4, 1fr);
-  }
   .web_redesign_box .popup_overlay .popup_content .popup_inner {
     max-width: 25vw;
   }
@@ -1399,17 +1391,7 @@ div:has(.mail_wrap) {
 ****************************************************************************************************/
 @media screen and (max-height: 600px) {
   .home_screen .top_inner {
-    gap: 10px;
     margin-bottom: 10px;
-    padding-bottom: 0;
-  }
-  .home_screen .top_inner .top_contents {
-    gap: 12px;
-    padding-top: 12px;
-  }
-  .home_screen .top_inner .top_contents .about .about_icon {
-    width: 151px;
-    height: 151px;
   }
   .home_screen .top_inner .home_widegets .inner {
     min-height: 148px;
@@ -1417,7 +1399,6 @@ div:has(.mail_wrap) {
     padding-bottom: 8px;
   }
   .home_screen .bottom_inner .dock_bar {
-    width: calc(100% - 12px);
     padding-top: 4px;
   }
   .home_screen .bottom_inner .dock_bar .inner {
@@ -1440,6 +1421,7 @@ div:has(.mail_wrap) {
 @media screen and (max-height: 375px) {
   .lock_screen .notifications {
     padding-top: 20px;
+    padding-right: 32px;
   }
 }
 @media screen and (max-height: 360px) {

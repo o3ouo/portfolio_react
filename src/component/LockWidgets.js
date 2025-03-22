@@ -30,7 +30,7 @@ function LockWidgets() {
     hourlyError,
   } = useWeatherContext();
 
-  if (!activeWeatherData && !dailyTemperatureStats && !dailyRainProbability) return <div className='error'><img src={`${process.env.PUBLIC_URL}/image/error.webp`} alt="error_img" /></div>
+  if (!activeWeatherData && !dailyTemperatureStats && !dailyRainProbability) return <div className='error'><img src={`${process.env.PUBLIC_URL}/image/error.webp`} alt="date_error_img" /></div>
 
   if (currentLoading || hourlyLoading) {
     <div className='loding'><img src={`${process.env.PUBLIC_URL}/image/spinner_icon.webp`} alt="spinner_icon" /></div>

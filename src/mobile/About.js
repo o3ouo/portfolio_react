@@ -19,7 +19,7 @@ function About() {
   return (
     <PageTansition>
       <div className="about_page">
-        <div className="inner">
+        <div className="about_inner">
           <NavBar title={"About Me"} />
 
           <div className="contents">

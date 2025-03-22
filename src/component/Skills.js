@@ -21,6 +21,9 @@ function Skills() {
         <Skill title={"JavaScript"} name={"js"}/>
         <Skill title={"jQuery"} name={"jquery"}/>
         <Skill title={"React"} name={"react"}/>
+        <Skill title={"React-Axios"} name={"axios"}/>
+        <Skill title={"React-Router"} name={"router"}/>
+        <Skill title={"React-Query"} name={"query"}/>
         <Skill title={"Visual Studio Code"} name={"vscode"}/>
         <Skill title={"Figma"} name={"figma"}/>
         <Skill title={"Adobe Photoshop"} name={"ps"}/>

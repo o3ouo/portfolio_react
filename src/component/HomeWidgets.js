@@ -12,7 +12,7 @@ function HomeWidgets() {
     hourlyError,
   } = useWeatherContext();
 
-  if (!activeWeatherData && !activeHourlyData && !dailyTemperatureStats) return <div className='error'><img src={`${process.env.PUBLIC_URL}/image/error.webp`} alt="error_img" /></div>
+  if (!activeWeatherData && !activeHourlyData && !dailyTemperatureStats) return <div className='error'><img src={`${process.env.PUBLIC_URL}/image/error.webp`} alt="data_error_img" /></div>
 
   if (currentLoading || hourlyLoading) {
     <div className='loding'><img src={`${process.env.PUBLIC_URL}/image/spinner_icon.webp`} alt="spinner_icon" /></div>
@@ -21,7 +21,7 @@ function HomeWidgets() {
     <div className='error'><img src={`${process.env.PUBLIC_URL}/image/error.webp`} alt="error_img" /></div>
   }
 
-  if (!activeWeatherData) return <div className='error'><img src={`${process.env.PUBLIC_URL}/image/error.webp`} alt="error_img" /></div>
+  if (!activeWeatherData) return <div className='error'><img src={`${process.env.PUBLIC_URL}/image/error.webp`} alt="activeWeatherData_error_img" /></div>
 
 
   const { name, main, weather } = activeWeatherData || {};

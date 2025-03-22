@@ -34,7 +34,7 @@ function Mobile() {
         <Routes>
           <Route path="/" element={<HomeScreen />} />
           <Route path="/home" element={<HomeScreen />} />
-          <Route path="/about/*" element={!Tablet ? <About /> : <AboutTablet /> } />
+          <Route path="/about/*" element={Tablet ? <AboutTablet /> : <About />  } />
           <Route path="/web_redesign" element={mobile ?<WebRedesign /> : <WebRedesignTablet />} />
           <Route path="/mail" element={<Mail />} />
         </Routes>
