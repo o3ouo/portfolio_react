@@ -186,7 +186,7 @@
   height: 100%;
 }
 .lock_screen .notifications .title {
-  font-weight: 600;
+  font-family: "SF-Pro-Text-Semibold";
 }
 .lock_screen .notifications .first_content {
   position: relative;
@@ -460,7 +460,7 @@ div:has(.home_screen) {
   padding: 7px 11px;
   border-radius: 100px;
   background-color: rgba(51, 51, 51, 0.35);
-  font-weight: 600;
+  font-family: "SF-Pro-Text-Semibold";
   animation: homeUpDownMove 0.7s linear 0s infinite alternate;
 }
 @keyframes homeUpDownMove {
@@ -534,7 +534,7 @@ div:has(.home_screen) {
 }
 .status_bar .now_day_box {
   display: flex;
-  font-weight: 600;
+  font-family: "SF-Pro-Text-Semibold";
 }
 .status_bar .time {
   padding-right: 6px;
@@ -647,7 +647,7 @@ div:has(.home_screen) {
   box-shadow: 0 0 32px rgba(0, 0, 0, 0.2);
   backdrop-filter: blur(150px);
   font-size: 17px;
-  font-weight: 600;
+  font-family: "SF-Pro-Text-Semibold";
   line-height: 22px;
   letter-spacing: -0.43px;
 }
@@ -1038,7 +1038,7 @@ div:has(.mail_wrap) {
 }
 .web_redesign_box .popup_overlay .popup_content .title_and_description .title {
   margin-bottom: 4px;
-  font-weight: 600;
+  font-family: "SF-Pro-Text-Semibold";
   text-align: center;
 }
 .web_redesign_box .popup_overlay .popup_content .details {
@@ -1101,7 +1101,7 @@ div:has(.mail_wrap) {
 }
 .sidebar .ul_box li p {
   margin: 10px 8px;
-  font-weight: 600;
+  font-family: "SF-Pro-Text-Semibold";
   color: rgba(60, 60, 67, 0.6);
 }
 .sidebar .ul_box li img {
@@ -1159,7 +1159,7 @@ div:has(.mail_wrap) {
   .home_screen .top_inner .home_widegets .hourly_weather {
     overflow: hidden;
     flex-shrink: 1;
-    gap: 21px;
+    gap: 19px;
     width: 151px;
   }
   .home_screen .top_inner .link_app_list {
