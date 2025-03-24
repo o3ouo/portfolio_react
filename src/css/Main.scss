@@ -1346,14 +1346,16 @@ div:has(.mail_wrap) {
 
     .top_inner {
       grid-template-columns: repeat(2, 1fr);
+      column-gap: 0;
       padding: 0;
 
       .about {
         order: 1;
+        margin: auto;
 
         .about_icon {
-          width: 171px;
-          height: 171px;
+          width: 158px;
+          height: 158px;
           background-image: url(/public/image/about_icon_width.webp);
           background-position-x: center;
         }
@@ -1374,17 +1376,27 @@ div:has(.mail_wrap) {
       .home_widegets {
         grid-column: auto;
         order: 2;
+        margin: auto;
 
         .inner {
-          min-height: 170px;
+          max-width: 158px;
+          max-height: 158px;
           padding: 12px 10px;
+        }
+
+        .current_weather {
+          .text {
+            font-size: 12px;
+            text-align: end;
+          }
         }
 
         .hourly_weather {
           overflow: hidden;
           flex-shrink: 1;
-          gap: 19px;
+          gap: 39px;
           width: 151px;
+          font-size: 12px;
         }
       }
 
