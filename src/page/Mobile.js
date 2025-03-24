@@ -19,6 +19,7 @@ gsap.registerPlugin(ScrollToPlugin);
 function Mobile() {
   const { width } = useWindowDimensions();
   const mobile = width <= 767; 
+  const tablet = width >= 1080;
 
   // LockScreen과 HomeScreen에서만 스크롤 & 스와이프 감지
   const allowedSwipePages = ["/", "/home"];
@@ -33,7 +34,7 @@ function Mobile() {
         <Routes>
           <Route path="/" element={<HomeScreen />} />
           <Route path="/home" element={<HomeScreen />} />
-          <Route path="/about/*" element={mobile ? <About /> : <AboutTablet />  } />
+          <Route path="/about/*" element={tablet ? <AboutTablet /> : <About /> } />
           <Route path="/web_redesign" element={mobile ?<WebRedesign /> : <WebRedesignTablet />} />
           <Route path="/mail" element={<Mail />} />
         </Routes>
