@@ -3,14 +3,11 @@ import { BrowserRouter } from 'react-router-dom';
 import { WeatherProvider } from '../weather/WeatherContext';
 import '../css/Main.css';
 import Mobile from './Mobile';
-import useWindowDimensions from '../customHook/useWindowDimensions';
 
 function Main() {
-  const { width } = useWindowDimensions();
-  const mobile = width <= 768;
 
   return (
-    <BrowserRouter basename="/portfolio_react">
+    <BrowserRouter basename= {process.env.PUBLIC_URL}>
       <WeatherProvider>
         <div className='main'>
           <Mobile />

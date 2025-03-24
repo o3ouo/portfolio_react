@@ -1339,27 +1339,36 @@ div:has(.mail_wrap) {
 ****************************************************************************************************/
 @media screen and (max-width: 375px) {
 
+  // Home Screen
   .home_screen {
     margin: auto;
     padding: 0;
 
     .top_inner {
       grid-template-columns: repeat(2, 1fr);
+      padding: 0;
 
       .about {
         order: 1;
 
         .about_icon {
-          width: 148px;
-          height: 148px;
+          width: 171px;
+          height: 171px;
           background-image: url(/public/image/about_icon_width.webp);
           background-position-x: center;
         }
       }
 
       .work_list {
+        display: flex;
         grid-column: 1/3;
         order: 3;
+        gap: 8px;
+
+        .work_icon {
+          margin-left: 12px;
+          margin-right: 12px;
+        }
       }
 
       .home_widegets {
@@ -1367,14 +1376,15 @@ div:has(.mail_wrap) {
         order: 2;
 
         .inner {
-          padding: 12px 6px;
+          min-height: 170px;
+          padding: 12px 10px;
         }
 
         .hourly_weather {
           overflow: hidden;
           flex-shrink: 1;
-          gap: 7px;
-          width: 140px;
+          gap: 19px;
+          width: 151px;
         }
       }
 
@@ -1383,7 +1393,8 @@ div:has(.mail_wrap) {
         order: 4;
 
         .inner {
-          gap: 19px;
+          justify-content: center;
+          gap: 32px;
         }
       }
     }
@@ -1572,7 +1583,7 @@ div:has(.mail_wrap) {
 
     .web_contents {
       padding-top: 40px;
-      
+
       .box {
         align-items: flex-start;
       }
@@ -1632,15 +1643,6 @@ div:has(.mail_wrap) {
 
     .bottom {
       margin-bottom: 32px;
-    }
-  }
-
-  // Home Screen
-  .home_screen {
-
-    .work_list .work_icon,
-    .link_app_list .work_icon {
-      margin: 0 42px;
     }
   }
 
