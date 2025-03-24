@@ -212,7 +212,7 @@
     }
 
     .title {
-      font-weight: 700;
+      font-weight: 600;
     }
 
     .first_content {
@@ -544,7 +544,7 @@ div:has(.home_screen) {
       padding: 7px 11px;
       border-radius: 100px;
       background-color: rgba(51, 51, 51, .35);
-      font-weight: 700;
+      font-weight: 600;
       animation: homeUpDownMove .7s linear 0s infinite alternate;
 
       @keyframes homeUpDownMove {
@@ -769,7 +769,7 @@ div:has(.home_screen) {
     box-shadow: 0 0 32px rgb(0 0 0 / 20%);
     backdrop-filter: blur(150px);
     font-size: 17px;
-    font-weight: 700;
+    font-weight: 600;
     line-height: 22px;
     letter-spacing: -0.43px;
 
@@ -1312,7 +1312,7 @@ div:has(.mail_wrap) {
 
       p {
         margin: 10px 8px;
-        font-weight: 700;
+        font-weight: 600;
         color: rgba(60, 60, 67, .6);
       }
 
@@ -1569,6 +1569,14 @@ div:has(.mail_wrap) {
   // Web Redesign Page
   .web_redesign_box {
     flex-direction: row;
+
+    .web_contents {
+      padding-top: 40px;
+      
+      .box {
+        align-items: flex-start;
+      }
+    }
 
     .popup_overlay {
       .popup_content {
