@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/portfolio_react/static/css/main.8c05d86c.css",
-    "main.js": "/portfolio_react/static/js/main.44c8ba96.js",
+    "main.css": "/portfolio_react/static/css/main.0e7ea965.css",
+    "main.js": "/portfolio_react/static/js/main.32e93a73.js",
     "static/js/453.906b0208.chunk.js": "/portfolio_react/static/js/453.906b0208.chunk.js",
     "static/media/SF-Pro.woff2": "/portfolio_react/static/media/SF-Pro.891ac6a1341faf86cf4e.woff2",
     "static/media/SF-Pro-Text-Semibold.otf": "/portfolio_react/static/media/SF-Pro-Text-Semibold.288d5eb3fd7bf0174807.otf",
@@ -18,12 +18,12 @@
     "static/media/wifi_icon.webp": "/portfolio_react/static/media/wifi_icon.7038a5ce2a123a887005.webp",
     "static/media/data_icon_black.webp": "/portfolio_react/static/media/data_icon_black.8d07f130c19040cc0be2.webp",
     "static/media/data_icon.webp": "/portfolio_react/static/media/data_icon.adccd24eb26f1a869034.webp",
-    "main.8c05d86c.css.map": "/portfolio_react/static/css/main.8c05d86c.css.map",
-    "main.44c8ba96.js.map": "/portfolio_react/static/js/main.44c8ba96.js.map",
+    "main.0e7ea965.css.map": "/portfolio_react/static/css/main.0e7ea965.css.map",
+    "main.32e93a73.js.map": "/portfolio_react/static/js/main.32e93a73.js.map",
     "453.906b0208.chunk.js.map": "/portfolio_react/static/js/453.906b0208.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.8c05d86c.css",
-    "static/js/main.44c8ba96.js"
+    "static/css/main.0e7ea965.css",
+    "static/js/main.32e93a73.js"
   ]
 }
