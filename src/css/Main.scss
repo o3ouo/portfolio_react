@@ -272,6 +272,11 @@
           }
         }
 
+        &:not(:first-child) .con_img,
+        &:not(:first-child) .text_box {
+          opacity: 0;
+        }
+
         &:nth-child(2) {
           top: 30px;
           top: 10px;
@@ -317,6 +322,8 @@
   .flash_camera_box {
     display: flex;
     justify-content: space-between;
+    max-width: 1920px;
+    margin: auto;
     padding: 0 46px;
 
     .flash,
@@ -626,6 +633,8 @@ div:has(.home_screen) {
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+    max-width: 1920px;
+    margin: auto;
     padding: 16px 0;
   }
 
@@ -1118,7 +1127,7 @@ div:has(.mail_wrap) {
   overflow-y: hidden;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  width: 100%;
   height: 100dvh;
   background-color: #fff;
 
@@ -1590,6 +1599,10 @@ div:has(.mail_wrap) {
   }
 
   // Web Redesign Page
+  div:has(.web_redesign_box) {
+    background-color: #fff;
+  }
+
   .web_redesign_box {
     flex-direction: row;
 
@@ -1636,9 +1649,6 @@ div:has(.mail_wrap) {
   // Lock Screen 
   .lock_screen {
     .lock_widgets {
-      position: absolute;
-      top: 210px;
-      left: 0;
       flex-direction: column;
       align-items: flex-start;
       gap: 18px;
@@ -1765,6 +1775,35 @@ div:has(.mail_wrap) {
         }
       }
     }
+  }
+
+  /****************************************************************************************************
+  Tablet min-width: 1210px 
+****************************************************************************************************/
+  @media screen and (min-width: 1920px) {
+
+    // Lock Screen
+    .lock_screen {
+      .lock_widgets {
+        min-width: 1920px;
+        margin: auto;
+      }
+    }
+
+    // Web Redesign Page
+    .web_redesign_box {
+      .web_contents {
+        .box {
+          flex-direction: row;
+          margin-bottom: 40px;
+
+          .overflow_box {
+            height: 65vh;
+          }
+        }
+      }
+    }
+    
   }
 
   /****************************************************************************************************

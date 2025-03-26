@@ -32,6 +32,12 @@ function Notifications() {
         <Content title={list[1].title} description={list[1].description} icon={list[1].icon}/>
       </div>
       <div className="last_contents">
+        {/* <div className="content">
+          <Content title={list[0].title} description={list[0].description} icon={list[0].icon}/>
+        </div>
+        <div className="content"> <div className="inner"></div> </div>
+        <div className="content"> <div className="inner"></div> </div>
+        <div className="content"> <div className="inner"></div> </div> */}
         {
           list.map((con, index) => (
             index >= 0 && index < 4 ? (
